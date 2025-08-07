@@ -1,0 +1,24 @@
+.header {
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 1rem;
+    border-bottom: 2px solid var(--header-color);
+    background: var(--bg-color);
+    flex-wrap: wrap;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+.header a {
+
+    text-decoration: none;
+    color: var(--button-text);
+    transition: color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+}
+
+.header a:hover {
+    color: var(--text-hover-color);
+    box-shadow: 0 1px 60px var(--hover-color);
+}

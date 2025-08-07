@@ -1,0 +1,24 @@
+.certificates-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1.5rem;
+    overflow-x: scroll;
+    padding: 2rem;
+    background: var(--card-color);
+    border-radius: 10px;
+    border: 2px solid var(--header-color);
+}
+
+
+
+.certificates-container img {
+    height: 200px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.certificates-container img:hover {
+    transform: scale(1.03);
+}
+

@@ -1,0 +1,57 @@
+h1.name {
+    text-align: center;
+    margin: 9rem 1rem 1rem;
+    font-size: 6rem;
+    text-shadow: 0 0 50px var(--box-shadow);
+}
+
+h1.name:hover{
+    box-shadow: 0 0 100px var(--box-shadow);
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.intro img {
+    width: 195px;
+    height: 195px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.intro #description {
+    max-width: 700px;
+    padding: 2rem;
+    background: var(--card-color);
+    border: 2px solid var(--header-color);
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.intro #description:hover, .intro img:hover {
+    box-shadow: 0 0 20px var(--box-shadow);
+}
+
+
+@media (min-width: 768px) {
+    .intro {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .intro img {
+        width: 230px;
+        height: 230px;
+    }
+
+    .name {
+        font-size: 5rem;
+    }
+    
+}

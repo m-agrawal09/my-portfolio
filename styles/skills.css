@@ -1,0 +1,26 @@
+.sk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+    flex: 1 1 250px;
+    max-width: 320px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--header-color);
+    border-radius: 25px;
+ 
+}
+
+.sk img {
+    width: 40px;
+    height: 40px;
+}
+
+.sk:hover {
+    box-shadow: 0 0 20px var(--box-shadow);
+}
+
