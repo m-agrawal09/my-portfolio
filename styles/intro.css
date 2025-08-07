@@ -62,4 +62,9 @@ h1.name:hover{
     h1.name {
         font-size: 3rem;
     }
+    
+    .intro #description {
+    text-align:left;
+    padding: 1rem;
+    }
 }
