@@ -55,3 +55,11 @@ h1.name:hover{
     }
     
 }
+
+
+@media (max-width: 768px) {
+
+    h1.name {
+        font-size: 3rem;
+    }
+}
