@@ -11,14 +11,13 @@
   --button-border: #00bfff;
   --text-hover-color: aliceblue;
   --card-text-color: aliceblue;
-
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -31,7 +30,6 @@ body {
   scroll-behavior: smooth;
 }
 
-    
 section {
   padding: 4rem 1rem;
 }
@@ -44,14 +42,26 @@ section {
 }
 
 .education-container,
-.experience-container,
 .skills-container,
-.contact-info{
+.contact-info {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
 }
+
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto); 
+  justify-content: center;               
+  gap: 1.5rem;                          
+}
+
+.experience-box {
+  width: 200px; 
+  height: 150px; 
+}
+
 
 .education-container > div,
 .experience-item {
@@ -63,15 +73,15 @@ section {
   flex: 1 1 250px;
   max-width: 320px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
-.education-container > div:hover, .experience-item:hover{
+.education-container > div:hover,
+.experience-item:hover {
   box-shadow: 0 0 15px var(--box-shadow);
 }
 
-
-.projects-container .project-item button, .certificates-container button  {
+.projects-container .project-item button,
+.certificates-container button {
   background-color: var(--button-bg);
   color: var(--button-text);
   border: 2px solid var(--button-border);
@@ -80,8 +90,3 @@ section {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-
-
-
-    
