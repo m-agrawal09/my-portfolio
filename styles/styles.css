@@ -439,6 +439,11 @@ section {
   align-self: flex-start;
 }
 
+.project-item a {
+  text-decoration: none;
+  color: inherit;    
+}
+
 .project-item button:hover {
   background: #6d28d9;
   color: white;
@@ -470,12 +475,17 @@ section {
 .gold-button {
   border: 2px solid #d4a13e !important;
   color: #b68b40 !important;
+  
 }
 
 .gold-button:hover {
   background: #d4a13e !important;
   color: white !important;
   box-shadow: 0 0 20px #d4a13e80 !important;
+}
+.gold-button a {
+  text-decoration: none;
+  color: inherit;    
 }
 
 /* ===== ACHIEVEMENTS ===== */
