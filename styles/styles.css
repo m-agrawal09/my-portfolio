@@ -837,9 +837,9 @@ section {
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   background: #ffffff;
-  border-top: 1.5px solid rgba(109, 40, 217, 0.2);
+  border-top: 2px solid rgba(109, 40, 217, 0.2);
   color: #64748b;
 }
 
@@ -918,7 +918,7 @@ footer {
   }
 
   .header a{
-    font-size:0.9rem;
+    font-size:0.8rem;
   }
 
   .subheading{
