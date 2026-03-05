@@ -82,6 +82,18 @@ section#posters1 .posters-container1 img:hover {
 
 </style>
 <body>
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <div class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <div class="header">
+        <a href="index.html">Home</a>
+        <a href="posters-dark.html" class="theme-btn">Change Theme</a>
+    </div>
 
 
     <section id="posters1">
@@ -110,7 +122,31 @@ section#posters1 .posters-container1 img:hover {
             <img src="Files/Posters & Dashboards/Reutilization of Fossil Fuels Poster.png" alt="Poster 21" class="poster-item">            
          </div>
     </section>
+    <!-- ================= FOOTER ================= -->
+  <footer>
+    <p><strong>&copy; 2026 Medhavi Agrawal. All rights reserved.</strong></p>
+    <p>Crafted with curiosity, logic, and creativity.</p>
+    <p>Last updated: March 2026</p>
+  </footer>
 
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 
 </body>
 </html>
