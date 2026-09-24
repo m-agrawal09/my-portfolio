@@ -500,6 +500,152 @@ section {
   color: inherit;    
 }
 
+/* KSP Project Card Badge */
+.project-item.ksp-featured {
+  border: 2px solid #6366f1;
+  background: linear-gradient(145deg, #f8faff, #ffffff);
+}
+
+.ksp-badge {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4f46e5;
+  border: 1px solid #6366f1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.9rem;
+}
+
+.tech-tag {
+  background: rgba(109, 40, 217, 0.08);
+  color: #6d28d9;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ===== WHAT I DO ===== */
+.what-i-do-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 3.5rem;
+}
+
+.what-i-do-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(109, 40, 217, 0.2);
+  border-radius: 18px;
+  padding: 1.8rem 1.5rem;
+  transition: var(--transition-elegant);
+  box-shadow: var(--shadow-elegant);
+  display: flex;
+  flex-direction: column;
+}
+
+.what-i-do-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--header-color);
+  box-shadow: var(--glow-elegant);
+}
+
+.what-i-do-card .wid-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(109, 40, 217, 0.08);
+  border-radius: 12px;
+}
+
+.what-i-do-card h4 {
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.what-i-do-card p {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== RESTRUCTURED SKILLS SECTION ===== */
+.skills-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.skill-category-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(109, 40, 217, 0.2);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow-elegant);
+  transition: var(--transition-elegant);
+}
+
+.skill-category-card:hover {
+  border-color: var(--header-color);
+  transform: translateY(-3px);
+  box-shadow: var(--glow-elegant);
+}
+
+.skill-category-card.priority-category {
+  border: 2px solid var(--header-color);
+  background: linear-gradient(145deg, #faf7ff, #ffffff);
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.12);
+  grid-column: 1 / -1;
+}
+
+.category-badge-label {
+  display: inline-block;
+  background: #6d28d9;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+}
+
+.skill-category-card h3 {
+  color: var(--header-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-category-card .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
 /* ===== ACHIEVEMENTS ===== */
 #achievements {
   max-width: 1300px;
@@ -709,7 +855,8 @@ section {
 
 /* ===== CERTIFICATES & POSTERS ===== */
 #certificates,
-#posters {
+#posters,
+#designs {
   text-align: center;
   padding: 5rem 2rem;
 }
@@ -735,7 +882,8 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-#posters .certificates-container {
+#posters .certificates-container,
+#designs .certificates-container {
   grid-template-columns: repeat(5, 1fr);
 }
 
@@ -876,7 +1024,8 @@ footer {
     gap:3rem;
   }
 
-  #posters .certificates-container{
+  #posters .certificates-container,
+  #designs .certificates-container{
     grid-template-columns:repeat(3,1fr);
   }
 
@@ -1028,7 +1177,8 @@ footer {
     gap:1.5rem;
   }
 
-  #posters .certificates-container{
+  #posters .certificates-container,
+  #designs .certificates-container{
     grid-template-columns:repeat(2,1fr);
   }
 
@@ -1098,7 +1248,8 @@ footer {
     justify-content:center;
   }
 
-  #posters .certificates-container{
+  #posters .certificates-container,
+  #designs .certificates-container{
     grid-template-columns:1fr;
   }
 
