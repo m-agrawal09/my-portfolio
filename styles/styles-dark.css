@@ -743,7 +743,20 @@ section {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.certificate-item,
+.certificate-item {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  border: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.certificate-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(195, 163, 255, 0.2);
+}
+
 .poster-item {
   width: 100%;
   border-radius: 18px;
@@ -753,7 +766,6 @@ section {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.certificate-item:hover,
 .poster-item:hover {
   border-color: #c3a3ff;
   transform: scale(1.02);
