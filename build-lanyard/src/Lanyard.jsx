@@ -21,15 +21,15 @@ const FRONT_UV_RECT = { x: 0, y: 0, w: 0.5, h: 0.755 };
 const BACK_UV_RECT = { x: 0.5, y: 0, w: 0.5, h: 0.757 };
 
 export default function Lanyard({
-  position = [0, 0, 20],
+  position = [0, -0.4, 13],
   gravity = [0, -40, 0],
-  fov = 24,
+  fov = 26,
   transparent = true,
   frontImage = null,
   backImage = null,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1
+  lanyardWidth = 1.3
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
@@ -47,8 +47,8 @@ export default function Lanyard({
         gl={{ alpha: transparent, antialias: true }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
-        <ambientLight intensity={Math.PI * 1.2} />
-        <directionalLight position={[5, 10, 5]} intensity={1.5} />
+        <ambientLight intensity={Math.PI * 1.3} />
+        <directionalLight position={[5, 10, 5]} intensity={1.8} />
         <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
           <Band
             isMobile={isMobile}
@@ -102,7 +102,7 @@ function Band({
   backImage = null,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1
+  lanyardWidth = 1.3
 }) {
   const band = useRef(),
     fixed = useRef(),
@@ -132,7 +132,10 @@ function Band({
     canvas.height = H;
     const ctx = canvas.getContext('2d');
     if (!ctx) return baseMap;
-    ctx.drawImage(baseImg, 0, 0, W, H);
+
+    // Fill clean slate background to eliminate any React Bits logos from baseImg
+    ctx.fillStyle = '#080C14';
+    ctx.fillRect(0, 0, W, H);
 
     const drawFitted = (img, rect) => {
       const rx = rect.x * W;
@@ -176,7 +179,7 @@ function Band({
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
   useSphericalJoint(j3, card, [
     [0, 0, 0],
-    [0, 1.5, 0]
+    [0, 2.25, 0]
   ]);
 
   useEffect(() => {
@@ -219,7 +222,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[0, 4.2, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -231,10 +234,10 @@ function Band({
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
-          <CuboidCollider args={[0.8, 1.125, 0.01]} />
+          <CuboidCollider args={[1.25, 1.75, 0.015]} />
           <group
-            scale={2.25}
-            position={[0, -1.2, -0.05]}
+            scale={3.5}
+            position={[0, -1.86, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={e => (e.target.releasePointerCapture(e.pointerId), drag(false))}
@@ -266,7 +269,7 @@ function Band({
           resolution={isMobile ? [1000, 2000] : [1000, 1000]}
           useMap
           map={texture}
-          repeat={[-4, 1]}
+          repeat={[-3, 1]}
           lineWidth={lanyardWidth}
         />
       </mesh>

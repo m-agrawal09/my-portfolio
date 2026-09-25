@@ -9,7 +9,7 @@ export default defineConfig({
   },
   build: {
     outDir: '../Files/lanyard-dist',
-    emptyOutDir: true,
+    emptyOutDir: false,
     lib: {
       entry: './src/main.jsx',
       name: 'LanyardBundle',

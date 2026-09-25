@@ -699,8 +699,8 @@ img {
 .hero-lanyard-wrapper {
   position: relative;
   width: 100%;
-  max-width: 360px;
-  height: 520px;
+  max-width: 440px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -711,7 +711,7 @@ img {
 
 .lanyard-container {
   width: 100%;
-  height: 480px;
+  height: 550px;
   position: relative;
   cursor: grab;
 }

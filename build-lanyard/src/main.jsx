@@ -9,15 +9,15 @@ export function initLanyard(target, options = {}) {
   const root = ReactDOM.createRoot(container);
   root.render(
     <Lanyard
-      position={[0, 0, 20]}
-      gravity={[0, -40, 0]}
-      fov={25}
-      transparent={true}
+      position={options.position || [0, -0.4, 13]}
+      gravity={options.gravity || [0, -40, 0]}
+      fov={options.fov || 26}
+      transparent={options.transparent !== undefined ? options.transparent : true}
       frontImage={options.frontImage || 'Files/Profile.jpg'}
       backImage={options.backImage || null}
       imageFit={options.imageFit || 'cover'}
       lanyardImage={options.lanyardImage || null}
-      lanyardWidth={options.lanyardWidth || 1}
+      lanyardWidth={options.lanyardWidth || 1.3}
       {...options}
     />
   );
