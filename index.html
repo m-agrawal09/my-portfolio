@@ -129,20 +129,26 @@
         </div>
       </div>
 
-      <!-- Right Column: Small Editorial Portrait -->
+      <!-- Right Column: Interactive 3D Physics Lanyard ID Card -->
       <div class="hero-aside">
-        <div class="hero-portrait-editorial">
-          <div class="portrait-image-container">
-            <div class="portrait-image-inner">
-              <img src="Files/Profile.jpg" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
+        <div class="hero-lanyard-wrapper" id="heroLanyardWrap">
+          <div id="lanyardContainer" class="lanyard-container">
+            <div class="portrait-image-container" id="lanyardFallback">
+              <div class="portrait-image-inner">
+                <img src="Files/Profile.jpg" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
+              </div>
             </div>
           </div>
-          <div class="portrait-meta-wrap">
-            <span class="portrait-tag">MEDHAVI / 2026</span>
-            <div class="portrait-status-badge">
-              <span class="status-pulse-dot"></span>
-              <span class="status-text">AVAILABLE FOR<br>DATA ANALYTICS ROLES</span>
-            </div>
+          <div class="lanyard-hint">
+            <span class="hint-icon">✦</span>
+            <span class="hint-text">DRAG ID CARD TO INTERACT</span>
+          </div>
+        </div>
+        <div class="portrait-meta-wrap">
+          <span class="portrait-tag">MEDHAVI / 2026</span>
+          <div class="portrait-status-badge">
+            <span class="status-pulse-dot"></span>
+            <span class="status-text">AVAILABLE FOR<br>DATA ANALYTICS ROLES</span>
           </div>
         </div>
       </div>
@@ -1218,8 +1224,44 @@
     })();
   </script>
 
-</body>
+  <!-- ================= 3D PHYSICS LANYARD ID CARD (REACT BITS) ================= -->
+  <link rel="stylesheet" href="Files/lanyard-dist/style.css">
+  <script type="module">
+    import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js';
+    import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js';
 
-</html>
+    async function setupLanyard() {
+      const container = document.getElementById('lanyardContainer');
+      const fallback = document.getElementById('lanyardFallback');
+      if (!container) return;
+
+      try {
+        const { frontImage, backImage } = await generateIdCardTextures('Files/Profile.jpg');
+        if (fallback) fallback.style.display = 'none';
+
+        initLanyard(container, {
+          frontImage,
+          backImage,
+          position: [0, 0, 16],
+          gravity: [0, -40, 0],
+          fov: 24,
+          transparent: true,
+          imageFit: 'cover',
+          lanyardWidth: 1.1
+        });
+      } catch (err) {
+        console.warn('Lanyard 3D initialization fallback to static photo:', err);
+        if (fallback) fallback.style.display = 'block';
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupLanyard);
+    } else {
+      setupLanyard();
+    }
+  </script>
+
+</body>
 
 </html>

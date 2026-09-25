@@ -687,34 +687,67 @@ img {
   transform: translateY(-1px);
 }
 
-/* Hero Portrait - Small Editorial Portrait */
+/* Hero Aside */
 .hero-aside {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   margin-top: 0.25rem;
 }
 
-.hero-portrait-editorial {
+/* Hero 3D Physics Lanyard Card Container */
+.hero-lanyard-wrapper {
   position: relative;
   width: 100%;
-  max-width: 270px;
+  max-width: 360px;
+  height: 520px;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  animation: portraitFloat 5.5s ease-in-out infinite;
+  align-items: center;
+  justify-content: flex-start;
+  user-select: none;
+  touch-action: none;
 }
 
-@keyframes portraitFloat {
+.lanyard-container {
+  width: 100%;
+  height: 480px;
+  position: relative;
+  cursor: grab;
+}
 
-  0%,
-  100% {
-    transform: translateY(0);
-  }
+.lanyard-container:active {
+  cursor: grabbing;
+}
 
-  50% {
-    transform: translateY(-5px);
-  }
+.lanyard-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-blue);
+  background: rgba(23, 105, 255, 0.08);
+  border: 1px solid rgba(23, 105, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.lanyard-hint .hint-icon {
+  font-size: 0.75rem;
+  color: var(--accent-green);
+  animation: pulseHint 2s infinite ease-in-out;
+}
+
+@keyframes pulseHint {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; }
 }
 
 .portrait-image-container {
@@ -744,10 +777,13 @@ img {
 }
 
 .portrait-meta-wrap {
+  width: 100%;
+  max-width: 320px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 0.15rem;
+  padding: 0.6rem 0.25rem 0;
+  border-top: 1px solid var(--border-rule-subtle);
   transition: transform 0.25s ease;
 }
 
