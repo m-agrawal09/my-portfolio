@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medhavi Agrawal — Data Analyst | The Analyst's Desk</title>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 
   <!-- SEO META TAGS -->
   <meta name="description" content="Medhavi Agrawal — Data Analyst specializing in Power BI, SQL, Python, Excel and data intelligence. 9.84 CGPA, Institute Rank 1, Top 30 KSP Datathon.">
@@ -43,16 +49,35 @@
         <span class="desk-brand-role">DATA ANALYST</span>
       </a>
 
-      <nav class="desk-menu" id="navLinks">
-        <a href="#work">WORK</a>
-        <a href="#about">ABOUT</a>
-        <a href="#achievements">ACHIEVEMENTS</a>
-        <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank">RESUME</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
+      <div class="desk-nav-right">
+        <nav class="desk-menu" id="navLinks">
+          <a href="#work">WORK</a>
+          <a href="#about">ABOUT</a>
+          <a href="#achievements">ACHIEVEMENTS</a>
+          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank">RESUME</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
 
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation">
-        ☰
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation">
+          ☰
+        </div>
       </div>
     </div>
   </header>
@@ -368,9 +393,9 @@
           <span class="index-stack">Power BI · DAX · Data Visualization</span>
         </div>
         <div class="index-thumb-peek">
-          <img src="Files/Project Img/IPL Auction Analytics.png" alt="IPL Auction Analytics">
+          <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Auction Analytics">
         </div>
-        <a href="Files/IPL_Player_Auction_Dataset.csv" download class="index-arrow">→</a>
+        <a href="Files/IPL Dataset Final.xlsx" download class="index-arrow">→</a>
       </div>
 
       <div class="index-row">
@@ -382,7 +407,7 @@
         <div class="index-thumb-peek">
           <img src="Files/Project Img/AP Election.png" alt="AP Election Analysis">
         </div>
-        <a href="Files/Andhra_Pradesh_Election_Dataset.csv" download class="index-arrow">→</a>
+        <a href="Files/APelections.csv" download class="index-arrow">→</a>
       </div>
 
       <div class="index-row">
@@ -392,7 +417,7 @@
           <span class="index-stack">Power BI · Business Analytics</span>
         </div>
         <div class="index-thumb-peek">
-          <img src="Files/Project Img/Amazon Sales.jpg" alt="Amazon Sales Analysis">
+          <img src="Files/Project Img/Amazon Sales.png" alt="Amazon Sales Analysis">
         </div>
         <a href="Files/Amazon Store Sales Data.xlsx - Sheet1 (1) - Copy.csv" download class="index-arrow">→</a>
       </div>
@@ -672,21 +697,21 @@
 
     <div class="archive-preview-grid">
       <div class="archive-thumb">
-        <img src="Files/Certificates/Coursera IBM Data Analyst.jpg" alt="IBM Data Analyst Certificate" loading="lazy">
+        <img src="Files/Certificates/IMG-20250804-WA0019.jpg" alt="Certification 1" loading="lazy">
       </div>
       <div class="archive-thumb">
-        <img src="Files/Certificates/Power BI Workshop.jpg" alt="Power BI Workshop Certificate" loading="lazy">
+        <img src="Files/Certificates/IMG-202603-04-WA0002.jpeg" alt="Certification 2" loading="lazy">
       </div>
       <div class="archive-thumb">
-        <img src="Files/Certificates/IMG-20251009-WA0001.jpg" alt="Certification 1" loading="lazy">
+        <img src="Files/Certificates/IMG-20251009-WA0001.jpg" alt="Certification 3" loading="lazy">
       </div>
       <div class="archive-thumb">
-        <img src="Files/Certificates/IMG-20251009-WA0004.jpg" alt="Certification 2" loading="lazy">
+        <img src="Files/Certificates/IMG-20250804-WA0007.jpg" alt="Certification 4" loading="lazy">
       </div>
     </div>
 
     <div class="archive-view-more">
-      <a href="certificates-dark.html" class="archive-btn">VIEW ALL CERTIFICATIONS →</a>
+      <a href="certificates-dark.html" class="archive-btn" id="viewAllCertBtn">VIEW ALL CERTIFICATIONS &rarr;</a>
     </div>
   </section>
 
@@ -703,18 +728,18 @@
         <img src="Files/Posters & Dashboards/Dash-It-Up Poster.jpg" alt="Dash-It-Up Poster" loading="lazy">
       </div>
       <div class="archive-thumb">
-        <img src="Files/Posters & Dashboards/Dataviz Poster.jpg" alt="Dataviz Poster" loading="lazy">
+        <img src="Files/Posters & Dashboards/VIKASIT BHARAT.jpg" alt="Vikasit Bharat Poster" loading="lazy">
       </div>
       <div class="archive-thumb">
-        <img src="Files/Posters & Dashboards/Poster 1.jpg" alt="Poster 1" loading="lazy">
+        <img src="Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg" alt="PROMPT-E-PIC Event Poster" loading="lazy">
       </div>
       <div class="archive-thumb">
-        <img src="Files/Posters & Dashboards/Poster 2.jpg" alt="Poster 2" loading="lazy">
+        <img src="Files/Posters & Dashboards/CCC Recruitment.jpg" alt="CCC Recruitment Poster" loading="lazy">
       </div>
     </div>
 
     <div class="archive-view-more">
-      <a href="posters-dark.html" class="archive-btn">VIEW ALL DESIGNS →</a>
+      <a href="posters-dark.html" class="archive-btn" id="viewAllDesignsBtn">VIEW ALL DESIGNS &rarr;</a>
     </div>
   </section>
 
@@ -788,12 +813,32 @@
       }
     });
 
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    // Theme toggle & persistence logic
+    const themeToggleBtn = document.getElementById("themeToggle");
+    function setTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+      const certBtn = document.getElementById("viewAllCertBtn");
+      const designsBtn = document.getElementById("viewAllDesignsBtn");
+      if (certBtn) {
+        certBtn.href = theme === "light" ? "certificates.html" : "certificates-dark.html";
+      }
+      if (designsBtn) {
+        designsBtn.href = theme === "light" ? "posters.html" : "posters-dark.html";
+      }
+    }
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        setTheme(nextTheme);
       });
-    });
+    }
+
+    // Initialize links based on active theme
+    const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    setTheme(activeTheme);
   </script>
 
 </body>

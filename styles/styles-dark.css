@@ -4,7 +4,7 @@
    ========================================================================== */
 
 :root {
-  /* Strict Palette */
+  /* Strict Palette - Dark (default) */
   --bg-dark: #0D1117;
   --bg-surface: #131821;
   --bg-surface-elevated: #161D28;
@@ -28,6 +28,11 @@
   --border-rule-subtle: rgba(255, 255, 255, 0.06);
   --border-rule-strong: rgba(255, 255, 255, 0.20);
 
+  /* Nav & Background Line */
+  --nav-bg: rgba(13, 17, 23, 0.94);
+  --grid-line: rgba(255, 255, 255, 0.025);
+  --surface-tint: rgba(255, 255, 255, 0.015);
+
   /* Typography */
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -35,6 +40,75 @@
 
   --max-w: 1240px;
   --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Legacy variables for certificates & posters compatibility */
+  --bg-color: #0b0b12;
+  --header-color: #7C3AED;
+  --after-color: #A78BFA;
+  --card-color: #151528;
+  --ani-border-color: #C4B5FD;
+  --hover-color: rgba(124, 58, 237, 0.18);
+  --button-bg: #1c1c2e;
+  --box-shadow: rgba(124, 58, 237, 0.35);
+  --button-text: #A78BFA;
+  --button-border: #7C3AED;
+  --text-hover-color: #ffffff;
+  --card-text-color: #EAEAF0;
+  --text-color: #ffffff;
+  --card-bg: #151528;
+  --card-bg-light: #1a1a30;
+  --border-subtle: rgba(124, 58, 237, 0.25);
+  --shadow-elegant: 0 20px 35px -12px rgba(0, 0, 0, 0.7);
+  --glow-elegant: 0 0 25px rgba(124, 58, 237, 0.25);
+  --transition-elegant: all 0.3s ease;
+}
+
+[data-theme="light"] {
+  /* Strict Editorial Light Palette */
+  --bg-dark: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F1F3F5;
+  --bg-surface-hover: #E9ECEF;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+
+  --accent-blue: #2563EB;
+  --accent-blue-hover: #1D4ED8;
+  --accent-blue-subtle: rgba(37, 99, 235, 0.08);
+
+  --accent-green: #16A34A;
+  --accent-green-subtle: rgba(22, 163, 74, 0.08);
+
+  --border-rule: rgba(0, 0, 0, 0.10);
+  --border-rule-subtle: rgba(0, 0, 0, 0.05);
+  --border-rule-strong: rgba(0, 0, 0, 0.22);
+
+  --nav-bg: rgba(248, 249, 250, 0.94);
+  --grid-line: rgba(0, 0, 0, 0.035);
+  --surface-tint: rgba(0, 0, 0, 0.015);
+
+  /* Legacy variables for light mode certificates & posters */
+  --bg-color: #f8fafc;
+  --header-color: #6d28d9;
+  --after-color: #8b5cf6;
+  --card-color: #ffffff;
+  --ani-border-color: #c4b5fd;
+  --hover-color: rgba(109, 40, 217, 0.08);
+  --button-bg: #f1f5f9;
+  --box-shadow: rgba(109, 40, 217, 0.15);
+  --button-text: #6d28d9;
+  --button-border: #6d28d9;
+  --text-hover-color: #2e1065;
+  --card-text-color: #334155;
+  --text-color: #0f172a;
+  --card-bg: #ffffff;
+  --card-bg-light: #f8fafc;
+  --border-subtle: rgba(109, 40, 217, 0.3);
+  --shadow-elegant: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+  --glow-elegant: 0 0 25px rgba(109, 40, 217, 0.12);
 }
 
 /* ===== RESET & BASE ===== */
@@ -53,8 +127,8 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark);
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 36px 36px;
   color: var(--text-secondary);
   line-height: 1.65;
@@ -62,6 +136,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a {
@@ -80,9 +155,10 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(13, 17, 23, 0.94);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-rule);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .desk-nav-inner {
@@ -151,11 +227,114 @@ img {
   width: 100%;
 }
 
+.desk-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Minimal technical theme toggle matching Analyst's Desk */
+.theme-toggle-btn {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-rule);
+  color: var(--text-secondary);
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition-fast);
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  background: var(--bg-surface-hover);
+}
+
+.theme-toggle-btn svg {
+  pointer-events: none;
+}
+
+.theme-icon-sun {
+  display: block;
+}
+
+.theme-icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-icon-moon {
+  display: block;
+}
+
 .hamburger {
   display: none;
   font-size: 1.4rem;
   color: var(--text-primary);
   cursor: pointer;
+  line-height: 1;
+}
+
+/* Legacy header & theme button for certificates and posters */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.header a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--font-mono, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.header a:hover {
+  color: var(--header-color);
+}
+
+.theme-btn {
+  background: rgba(109, 40, 217, 0.08);
+  border: 1.5px solid var(--button-border);
+  padding: 0.6rem 1.6rem !important;
+  border-radius: 40px;
+  color: var(--button-text) !important;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-family: var(--font-mono, sans-serif);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--header-color);
+  color: white !important;
+  border-color: var(--header-color);
+}
+
+.theme-btn::after {
+  display: none;
 }
 
 /* ===== HERO SECTION ===== */
@@ -1267,6 +1446,10 @@ img {
 @media (max-width: 768px) {
   .desk-nav-inner {
     padding: 1rem 1.4rem;
+  }
+
+  .desk-nav-right {
+    gap: 0.9rem;
   }
 
   .hamburger {
