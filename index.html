@@ -24,12 +24,12 @@
   <meta property="og:image" content="Files/Profile.jpg">
   <meta property="og:type" content="website">
 
-  <!-- Styles & Fonts -->
+  <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -110,12 +110,17 @@
         </div>
       </div>
 
-      <!-- Right Column: Rectangular Portrait & Analyst Profile Panel -->
+      <!-- Right Column: Clean Editorial Portrait & Separated Analyst Profile Panel -->
       <div class="hero-aside">
-        <div class="hero-portrait-frame">
-          <img src="Files/Profile.jpg" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
-          <div class="portrait-caption">
-            <span class="status-indicator"></span> AVAILABLE FOR DATA ANALYTICS ROLES
+        <div class="hero-portrait-editorial">
+          <div class="portrait-image-wrap">
+            <img src="Files/Profile.jpg" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
+          </div>
+          <div class="portrait-meta-bar">
+            <span class="portrait-tag">MEDHAVI / 2026</span>
+            <span class="portrait-status">
+              <span class="status-indicator"></span> AVAILABLE FOR ROLES
+            </span>
           </div>
         </div>
 
@@ -160,24 +165,24 @@
 
   <!-- ================= PROFILE SIGNALS STRIP ================= -->
   <div class="signals-strip-wrapper">
-    <div class="signals-strip">
+    <div class="signals-strip" id="signalsStrip">
       <div class="signal-item">
-        <div class="signal-number">9.84 <span class="signal-denom">/ 10</span></div>
+        <div class="signal-number" data-target="9.84" data-decimals="2" data-denom=" / 10">9.84 <span class="signal-denom">/ 10</span></div>
         <div class="signal-label">CGPA</div>
       </div>
       <div class="signal-divider"></div>
       <div class="signal-item">
-        <div class="signal-number">#01</div>
+        <div class="signal-number" data-target="1" data-prefix="#0">#01</div>
         <div class="signal-label">INSTITUTE RANK</div>
       </div>
       <div class="signal-divider"></div>
       <div class="signal-item">
-        <div class="signal-number">TOP 30</div>
+        <div class="signal-number" data-target="30" data-prefix="TOP ">TOP 30</div>
         <div class="signal-label">KSP DATATHON 2026</div>
       </div>
       <div class="signal-divider"></div>
       <div class="signal-item">
-        <div class="signal-number">3×</div>
+        <div class="signal-number" data-target="3" data-suffix="×">3×</div>
         <div class="signal-label">DASHBOARD PODIUMS</div>
       </div>
     </div>
@@ -331,32 +336,34 @@
       <span class="section-annotation">PIPELINE &amp; EXECUTION</span>
     </div>
 
-    <div class="workflow-list">
-      <div class="workflow-row">
+    <div class="workflow-list" id="workflowList">
+      <div class="workflow-progress-line"></div>
+      <div class="workflow-progress-bar" id="workflowProgressBar"></div>
+      <div class="workflow-row" data-step="1">
         <span class="wf-index">01</span>
         <div class="wf-name">COLLECT</div>
         <div class="wf-desc">Understand the data and the question. Frame core objectives, audit source integrity, and establish analytical benchmarks.</div>
       </div>
 
-      <div class="workflow-row">
+      <div class="workflow-row" data-step="2">
         <span class="wf-index">02</span>
         <div class="wf-name">CLEAN</div>
         <div class="wf-desc">Prepare, transform and validate the dataset. Eliminate anomalies, normalize schemas, reconcile missing attributes, and structure relational tables.</div>
       </div>
 
-      <div class="workflow-row">
+      <div class="workflow-row" data-step="3">
         <span class="wf-index">03</span>
         <div class="wf-name">ANALYZE</div>
         <div class="wf-desc">Identify patterns, relationships and trends. Write DAX measures, test statistical correlations, construct aggregations, and compute KPI variances.</div>
       </div>
 
-      <div class="workflow-row">
+      <div class="workflow-row" data-step="4">
         <span class="wf-index">04</span>
         <div class="wf-name">VISUALIZE</div>
         <div class="wf-desc">Build dashboards that make findings understandable. Maintain visual hierarchy, intuitive drill-down interactions, and zero-clutter information design.</div>
       </div>
 
-      <div class="workflow-row">
+      <div class="workflow-row" data-step="5">
         <span class="wf-index">05</span>
         <div class="wf-name">COMMUNICATE</div>
         <div class="wf-desc">Turn analysis into decisions and recommendations. Deliver executive briefings with crisp, quantitative insights that drive real-world action.</div>
@@ -839,6 +846,115 @@
     // Initialize links based on active theme
     const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
     setTheme(activeTheme);
+
+    // Subtle Scroll Parallax on Hero Portrait
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const heroPortrait = document.querySelector('.hero-portrait-img');
+    if (heroPortrait && !prefersReduced) {
+      let parallaxTicking = false;
+      window.addEventListener('scroll', () => {
+        if (!parallaxTicking) {
+          window.requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            if (scrollY < 900) {
+              const offset = Math.min(scrollY * 0.035, 12);
+              heroPortrait.style.transform = `translateY(${offset}px)`;
+            }
+            parallaxTicking = false;
+          });
+          parallaxTicking = true;
+        }
+      }, { passive: true });
+    }
+
+    // Stat Strip Reveal & Count-Up
+    const signalsStrip = document.getElementById('signalsStrip');
+    if (signalsStrip) {
+      const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            signalsStrip.classList.add('revealed');
+            if (!prefersReduced) {
+              const statNumbers = signalsStrip.querySelectorAll('.signal-number');
+              statNumbers.forEach(statEl => {
+                const target = parseFloat(statEl.dataset.target);
+                const decimals = parseInt(statEl.dataset.decimals || '0', 10);
+                const prefix = statEl.dataset.prefix || '';
+                const suffix = statEl.dataset.suffix || '';
+                const denom = statEl.dataset.denom ? `<span class="signal-denom">${statEl.dataset.denom}</span>` : '';
+                const duration = 1200;
+                const startTime = performance.now();
+                const startVal = decimals > 0 ? target * 0.75 : 0;
+
+                function updateCount(currentTime) {
+                  const elapsed = currentTime - startTime;
+                  const progress = Math.min(elapsed / duration, 1);
+                  const easeProgress = 1 - Math.pow(1 - progress, 3);
+                  const currentVal = startVal + (target - startVal) * easeProgress;
+                  const formattedVal = decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal);
+                  statEl.innerHTML = `${prefix}${formattedVal}${suffix}${denom}`;
+                  if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                  }
+                }
+                requestAnimationFrame(updateCount);
+              });
+            }
+            statObserver.unobserve(signalsStrip);
+          }
+        });
+      }, { threshold: 0.25 });
+      statObserver.observe(signalsStrip);
+    }
+
+    // Project Image Reveal (Case Studies)
+    const caseMediaList = document.querySelectorAll('.case-media');
+    if (caseMediaList.length > 0) {
+      const caseObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            caseObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      caseMediaList.forEach(cm => caseObserver.observe(cm));
+    }
+
+    // How I Work Progress Indicator
+    const workflowList = document.getElementById('workflowList');
+    const workflowBar = document.getElementById('workflowProgressBar');
+    const workflowRows = document.querySelectorAll('.workflow-row');
+    if (workflowList && workflowRows.length > 0) {
+      const wfObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            if (workflowBar && !prefersReduced) {
+              const listRect = workflowList.getBoundingClientRect();
+              const rowRect = entry.target.getBoundingClientRect();
+              const progressHeight = (rowRect.top + (rowRect.height / 2)) - listRect.top;
+              workflowBar.style.height = `${Math.max(progressHeight, 0)}px`;
+            }
+          }
+        });
+      }, { threshold: 0.35 });
+      workflowRows.forEach(row => wfObserver.observe(row));
+    }
+
+    // Achievement Record Animation (Row reveal & separator line draw)
+    const recordRows = document.querySelectorAll('.record-row');
+    if (recordRows.length > 0) {
+      const recordObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            recordObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      recordRows.forEach(row => recordObserver.observe(row));
+    }
   </script>
 
 </body>
