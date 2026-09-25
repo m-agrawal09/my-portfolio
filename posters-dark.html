@@ -36,8 +36,11 @@ section#posters1 .posters-container1 {
 section#posters1 .posters-container1 img {
     width: 320px;
     height: auto;
-    object-fit: fill;
-    border-radius: 5px;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    background: var(--bg-surface-elevated, #161B22);
+    border: 1px solid var(--border-rule, #30363D);
+    border-radius: 4px;
     transition: transform 0.3s ease;
 }
 
