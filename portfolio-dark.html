@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
 
   <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
-  <link rel="stylesheet" href="styles/styles.css?v=2.0">
+  <link rel="stylesheet" href="styles/styles.css?v=5.3">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,7 +113,7 @@
         </div>
 
         <div class="hero-identity">
-          <div class="identity-name">MEDHAVI AGRAWAL</div>
+          <div class="identity-name" id="techTextName">MEDHAVI AGRAWAL</div>
           <div class="identity-stack">Data Analyst · Power BI · SQL · Python · Excel</div>
         </div>
 
@@ -856,13 +856,18 @@
 
     // Back to top button visibility and smooth scroll
     const backToTopBtn = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        backToTopBtn.classList.add("visible");
-      } else {
-        backToTopBtn.classList.remove("visible");
-      }
-    });
+    if (backToTopBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
 
     // Theme toggle & persistence logic
     const themeToggleBtn = document.getElementById("themeToggle");
@@ -1230,6 +1235,7 @@
     import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js?v=4';
     import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js?v=4';
     import { initDecryptedText } from './Files/decrypted-text.js?v=1';
+    import { initTechText } from './Files/tech-text.js?v=1';
 
     // Initialize DecryptedText on DECISIONS with speed=120
     initDecryptedText({
@@ -1240,6 +1246,22 @@
       sequential: true,
       characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
       animateOn: 'inViewHover'
+    });
+
+    // Initialize TechText on MEDHAVI AGRAWAL with exact React Bits configuration
+    initTechText('#techTextName', {
+      text: 'MEDHAVI AGRAWAL',
+      fontWeight: 700,
+      fontSize: 150,
+      reveal: 'letter',
+      dashLength: 4,
+      dashGap: 2,
+      specks: 15,
+      letterSpacing: -0.03,
+      strokeWidth: 1.75,
+      speed: 1.1,
+      color: 'auto',
+      accentColor: 'auto'
     });
 
     async function setupLanyard() {

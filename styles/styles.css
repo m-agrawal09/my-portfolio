@@ -552,15 +552,15 @@ img {
 .hero-statement {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
-  line-height: 0.98;
+  margin-bottom: 0.65rem;
+  line-height: 1.0;
 }
 
 .statement-line {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
   text-transform: uppercase;
   opacity: 0;
@@ -593,7 +593,7 @@ img {
 .statement-highlight::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 3px;
   left: 0;
   width: 0;
   height: 3px;
@@ -661,24 +661,49 @@ img {
 
 .hero-identity {
   border-top: 1px solid var(--border-rule);
-  padding-top: 1.4rem;
-  margin-bottom: 1.4rem;
+  padding-top: 0.65rem;
+  margin-bottom: 0.85rem;
 }
 
 .identity-name {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   color: var(--text-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.15rem;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  height: clamp(42px, 5.5vw, 56px);
+}
+
+.identity-name.tech-text {
+  font-size: 0;
+}
+
+.tech-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.tech-text-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .identity-stack {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
   color: var(--accent-green);
   letter-spacing: 0.04em;
+  margin-top: 0.1rem;
 }
 
 .hero-desc {
