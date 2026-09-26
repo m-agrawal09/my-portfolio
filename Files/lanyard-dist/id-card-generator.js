@@ -1,5 +1,14 @@
-// Generates high-resolution ID card front and back textures for the 3D Lanyard
-export function generateIdCardTextures(profileImgSrc = 'Files/Profile.jpg') {
+// Generates ultra high-resolution, crystal-clear ID card front and back textures for the 3D Lanyard
+export async function generateIdCardTextures(profileImgSrc = 'Files/Profile.jpg') {
+  // Ensure custom webfonts are fully loaded before rasterizing canvas to avoid blurry fallback text
+  if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+    try {
+      await document.fonts.ready;
+    } catch {
+      // Continue even if font loading ready promise is delayed
+    }
+  }
+
   return new Promise((resolve) => {
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -17,25 +26,27 @@ export function generateIdCardTextures(profileImgSrc = 'Files/Profile.jpg') {
 }
 
 function drawFrontCard(profileImg) {
-  const W = 1000;
-  const H = 1500;
+  const W = 1600;
+  const H = 2400;
   const canvas = document.createElement('canvas');
   canvas.width = W;
   canvas.height = H;
   const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
 
-  // Background
+  // Deep obsidian luxury gradient background
   const bgGrad = ctx.createLinearGradient(0, 0, W, H);
-  bgGrad.addColorStop(0, '#0D121B');
-  bgGrad.addColorStop(0.5, '#090D14');
-  bgGrad.addColorStop(1, '#06090E');
+  bgGrad.addColorStop(0, '#0D1424');
+  bgGrad.addColorStop(0.4, '#090E1A');
+  bgGrad.addColorStop(1, '#05070D');
   ctx.fillStyle = bgGrad;
   ctx.fillRect(0, 0, W, H);
 
-  // Subtle geometric grid pattern
-  ctx.strokeStyle = 'rgba(59, 130, 246, 0.05)';
-  ctx.lineWidth = 1;
-  const step = 40;
+  // Subtle precision grid pattern
+  ctx.strokeStyle = 'rgba(59, 130, 246, 0.04)';
+  ctx.lineWidth = 1.5;
+  const step = 48;
   for (let x = 0; x < W; x += step) {
     ctx.beginPath();
     ctx.moveTo(x, 0);
@@ -49,266 +60,336 @@ function drawFrontCard(profileImg) {
     ctx.stroke();
   }
 
-  // Outer border with subtle rounded corners
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+  // Outer border with smooth rounded corners
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.14)';
   ctx.lineWidth = 4;
-  roundRect(ctx, 24, 24, W - 48, H - 48, 36);
+  roundRect(ctx, 36, 36, W - 72, H - 72, 48);
+  ctx.stroke();
+
+  // Subtle interior cyan glow line
+  ctx.strokeStyle = 'rgba(59, 130, 246, 0.12)';
+  ctx.lineWidth = 2;
+  roundRect(ctx, 44, 44, W - 88, H - 88, 42);
   ctx.stroke();
 
   // Top lanyard slot (physical badge cutout look)
-  ctx.fillStyle = '#05070B';
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-  ctx.lineWidth = 2;
-  roundRect(ctx, W / 2 - 80, 40, 160, 24, 12);
+  ctx.fillStyle = '#04060B';
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+  ctx.lineWidth = 3;
+  roundRect(ctx, W / 2 - 120, 56, 240, 36, 18);
   ctx.fill();
   ctx.stroke();
 
-  // Header banner
-  ctx.fillStyle = '#1769FF';
-  ctx.fillRect(40, 95, W - 80, 3);
+  // Clean vibrant header accent line
+  const headerGrad = ctx.createLinearGradient(140, 130, W - 140, 130);
+  headerGrad.addColorStop(0, '#06B6D4');
+  headerGrad.addColorStop(0.5, '#3B82F6');
+  headerGrad.addColorStop(1, '#6366F1');
+  ctx.fillStyle = headerGrad;
+  roundRect(ctx, 140, 130, W - 280, 5, 2.5);
+  ctx.fill();
 
-  // Top header text
-  ctx.font = '600 24px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#60A5FA';
+  // Minimal brand header mark (Clean, no cheesy pass boilerplate)
+  ctx.font = '600 32px "IBM Plex Mono", monospace';
+  ctx.fillStyle = '#93C5FD';
   ctx.textAlign = 'center';
-  ctx.letterSpacing = '4px';
-  ctx.fillText("THE ANALYST'S DESK", W / 2, 140);
+  ctx.letterSpacing = '6px';
+  ctx.fillText("◈  THE ANALYST'S DESK  ◈", W / 2, 190);
 
-  ctx.font = '500 18px "Inter", sans-serif';
-  ctx.fillStyle = '#94A3B8';
-  ctx.fillText('IDENTITY ACCESS PASS · 2026', W / 2, 172);
-
-  // Photo Frame
-  const pw = 620;
-  const ph = 690;
+  // Photo Frame Setup
+  const pw = 1040;
+  const ph = 1120;
   const px = (W - pw) / 2;
-  const py = 205;
+  const py = 230;
 
-  // Photo border & glow
-  ctx.strokeStyle = 'rgba(59, 130, 246, 0.5)';
-  ctx.lineWidth = 3;
-  roundRect(ctx, px, py, pw, ph, 20);
-  ctx.stroke();
-
-  // Draw photo inside rounded clipping mask
+  // Photo outer glow & smooth frame
   ctx.save();
-  ctx.beginPath();
-  roundRect(ctx, px + 2, py + 2, pw - 4, ph - 4, 18);
-  ctx.clip();
-  ctx.drawImage(profileImg, px, py, pw, ph);
+  ctx.shadowColor = 'rgba(37, 99, 235, 0.28)';
+  ctx.shadowBlur = 32;
+  ctx.strokeStyle = 'rgba(59, 130, 246, 0.55)';
+  ctx.lineWidth = 3.5;
+  roundRect(ctx, px, py, pw, ph, 26);
+  ctx.stroke();
   ctx.restore();
 
-  // Corner tech ticks on photo frame
+  // Draw portrait with perfect aspect-ratio cover fitting inside clipping mask
+  ctx.save();
+  ctx.beginPath();
+  roundRect(ctx, px + 3, py + 3, pw - 6, ph - 6, 23);
+  ctx.clip();
+  drawImageCover(ctx, profileImg, px + 3, py + 3, pw - 6, ph - 6);
+  ctx.restore();
+
+  // Corner precision tech ticks
   ctx.strokeStyle = '#3B82F6';
   ctx.lineWidth = 4;
-  const tickLen = 20;
+  const tickLen = 28;
   // Top left
   ctx.beginPath();
-  ctx.moveTo(px - 6, py + tickLen);
-  ctx.lineTo(px - 6, py - 6);
-  ctx.lineTo(px + tickLen, py - 6);
+  ctx.moveTo(px - 8, py + tickLen);
+  ctx.lineTo(px - 8, py - 8);
+  ctx.lineTo(px + tickLen, py - 8);
   ctx.stroke();
   // Top right
   ctx.beginPath();
-  ctx.moveTo(px + pw + 6 - tickLen, py - 6);
-  ctx.lineTo(px + pw + 6, py - 6);
-  ctx.lineTo(px + pw + 6, py + tickLen);
+  ctx.moveTo(px + pw + 8 - tickLen, py - 8);
+  ctx.lineTo(px + pw + 8, py - 8);
+  ctx.lineTo(px + pw + 8, py + tickLen);
   ctx.stroke();
   // Bottom left
   ctx.beginPath();
-  ctx.moveTo(px - 6, py + ph - tickLen);
-  ctx.lineTo(px - 6, py + ph + 6);
-  ctx.lineTo(px + tickLen, py + ph + 6);
+  ctx.moveTo(px - 8, py + ph - tickLen);
+  ctx.lineTo(px - 8, py + ph + 8);
+  ctx.lineTo(px + tickLen, py + ph + 8);
   ctx.stroke();
   // Bottom right
   ctx.beginPath();
-  ctx.moveTo(px + pw + 6 - tickLen, py + ph + 6);
-  ctx.lineTo(px + pw + 6, py + ph + 6);
-  ctx.lineTo(px + pw + 6, py + ph - tickLen);
+  ctx.moveTo(px + pw + 8 - tickLen, py + ph + 8);
+  ctx.lineTo(px + pw + 8, py + ph + 8);
+  ctx.lineTo(px + pw + 8, py + ph - tickLen);
   ctx.stroke();
 
-  // Identity Section
-  const ty = py + ph + 60;
-  ctx.font = '800 48px "Manrope", sans-serif';
+  // Identity Section: Name
+  const ty = py + ph + 90;
+  ctx.font = '800 68px "Manrope", sans-serif';
   ctx.fillStyle = '#FFFFFF';
   ctx.textAlign = 'center';
+  ctx.letterSpacing = '1px';
   ctx.fillText('MEDHAVI AGRAWAL', W / 2, ty);
 
   // Role Pill Badge
-  const pillW = 320;
-  const pillH = 46;
+  const pillW = 460;
+  const pillH = 64;
   const pillX = (W - pillW) / 2;
-  const pillY = ty + 20;
+  const pillY = ty + 24;
   ctx.fillStyle = 'rgba(23, 105, 255, 0.16)';
-  ctx.strokeStyle = '#1769FF';
-  ctx.lineWidth = 2;
-  roundRect(ctx, pillX, pillY, pillW, pillH, 23);
+  ctx.strokeStyle = '#2563EB';
+  ctx.lineWidth = 2.5;
+  roundRect(ctx, pillX, pillY, pillW, pillH, 32);
   ctx.fill();
   ctx.stroke();
 
-  ctx.font = '700 22px "IBM Plex Mono", monospace';
+  ctx.font = '700 28px "IBM Plex Mono", monospace';
   ctx.fillStyle = '#60A5FA';
-  ctx.textAlign = 'center';
-  ctx.fillText('DATA ANALYST', W / 2, pillY + 31);
+  ctx.letterSpacing = '3px';
+  ctx.fillText('DATA ANALYST', W / 2, pillY + 43);
 
-  // Key Metadata grid
-  const metaY = pillY + 95;
-  ctx.font = '500 20px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#94A3B8';
-  ctx.textAlign = 'center';
+  // High-impact Key Credentials (clean & concise)
+  const metaY = pillY + 115;
+  ctx.font = '600 28px "IBM Plex Mono", monospace';
+  ctx.fillStyle = '#F1F5F9';
+  ctx.letterSpacing = '1px';
   ctx.fillText('MITS GWALIOR · CGPA 9.84 (RANK 1)', W / 2, metaY);
 
-  ctx.font = '400 18px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#4ADE80';
-  ctx.fillText('ID: DA-2026-09 · TOP 30 KSP DATATHON', W / 2, metaY + 34);
+  ctx.font = '600 25px "IBM Plex Mono", monospace';
+  ctx.fillStyle = '#34D399';
+  ctx.letterSpacing = '1.5px';
+  ctx.fillText('TOP 30 · KSP DATATHON 2026', W / 2, metaY + 48);
 
-  // Security Divider
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-  ctx.lineWidth = 1;
+  // Sleek Divider Rule
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+  ctx.lineWidth = 1.5;
   ctx.beginPath();
-  ctx.moveTo(80, metaY + 65);
-  ctx.lineTo(W - 80, metaY + 65);
+  ctx.moveTo(180, metaY + 95);
+  ctx.lineTo(W - 180, metaY + 95);
   ctx.stroke();
 
-  // Realistic Barcode at bottom
-  const bY = metaY + 90;
-  const bH = 65;
-  const bX = 140;
-  const bW = W - 280;
+  // Minimalist crisp barcode
+  const bY = metaY + 130;
+  const bH = 80;
+  const bW = 880;
+  const bX = (W - bW) / 2;
   drawBarcode(ctx, bX, bY, bW, bH);
 
-  ctx.font = '600 15px "IBM Plex Mono", monospace';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+  // Clean status footer (Removed all fake auth codes)
+  ctx.font = '600 20px "IBM Plex Mono", monospace';
+  ctx.fillStyle = 'rgba(148, 163, 184, 0.7)';
   ctx.textAlign = 'center';
-  ctx.fillText('AUTH CODE: 9840-2026-MEDHAVI-INTEL', W / 2, bY + bH + 28);
+  ctx.letterSpacing = '3px';
+  ctx.fillText('VERIFIED DATA ANALYST CREDENTIAL · 2026', W / 2, bY + bH + 40);
 
   return canvas.toDataURL('image/png');
 }
 
 function drawBackCard() {
-  const W = 1000;
-  const H = 1500;
+  const W = 1600;
+  const H = 2400;
   const canvas = document.createElement('canvas');
   canvas.width = W;
   canvas.height = H;
   const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
 
-  // Dark slate background
-  ctx.fillStyle = '#080C13';
+  // Deep slate background
+  ctx.fillStyle = '#070B13';
   ctx.fillRect(0, 0, W, H);
 
-  // Top Magnetic Stripe
-  ctx.fillStyle = '#000000';
-  ctx.fillRect(0, 110, W, 140);
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
-  ctx.fillRect(0, 110, W, 4);
+  // Subtle grid
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+  ctx.lineWidth = 1.5;
+  for (let x = 0; x < W; x += 48) {
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, H);
+    ctx.stroke();
+  }
 
-  // Border
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+  // Top Magnetic Stripe with metallic highlight
+  ctx.fillStyle = '#020408';
+  ctx.fillRect(0, 160, W, 220);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.07)';
+  ctx.fillRect(0, 160, W, 6);
+  ctx.fillRect(0, 374, W, 6);
+
+  // Outer Border
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.14)';
   ctx.lineWidth = 4;
-  roundRect(ctx, 24, 24, W - 48, H - 48, 36);
+  roundRect(ctx, 36, 36, W - 72, H - 72, 48);
   ctx.stroke();
 
   // Top lanyard slot
-  ctx.fillStyle = '#05070B';
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-  ctx.lineWidth = 2;
-  roundRect(ctx, W / 2 - 80, 40, 160, 24, 12);
+  ctx.fillStyle = '#04060B';
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+  ctx.lineWidth = 3;
+  roundRect(ctx, W / 2 - 120, 56, 240, 36, 18);
   ctx.fill();
   ctx.stroke();
 
-  // Holographic Security Seal
-  const hx = W / 2 - 70;
-  const hy = 300;
-  const hg = ctx.createLinearGradient(hx, hy, hx + 140, hy + 140);
+  // Holographic Iridescent Security Seal
+  const hx = W / 2 - 110;
+  const hy = 440;
+  const hw = 220;
+  const hh = 220;
+  const hg = ctx.createLinearGradient(hx, hy, hx + hw, hy + hh);
   hg.addColorStop(0, '#06B6D4');
   hg.addColorStop(0.3, '#3B82F6');
   hg.addColorStop(0.7, '#8B5CF6');
   hg.addColorStop(1, '#10B981');
   ctx.fillStyle = hg;
-  roundRect(ctx, hx, hy, 140, 140, 16);
+  roundRect(ctx, hx, hy, hw, hh, 24);
   ctx.fill();
 
-  ctx.font = '700 36px "IBM Plex Mono", monospace';
+  // Micro security ring inside hologram
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  ctx.arc(W / 2, hy + hh / 2, 70, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.font = '800 58px "IBM Plex Mono", monospace';
   ctx.fillStyle = '#FFFFFF';
   ctx.textAlign = 'center';
-  ctx.fillText('MA', W / 2, hy + 85);
+  ctx.fillText('MA', W / 2, hy + hh / 2 + 20);
 
-  // Back Content
-  ctx.font = '700 32px "Manrope", sans-serif';
+  // Section Header: Core Competencies
+  ctx.font = '800 48px "Manrope", sans-serif';
   ctx.fillStyle = '#FFFFFF';
-  ctx.fillText('DATA INTELLIGENCE WORKSPACE', W / 2, 510);
+  ctx.letterSpacing = '1px';
+  ctx.fillText('CORE COMPETENCIES', W / 2, 750);
 
-  ctx.font = '500 20px "Inter", sans-serif';
+  ctx.font = '500 24px "Inter", sans-serif';
   ctx.fillStyle = '#94A3B8';
-  ctx.fillText('Personal Analytics & Executive Dossier', W / 2, 550);
+  ctx.fillText('Technical Stack & Analytical Methods', W / 2, 796);
 
-  // Skills Table / Box
-  const boxW = W - 180;
-  const boxH = 260;
-  const boxX = 90;
-  const boxY = 610;
+  // Competencies Container Box
+  const boxW = W - 280;
+  const boxH = 430;
+  const boxX = 140;
+  const boxY = 850;
   ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-  ctx.lineWidth = 2;
-  roundRect(ctx, boxX, boxY, boxW, boxH, 16);
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.09)';
+  ctx.lineWidth = 2.5;
+  roundRect(ctx, boxX, boxY, boxW, boxH, 20);
   ctx.fill();
   ctx.stroke();
 
-  ctx.font = '600 20px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#60A5FA';
-  ctx.textAlign = 'left';
-  ctx.fillText('CORE COMPETENCIES:', boxX + 30, boxY + 45);
-
   const skills = [
-    '• Business Intelligence & Dashboard Architecture',
-    '• SQL Data Modeling, ETL & Complex Analytics',
-    '• Python Statistical Computing & Machine Learning',
-    '• Power BI DAX & Interactive Storytelling'
+    { num: '01', title: 'Power BI DAX & Interactive Dashboards' },
+    { num: '02', title: 'SQL Data Modeling, Complex Queries & ETL' },
+    { num: '03', title: 'Python Statistical Computing & Predictive ML' },
+    { num: '04', title: 'Business Intelligence & Executive Storytelling' }
   ];
 
-  ctx.font = '400 19px "Inter", sans-serif';
-  ctx.fillStyle = '#CBD5E1';
   skills.forEach((s, idx) => {
-    ctx.fillText(s, boxX + 30, boxY + 95 + idx * 38);
+    const rowY = boxY + 55 + idx * 88;
+    // Row background highlight
+    ctx.fillStyle = idx % 2 === 0 ? 'rgba(255, 255, 255, 0.02)' : 'transparent';
+    roundRect(ctx, boxX + 16, rowY - 32, boxW - 32, 68, 10);
+    ctx.fill();
+
+    // Number badge
+    ctx.font = '700 24px "IBM Plex Mono", monospace';
+    ctx.fillStyle = '#38BDF8';
+    ctx.textAlign = 'left';
+    ctx.fillText(s.num, boxX + 40, rowY + 12);
+
+    // Skill title
+    ctx.font = '500 28px "Inter", sans-serif';
+    ctx.fillStyle = '#F1F5F9';
+    ctx.fillText(s.title, boxX + 110, rowY + 12);
   });
 
-  // Verification text
-  ctx.font = '500 17px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#64748B';
+  // Portfolio Verification URL Pill
+  const pillW = 680;
+  const pillH = 60;
+  const pillX = (W - pillW) / 2;
+  const pillY = 1340;
+  ctx.fillStyle = 'rgba(56, 189, 248, 0.08)';
+  ctx.strokeStyle = 'rgba(56, 189, 248, 0.28)';
+  ctx.lineWidth = 2;
+  roundRect(ctx, pillX, pillY, pillW, pillH, 30);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.font = '600 25px "IBM Plex Mono", monospace';
+  ctx.fillStyle = '#38BDF8';
   ctx.textAlign = 'center';
-  ctx.fillText('VERIFIED PORTFOLIO CREDENTIAL', W / 2, 940);
-  ctx.fillText('https://m-agrawal09.vercel.app', W / 2, 975);
+  ctx.letterSpacing = '1px';
+  ctx.fillText('m-agrawal09.vercel.app', W / 2, pillY + 40);
 
-  // Signature Stripe
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(160, 1030, W - 320, 60);
+  // Clean Signature Stripe
+  const sigY = 1450;
+  ctx.fillStyle = '#F8FAFC';
+  roundRect(ctx, 260, sigY, W - 520, 85, 10);
+  ctx.fill();
 
-  ctx.font = 'italic 34px "Inter", cursive, sans-serif';
+  ctx.font = 'italic 46px "Inter", cursive, sans-serif';
   ctx.fillStyle = '#0F172A';
-  ctx.textAlign = 'center';
-  ctx.fillText('Medhavi Agrawal', W / 2, 1072);
-
-  // Security Stamp
-  ctx.font = '600 14px "IBM Plex Mono", monospace';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
-  ctx.fillText('AUTHORIZED DATA ANALYST PASS · SYSTEM CLEARANCE', W / 2, 1145);
+  ctx.fillText('Medhavi Agrawal', W / 2, sigY + 59);
 
   // Micro barcode at bottom
-  drawBarcode(ctx, 220, 1190, W - 440, 50);
+  drawBarcode(ctx, 340, 1600, W - 680, 68);
+
+  ctx.font = '600 20px "IBM Plex Mono", monospace';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+  ctx.letterSpacing = '2px';
+  ctx.fillText("THE ANALYST'S DESK · PORTFOLIO CREDENTIAL", W / 2, 1720);
 
   return canvas.toDataURL('image/png');
 }
 
+function drawImageCover(ctx, img, x, y, w, h) {
+  const imgW = img.naturalWidth || img.width || 1;
+  const imgH = img.naturalHeight || img.height || 1;
+  const scale = Math.max(w / imgW, h / imgH);
+  const sw = w / scale;
+  const sh = h / scale;
+  const sx = (imgW - sw) / 2;
+  const sy = (imgH - sh) / 2;
+  ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+}
+
 function drawBarcode(ctx, x, y, width, height) {
   ctx.fillStyle = '#FFFFFF';
-  const barCount = 55;
+  const barCount = 60;
   const barWidth = width / barCount;
   for (let i = 0; i < barCount; i++) {
-    // Generate deterministic pattern
     if ((i * 7 + 13) % 4 !== 0) {
-      const thickness = (i % 3 === 0) ? barWidth * 0.8 : barWidth * 0.45;
-      ctx.fillRect(x + i * barWidth, y, thickness, height);
+      const isThick = (i % 3 === 0);
+      const w = Math.max(2, Math.floor(isThick ? barWidth * 0.75 : barWidth * 0.4));
+      const bx = Math.floor(x + i * barWidth);
+      ctx.fillRect(bx, Math.floor(y), w, Math.floor(height));
     }
   }
 }

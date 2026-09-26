@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
 
   <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles.css?v=2.0">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1239,16 +1239,18 @@
         const { frontImage, backImage } = await generateIdCardTextures('Files/Profile.jpg');
         if (fallback) fallback.style.display = 'none';
 
+        const isDesktop = window.innerWidth >= 1024;
         initLanyard(container, {
           frontImage,
           backImage,
           lanyardImage: 'Files/lanyard/lanyard.png',
-          position: [0, -0.4, 13],
+          position: isDesktop ? [0, -0.32, 12.0] : [0, -0.4, 13],
           gravity: [0, -40, 0],
-          fov: 26,
+          fov: isDesktop ? 27 : 26,
           transparent: true,
           imageFit: 'cover',
-          lanyardWidth: 1.3
+          lanyardWidth: 1.3,
+          cardScale: isDesktop ? 4.15 : 3.3
         });
       } catch (err) {
         console.warn('Lanyard 3D initialization fallback to static photo:', err);

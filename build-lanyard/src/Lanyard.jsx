@@ -29,7 +29,8 @@ export default function Lanyard({
   backImage = null,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1.3
+  lanyardWidth = 1.3,
+  cardScale = null
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
@@ -57,6 +58,7 @@ export default function Lanyard({
             imageFit={imageFit}
             lanyardImage={lanyardImage}
             lanyardWidth={lanyardWidth}
+            cardScale={cardScale}
           />
         </Physics>
         <Environment blur={0.75}>
@@ -102,7 +104,8 @@ function Band({
   backImage = null,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1.3
+  lanyardWidth = 1.3,
+  cardScale = null
 }) {
   const band = useRef(),
     fixed = useRef(),
@@ -120,20 +123,26 @@ function Band({
   const frontTex = useTexture(frontImage || BLANK_PIXEL);
   const backTex = useTexture(backImage || BLANK_PIXEL);
 
+  const actualScale = cardScale || (isMobile ? 3.3 : 4.1);
+  const scaleRatio = actualScale / 3.5;
+
   const cardMap = useMemo(() => {
     const baseMap = materials.base.map;
     if (!frontImage && !backImage) return baseMap;
 
-    const baseImg = baseMap.image;
-    const W = baseImg.width || 1024;
-    const H = baseImg.height || 1024;
+    // High definition 2048x2048 texture canvas for crystal clear text
+    const W = 2048;
+    const H = 2048;
     const canvas = document.createElement('canvas');
     canvas.width = W;
     canvas.height = H;
     const ctx = canvas.getContext('2d');
     if (!ctx) return baseMap;
 
-    // Fill clean slate background to eliminate any React Bits logos from baseImg
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
+    // Fill clean obsidian slate background
     ctx.fillStyle = '#080C14';
     ctx.fillRect(0, 0, W, H);
 
@@ -163,6 +172,9 @@ function Band({
     composite.colorSpace = THREE.SRGBColorSpace;
     composite.flipY = baseMap.flipY;
     composite.anisotropy = 16;
+    composite.generateMipmaps = true;
+    composite.minFilter = THREE.LinearMipmapLinearFilter;
+    composite.magFilter = THREE.LinearFilter;
     composite.needsUpdate = true;
     return composite;
   }, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map]);
@@ -179,7 +191,7 @@ function Band({
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
   useSphericalJoint(j3, card, [
     [0, 0, 0],
-    [0, 2.25, 0]
+    [0, 2.25 * scaleRatio, 0]
   ]);
 
   useEffect(() => {
@@ -234,10 +246,10 @@ function Band({
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
-          <CuboidCollider args={[1.25, 1.75, 0.015]} />
+          <CuboidCollider args={[1.25 * scaleRatio, 1.75 * scaleRatio, 0.015]} />
           <group
-            scale={3.5}
-            position={[0, -1.86, -0.05]}
+            scale={actualScale}
+            position={[0, -1.86 * scaleRatio, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={e => (e.target.releasePointerCapture(e.pointerId), drag(false))}
@@ -250,10 +262,10 @@ function Band({
               <meshPhysicalMaterial
                 map={cardMap}
                 map-anisotropy={16}
-                clearcoat={isMobile ? 0 : 1}
-                clearcoatRoughness={0.15}
-                roughness={0.9}
-                metalness={0.8}
+                clearcoat={isMobile ? 0 : 0.85}
+                clearcoatRoughness={0.12}
+                roughness={0.22}
+                metalness={0.05}
               />
             </mesh>
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
