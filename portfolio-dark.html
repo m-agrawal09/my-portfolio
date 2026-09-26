@@ -135,7 +135,7 @@
           <div id="lanyardContainer" class="lanyard-container">
             <div class="portrait-image-container" id="lanyardFallback">
               <div class="portrait-image-inner">
-                <img src="Files/Profile.jpg" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
+                <img src="Files/Profile.jpg?v=4" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
               </div>
             </div>
           </div>
@@ -336,11 +336,11 @@
     </div>
   </section>
 
-  <!-- ================= HOW I WORK ================= -->
+  <!-- ================= WHAT I DO ================= -->
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">02</span>
-      <h2 class="section-title">HOW I WORK</h2>
+      <h2 class="section-title">WHAT I DO</h2>
       <span class="section-annotation">ANALYTICAL WORKFLOW</span>
     </div>
 
@@ -948,7 +948,7 @@
       caseMediaList.forEach(cm => caseObserver.observe(cm));
     }
 
-    // How I Work Progress Indicator
+    // What I Do Progress Indicator
     const workflowList = document.getElementById('workflowList');
     const workflowBar = document.getElementById('workflowProgressBar');
     const workflowRows = document.querySelectorAll('.workflow-row');
@@ -1227,8 +1227,8 @@
   <!-- ================= 3D PHYSICS LANYARD ID CARD (REACT BITS) ================= -->
   <link rel="stylesheet" href="Files/lanyard-dist/style.css">
   <script type="module">
-    import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js';
-    import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js';
+    import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js?v=4';
+    import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js?v=4';
 
     async function setupLanyard() {
       const container = document.getElementById('lanyardContainer');
@@ -1236,7 +1236,7 @@
       if (!container) return;
 
       try {
-        const { frontImage, backImage } = await generateIdCardTextures('Files/Profile.jpg');
+        const { frontImage, backImage } = await generateIdCardTextures('Files/Profile.jpg?v=4');
         if (fallback) fallback.style.display = 'none';
 
         const isDesktop = window.innerWidth >= 1024;

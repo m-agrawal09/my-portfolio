@@ -117,6 +117,7 @@ function drawFrontCard(profileImg) {
   ctx.beginPath();
   roundRect(ctx, px + 3, py + 3, pw - 6, ph - 6, 23);
   ctx.clip();
+  ctx.filter = 'brightness(0.94) contrast(1.02)';
   drawImageCover(ctx, profileImg, px + 3, py + 3, pw - 6, ph - 6);
   ctx.restore();
 

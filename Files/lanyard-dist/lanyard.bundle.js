@@ -43691,8 +43691,8 @@ function EX({
       gl: { alpha: C, antialias: !0 },
       onCreated: ({ gl: a }) => a.setClearColor(new OA(0), C ? 0 : 1),
       children: [
-        /* @__PURE__ */ bI.jsx("ambientLight", { intensity: Math.PI * 1.3 }),
-        /* @__PURE__ */ bI.jsx("directionalLight", { position: [5, 10, 5], intensity: 1.8 }),
+        /* @__PURE__ */ bI.jsx("ambientLight", { intensity: Math.PI * 0.75 }),
+        /* @__PURE__ */ bI.jsx("directionalLight", { position: [5, 10, 5], intensity: 1.25 }),
         /* @__PURE__ */ bI.jsx(Y1, { gravity: A, timeStep: s ? 1 / 30 : 1 / 60, children: /* @__PURE__ */ bI.jsx(
           nX,
           {
@@ -43705,11 +43705,11 @@ function EX({
             cardScale: o
           }
         ) }),
-        /* @__PURE__ */ bI.jsxs(_q, { blur: 0.75, children: [
+        /* @__PURE__ */ bI.jsxs(_q, { blur: 0.8, children: [
           /* @__PURE__ */ bI.jsx(
             Mc,
             {
-              intensity: 2,
+              intensity: 1.5,
               color: "white",
               position: [0, -1, 5],
               rotation: [0, 0, Math.PI / 3],
@@ -43719,7 +43719,7 @@ function EX({
           /* @__PURE__ */ bI.jsx(
             Mc,
             {
-              intensity: 3,
+              intensity: 1.8,
               color: "white",
               position: [-1, -1, 1],
               rotation: [0, 0, Math.PI / 3],
@@ -43729,7 +43729,7 @@ function EX({
           /* @__PURE__ */ bI.jsx(
             Mc,
             {
-              intensity: 3,
+              intensity: 1.8,
               color: "white",
               position: [1, 1, 1],
               rotation: [0, 0, Math.PI / 3],
@@ -43739,8 +43739,8 @@ function EX({
           /* @__PURE__ */ bI.jsx(
             Mc,
             {
-              intensity: 10,
-              color: "white",
+              intensity: 2.8,
+              color: "#E2E8F0",
               position: [-10, 0, 14],
               rotation: [0, Math.PI / 2, Math.PI / 3],
               scale: [100, 10, 1]
@@ -43822,10 +43822,10 @@ function nX({
                 {
                   map: X,
                   "map-anisotropy": 16,
-                  clearcoat: I ? 0 : 0.85,
-                  clearcoatRoughness: 0.12,
-                  roughness: 0.22,
-                  metalness: 0.05
+                  clearcoat: I ? 0 : 0.35,
+                  clearcoatRoughness: 0.25,
+                  roughness: 0.35,
+                  metalness: 0.03
                 }
               ) }),
               /* @__PURE__ */ bI.jsx("mesh", { geometry: b.clip.geometry, material: P.metal, "material-roughness": 0.3 }),

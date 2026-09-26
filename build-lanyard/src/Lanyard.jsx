@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
@@ -48,8 +47,8 @@ export default function Lanyard({
         gl={{ alpha: transparent, antialias: true }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
-        <ambientLight intensity={Math.PI * 1.3} />
-        <directionalLight position={[5, 10, 5]} intensity={1.8} />
+        <ambientLight intensity={Math.PI * 0.75} />
+        <directionalLight position={[5, 10, 5]} intensity={1.25} />
         <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
           <Band
             isMobile={isMobile}
@@ -61,31 +60,31 @@ export default function Lanyard({
             cardScale={cardScale}
           />
         </Physics>
-        <Environment blur={0.75}>
+        <Environment blur={0.8}>
           <Lightformer
-            intensity={2}
+            intensity={1.5}
             color="white"
             position={[0, -1, 5]}
             rotation={[0, 0, Math.PI / 3]}
             scale={[100, 0.1, 1]}
           />
           <Lightformer
-            intensity={3}
+            intensity={1.8}
             color="white"
             position={[-1, -1, 1]}
             rotation={[0, 0, Math.PI / 3]}
             scale={[100, 0.1, 1]}
           />
           <Lightformer
-            intensity={3}
+            intensity={1.8}
             color="white"
             position={[1, 1, 1]}
             rotation={[0, 0, Math.PI / 3]}
             scale={[100, 0.1, 1]}
           />
           <Lightformer
-            intensity={10}
-            color="white"
+            intensity={2.8}
+            color="#E2E8F0"
             position={[-10, 0, 14]}
             rotation={[0, Math.PI / 2, Math.PI / 3]}
             scale={[100, 10, 1]}
@@ -262,10 +261,10 @@ function Band({
               <meshPhysicalMaterial
                 map={cardMap}
                 map-anisotropy={16}
-                clearcoat={isMobile ? 0 : 0.85}
-                clearcoatRoughness={0.12}
-                roughness={0.22}
-                metalness={0.05}
+                clearcoat={isMobile ? 0 : 0.35}
+                clearcoatRoughness={0.25}
+                roughness={0.35}
+                metalness={0.03}
               />
             </mesh>
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />

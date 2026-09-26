@@ -772,7 +772,7 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: contrast(1.02) brightness(0.98);
+  filter: contrast(1.02) brightness(0.94);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1285,7 +1285,7 @@ img {
   color: #FFFFFF;
 }
 
-/* ===== HOW I WORK (NUMBERED EDITORIAL WORKFLOW) ===== */
+/* ===== WHAT I DO (NUMBERED EDITORIAL WORKFLOW) ===== */
 .workflow-list {
   border-top: 1px solid var(--border-rule);
   position: relative;
