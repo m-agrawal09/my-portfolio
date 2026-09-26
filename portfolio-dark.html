@@ -109,7 +109,7 @@
           <span class="statement-line">I TURN</span>
           <span class="statement-line">DATA</span>
           <span class="statement-line">INTO</span>
-          <span class="statement-line statement-highlight">DECISIONS.</span>
+          <span class="statement-line statement-highlight"><span class="decrypted-text-wrapper" id="decryptedDecisions" data-text="DECISIONS">DECISIONS</span>.</span>
         </div>
 
         <div class="hero-identity">
@@ -1229,6 +1229,18 @@
   <script type="module">
     import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js?v=4';
     import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js?v=4';
+    import { initDecryptedText } from './Files/decrypted-text.js?v=1';
+
+    // Initialize DecryptedText on DECISIONS with speed=120
+    initDecryptedText({
+      target: '#decryptedDecisions',
+      text: 'DECISIONS',
+      speed: 120,
+      maxIterations: 10,
+      sequential: true,
+      characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+      animateOn: 'inViewHover'
+    });
 
     async function setupLanyard() {
       const container = document.getElementById('lanyardContainer');

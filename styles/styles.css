@@ -611,6 +611,54 @@ img {
   }
 }
 
+/* DecryptedText Animation Component Styles */
+.decrypted-text-wrapper {
+  display: inline-block;
+  white-space: pre-wrap;
+  position: relative;
+  color: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+  user-select: none;
+}
+
+.decrypted-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: hidden;
+}
+
+.decrypted-chars-container {
+  display: inline-block;
+  color: inherit;
+  font: inherit;
+}
+
+.decrypted-char {
+  display: inline-block;
+  color: inherit;
+  font: inherit;
+  transition: opacity 0.05s ease;
+}
+
+.decrypted-char.decrypted-scrambled {
+  color: inherit;
+  opacity: 0.92;
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.45);
+}
+
+.decrypted-char.decrypted-revealed {
+  color: inherit;
+  opacity: 1;
+}
+
 .hero-identity {
   border-top: 1px solid var(--border-rule);
   padding-top: 1.4rem;
