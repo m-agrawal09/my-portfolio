@@ -44,7 +44,7 @@ function drawFrontCard(profileImg) {
   ctx.fillRect(0, 0, W, H);
 
   // Subtle precision grid pattern
-  ctx.strokeStyle = 'rgba(255, 96, 0, 0.05)';
+  ctx.strokeStyle = 'rgba(255, 79, 31, 0.05)';
   ctx.lineWidth = 1.5;
   const step = 48;
   for (let x = 0; x < W; x += step) {
@@ -67,7 +67,7 @@ function drawFrontCard(profileImg) {
   ctx.stroke();
 
   // Subtle interior orange glow line
-  ctx.strokeStyle = 'rgba(255, 96, 0, 0.15)';
+  ctx.strokeStyle = 'rgba(255, 79, 31, 0.15)';
   ctx.lineWidth = 2;
   roundRect(ctx, 44, 44, W - 88, H - 88, 42);
   ctx.stroke();
@@ -82,16 +82,16 @@ function drawFrontCard(profileImg) {
 
   // Clean vibrant header accent line
   const headerGrad = ctx.createLinearGradient(140, 130, W - 140, 130);
-  headerGrad.addColorStop(0, '#FFA057');
-  headerGrad.addColorStop(0.5, '#FF6000');
-  headerGrad.addColorStop(1, '#D94E00');
+  headerGrad.addColorStop(0, '#ff7a52');
+  headerGrad.addColorStop(0.5, '#ff4f1f');
+  headerGrad.addColorStop(1, '#d83b0f');
   ctx.fillStyle = headerGrad;
   roundRect(ctx, 140, 130, W - 280, 5, 2.5);
   ctx.fill();
 
   // Minimal brand header mark (Clean, no cheesy pass boilerplate)
   ctx.font = '600 32px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#FFA057';
+  ctx.fillStyle = '#ff7a52';
   ctx.textAlign = 'center';
   ctx.letterSpacing = '6px';
   ctx.fillText("◈  THE ANALYST'S DESK  ◈", W / 2, 190);
@@ -104,9 +104,9 @@ function drawFrontCard(profileImg) {
 
   // Photo outer glow & smooth frame
   ctx.save();
-  ctx.shadowColor = 'rgba(255, 96, 0, 0.35)';
+  ctx.shadowColor = 'rgba(255, 79, 31, 0.35)';
   ctx.shadowBlur = 32;
-  ctx.strokeStyle = 'rgba(255, 96, 0, 0.6)';
+  ctx.strokeStyle = 'rgba(255, 79, 31, 0.6)';
   ctx.lineWidth = 3.5;
   roundRect(ctx, px, py, pw, ph, 26);
   ctx.stroke();
@@ -122,7 +122,7 @@ function drawFrontCard(profileImg) {
   ctx.restore();
 
   // Corner precision tech ticks
-  ctx.strokeStyle = '#FF6000';
+  ctx.strokeStyle = '#ff4f1f';
   ctx.lineWidth = 4;
   const tickLen = 28;
   // Top left
@@ -163,15 +163,15 @@ function drawFrontCard(profileImg) {
   const pillH = 64;
   const pillX = (W - pillW) / 2;
   const pillY = ty + 24;
-  ctx.fillStyle = 'rgba(255, 96, 0, 0.18)';
-  ctx.strokeStyle = '#FF6000';
+  ctx.fillStyle = 'rgba(255, 79, 31, 0.18)';
+  ctx.strokeStyle = '#ff4f1f';
   ctx.lineWidth = 2.5;
   roundRect(ctx, pillX, pillY, pillW, pillH, 32);
   ctx.fill();
   ctx.stroke();
 
   ctx.font = '700 28px "IBM Plex Mono", monospace';
-  ctx.fillStyle = '#FFA057';
+  ctx.fillStyle = '#ff7a52';
   ctx.letterSpacing = '3px';
   ctx.fillText('DATA ANALYST', W / 2, pillY + 43);
 
@@ -263,10 +263,10 @@ function drawBackCard() {
   const hw = 220;
   const hh = 220;
   const hg = ctx.createLinearGradient(hx, hy, hx + hw, hy + hh);
-  hg.addColorStop(0, '#FFA057');
-  hg.addColorStop(0.3, '#FF6000');
-  hg.addColorStop(0.7, '#D94E00');
-  hg.addColorStop(1, '#993600');
+  hg.addColorStop(0, '#ff7a52');
+  hg.addColorStop(0.3, '#ff4f1f');
+  hg.addColorStop(0.7, '#d83b0f');
+  hg.addColorStop(1, '#942607');
   ctx.fillStyle = hg;
   roundRect(ctx, hx, hy, hw, hh, 24);
   ctx.fill();
