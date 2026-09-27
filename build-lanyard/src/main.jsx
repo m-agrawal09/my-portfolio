@@ -13,7 +13,7 @@ export function initLanyard(target, options = {}) {
       gravity={options.gravity || [0, -40, 0]}
       fov={options.fov || 26}
       transparent={options.transparent !== undefined ? options.transparent : true}
-      frontImage={options.frontImage || 'Files/Profile.jpg'}
+      frontImage={options.frontImage || 'Files/Profile New.jpeg'}
       backImage={options.backImage || null}
       imageFit={options.imageFit || 'cover'}
       lanyardImage={options.lanyardImage || null}

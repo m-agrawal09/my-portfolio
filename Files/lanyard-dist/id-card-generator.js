@@ -1,5 +1,5 @@
 // Generates ultra high-resolution, crystal-clear ID card front and back textures for the 3D Lanyard
-export async function generateIdCardTextures(profileImgSrc = 'Files/Profile.jpg') {
+export async function generateIdCardTextures(profileImgSrc = 'Files/Profile New.jpeg') {
   // Ensure custom webfonts are fully loaded before rasterizing canvas to avoid blurry fallback text
   if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
     try {

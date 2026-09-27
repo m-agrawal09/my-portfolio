@@ -43864,7 +43864,7 @@ function oX(g, A = {}) {
         gravity: A.gravity || [0, -40, 0],
         fov: A.fov || 26,
         transparent: A.transparent !== void 0 ? A.transparent : !0,
-        frontImage: A.frontImage || "Files/Profile.jpg",
+        frontImage: A.frontImage || "Files/Profile New.jpeg",
         backImage: A.backImage || null,
         imageFit: A.imageFit || "cover",
         lanyardImage: A.lanyardImage || null,
