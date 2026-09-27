@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
 
   <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
-  <link rel="stylesheet" href="styles/styles.css?v=6.1">
+  <link rel="stylesheet" href="styles/styles.css?v=7.0">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1076,7 +1076,7 @@
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
 
           if (p.tier === 'featured') {
-            ctx.shadowColor = 'rgba(23, 105, 255, 0.45)';
+            ctx.shadowColor = 'rgba(225, 29, 72, 0.45)';
             ctx.shadowBlur = 5;
             ctx.fillStyle = `rgba(245, 248, 255, ${Math.min(Math.max(alpha, 0.45), 0.85)})`;
           } else if (p.tier === 'normal') {
@@ -1103,7 +1103,7 @@
             if (dist < 70) {
               connectionCount++;
               const lineAlpha = (1 - dist / 70) * 0.04;
-              ctx.strokeStyle = `rgba(23, 105, 255, ${lineAlpha})`;
+              ctx.strokeStyle = `rgba(225, 29, 72, ${lineAlpha})`;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -1285,7 +1285,7 @@
         initLanyard(container, {
           frontImage,
           backImage,
-          lanyardImage: 'Files/lanyard/lanyard.png',
+          lanyardImage: 'Files/lanyard/lanyard.png?v=2',
           position: isDesktop ? [0, -0.32, 12.0] : [0, -0.4, 13],
           gravity: [0, -40, 0],
           fov: isDesktop ? 27 : 26,

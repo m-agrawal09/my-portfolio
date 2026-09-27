@@ -4,21 +4,21 @@
    ========================================================================== */
 
 :root {
-  /* Strict Palette - Dark (default) */
-  --bg-dark: #070A0F;
-  --bg-surface: #0E131B;
-  --bg-surface-elevated: #131924;
-  --bg-surface-hover: #192230;
+  /* Strict Palette - Dark (default) with Velvet Obsidian Slate surfaces */
+  --bg-dark: #08080A;
+  --bg-surface: #101014;
+  --bg-surface-elevated: #18181F;
+  --bg-surface-hover: #22222B;
 
-  --text-primary: #F2F1EC;
-  --text-secondary: #A5AAB2;
-  --text-muted: #7F8792;
-  --text-dim: #555C66;
+  --text-primary: #F5F5F7;
+  --text-secondary: #A2A2AD;
+  --text-muted: #7A7A88;
+  --text-dim: #545462;
 
-  /* Restrained Technical Accents */
-  --accent-blue: #3B82F6;
-  --accent-blue-hover: #60A5FA;
-  --accent-blue-subtle: rgba(59, 130, 246, 0.08);
+  /* Restrained Technical Accents — Electric Blaze Orange (#FF6000) */
+  --accent-blue: #FF6000;
+  --accent-blue-hover: #FF7E29;
+  --accent-blue-subtle: rgba(255, 96, 0, 0.10);
 
   --accent-green: #4ADE80;
   --accent-green-subtle: rgba(74, 222, 128, 0.08);
@@ -28,8 +28,8 @@
   --border-rule-subtle: rgba(255, 255, 255, 0.06);
   --border-rule-strong: rgba(255, 255, 255, 0.20);
 
-  /* Nav & Background Line (Grid removed from Dark Theme) */
-  --nav-bg: rgba(7, 10, 15, 0.88);
+  /* Nav & Background Line */
+  --nav-bg: rgba(8, 8, 10, 0.88);
   --grid-line: transparent;
   --surface-tint: rgba(255, 255, 255, 0.015);
 
@@ -75,9 +75,9 @@
   --text-muted: #787D85;
   --text-dim: #90969F;
 
-  --accent-blue: #175CD3;
-  --accent-blue-hover: #154FB8;
-  --accent-blue-subtle: rgba(23, 92, 211, 0.06);
+  --accent-blue: #BE123C;
+  --accent-blue-hover: #9F1239;
+  --accent-blue-subtle: rgba(190, 18, 60, 0.08);
 
   --accent-green: #16835B;
   --accent-green-subtle: rgba(22, 131, 91, 0.06);
@@ -93,15 +93,15 @@
 
   /* Clean Light Variables for Certificates & Posters */
   --bg-color: #F5F4EF;
-  --header-color: #175CD3;
-  --after-color: #175CD3;
+  --header-color: #BE123C;
+  --after-color: #BE123C;
   --card-color: #FAF9F5;
   --ani-border-color: #DAD8D1;
-  --hover-color: rgba(23, 92, 211, 0.06);
+  --hover-color: rgba(190, 18, 60, 0.08);
   --button-bg: #FAF9F5;
   --box-shadow: rgba(21, 24, 29, 0.04);
-  --button-text: #175CD3;
-  --button-border: #175CD3;
+  --button-text: #BE123C;
+  --button-border: #BE123C;
   --text-hover-color: #15181D;
   --card-text-color: #62666B;
   --text-color: #15181D;
@@ -147,8 +147,8 @@ body {
 [data-theme="light"] body {
   background-color: #F5F4EF;
   background-image:
-    radial-gradient(circle 800px at 75% 200px, rgba(23, 92, 211, 0.035), rgba(6, 182, 212, 0.012) 60%, transparent 80%),
-    radial-gradient(circle 900px at 20% 1250px, rgba(23, 92, 211, 0.022), transparent 75%),
+    radial-gradient(circle 800px at 75% 200px, rgba(190, 18, 60, 0.035), rgba(225, 29, 72, 0.012) 60%, transparent 80%),
+    radial-gradient(circle 900px at 20% 1250px, rgba(190, 18, 60, 0.022), transparent 75%),
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: auto, auto, 36px 36px, 36px 36px;
@@ -164,7 +164,7 @@ body {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  background-color: #070A0F;
+  background-color: #08080A;
   transition: opacity 0.3s ease;
   --hero-opacity: 1.0;
   --violet-opacity: 0.35;
@@ -185,61 +185,61 @@ body {
   transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 1. Primary Hero Light Field: Electric Blue #1769FF */
+/* 1. Primary Hero Light Field: Electric Blaze Orange #FF6000 */
 .glow-hero {
   top: -20vh;
   left: 26vw;
   width: 75vw;
   height: 75vh;
   background: radial-gradient(ellipse 65% 55% at 50% 50%,
-      rgba(23, 105, 255, 0.14) 0%,
-      rgba(23, 105, 255, 0.04) 45%,
-      rgba(7, 10, 15, 0) 75%);
+      rgba(255, 96, 0, 0.16) 0%,
+      rgba(255, 96, 0, 0.04) 45%,
+      rgba(8, 8, 10, 0) 75%);
   filter: blur(120px);
   animation: glowFloatHero 28s ease-in-out infinite alternate;
   opacity: calc(var(--hero-opacity, 1.0) * 0.95);
 }
 
-/* 2. Upper/Middle Left Light Field: Deep Violet #6D4AFF */
+/* 2. Upper/Middle Left Light Field: Warm Amber Gold */
 .glow-upper-left {
   top: 26vh;
   left: -22vw;
   width: 70vw;
   height: 70vh;
   background: radial-gradient(ellipse 60% 60% at 50% 50%,
-      rgba(109, 74, 255, 0.08) 0%,
-      rgba(109, 74, 255, 0.02) 48%,
-      rgba(7, 10, 15, 0) 75%);
+      rgba(255, 140, 0, 0.09) 0%,
+      rgba(255, 140, 0, 0.02) 48%,
+      rgba(8, 8, 10, 0) 75%);
   filter: blur(130px);
   animation: glowFloatUpperLeft 34s ease-in-out infinite alternate;
   opacity: calc(var(--violet-opacity, 0.35) * 0.9);
 }
 
-/* 3. Middle / Project Area Light Field: Cyan #00B8D9 */
+/* 3. Middle / Project Area Light Field: Solar Flare Orange */
 .glow-middle-cyan {
   top: 50vh;
   right: -18vw;
   width: 68vw;
   height: 68vh;
   background: radial-gradient(ellipse 60% 55% at 50% 50%,
-      rgba(0, 184, 217, 0.07) 0%,
-      rgba(0, 184, 217, 0.015) 48%,
-      rgba(7, 10, 15, 0) 75%);
+      rgba(255, 96, 0, 0.07) 0%,
+      rgba(255, 120, 0, 0.015) 48%,
+      rgba(8, 8, 10, 0) 75%);
   filter: blur(135px);
   animation: glowFloatMiddleCyan 38s ease-in-out infinite alternate;
   opacity: calc(var(--cyan-opacity, 0.25) * 0.85);
 }
 
-/* 4. Lower Page Light Field: Subtle Emerald #20C997 + Deep Blue */
+/* 4. Lower Page Light Field: Deep Ember Glow */
 .glow-lower-emerald {
   bottom: -18vh;
   left: 12vw;
   width: 72vw;
   height: 72vh;
   background: radial-gradient(ellipse 65% 55% at 50% 50%,
-      rgba(32, 201, 151, 0.045) 0%,
-      rgba(23, 105, 255, 0.035) 45%,
-      rgba(7, 10, 15, 0) 75%);
+      rgba(255, 80, 0, 0.05) 0%,
+      rgba(255, 130, 0, 0.025) 45%,
+      rgba(8, 8, 10, 0) 75%);
   filter: blur(140px);
   animation: glowFloatLowerEmerald 40s ease-in-out infinite alternate;
   opacity: calc(var(--emerald-opacity, 0.15) * 0.8);
@@ -651,7 +651,7 @@ img {
 .decrypted-char.decrypted-scrambled {
   color: inherit;
   opacity: 0.92;
-  text-shadow: 0 0 12px rgba(59, 130, 246, 0.45);
+  text-shadow: 0 0 12px rgba(255, 96, 0, 0.45);
 }
 
 .decrypted-char.decrypted-revealed {
@@ -1005,8 +1005,8 @@ img {
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   color: var(--accent-blue);
-  background: rgba(23, 105, 255, 0.08);
-  border: 1px solid rgba(23, 105, 255, 0.2);
+  background: rgba(255, 96, 0, 0.08);
+  border: 1px solid rgba(255, 96, 0, 0.25);
   padding: 4px 12px;
   border-radius: 20px;
   margin-top: 6px;
@@ -1335,7 +1335,7 @@ img {
 }
 
 .case-media {
-  background: #090C10;
+  background: #0D0D10;
   border-right: 1px solid var(--border-rule);
   padding: 1.5rem;
   display: flex;
@@ -1403,13 +1403,13 @@ img {
 
 /* Hover over project (Requirement 7) */
 .case-study:hover .case-media {
-  border-color: rgba(59, 130, 246, 0.4);
+  border-color: rgba(255, 96, 0, 0.4);
 }
 
 .case-study:hover .case-screenshot {
   transform: translateY(0) scale(1.012);
   filter: brightness(1.03) contrast(1.02);
-  border-color: rgba(59, 130, 246, 0.35);
+  border-color: rgba(255, 96, 0, 0.35);
 }
 
 .case-content {
@@ -1586,7 +1586,7 @@ img {
   height: 0;
   background: var(--accent-blue);
   z-index: 2;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 8px rgba(255, 96, 0, 0.4);
   transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1624,7 +1624,7 @@ img {
 .workflow-row.active .wf-index {
   color: var(--accent-blue);
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  text-shadow: 0 0 10px rgba(255, 96, 0, 0.4);
 }
 
 .wf-name {

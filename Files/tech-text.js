@@ -75,7 +75,7 @@ export function initTechText(target, userOptions = {}) {
 
   const getAccentColor = () => {
     if (userOptions.accentColor && userOptions.accentColor !== 'auto') return userOptions.accentColor;
-    return isLightMode() ? '#175CD3' : '#3B82F6';
+    return isLightMode() ? '#BE123C' : '#FF6000';
   };
 
   // Setup DOM container & canvas

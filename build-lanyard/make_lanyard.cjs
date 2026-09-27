@@ -12,7 +12,7 @@ const svg = `
     </linearGradient>
     <pattern id="weave" width="16" height="16" patternUnits="userSpaceOnUse">
       <path d="M0 8 L8 0 L16 8 L8 16 Z" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
-      <path d="M8 8 L16 0 M0 16 L8 8" fill="none" stroke="rgba(59,130,246,0.04)" stroke-width="1"/>
+      <path d="M8 8 L16 0 M0 16 L8 8" fill="none" stroke="rgba(225,29,72,0.06)" stroke-width="1"/>
     </pattern>
   </defs>
 
@@ -21,17 +21,17 @@ const svg = `
   <rect width="1024" height="256" fill="url(#weave)"/>
 
   <!-- Top and Bottom Reinforced Stitched Seams -->
-  <line x1="0" y1="28" x2="1024" y2="28" stroke="#1d4ed8" stroke-width="3.5" stroke-dasharray="12, 6"/>
-  <line x1="0" y1="228" x2="1024" y2="228" stroke="#1d4ed8" stroke-width="3.5" stroke-dasharray="12, 6"/>
+  <line x1="0" y1="28" x2="1024" y2="28" stroke="#FF6000" stroke-width="3.5" stroke-dasharray="12, 6"/>
+  <line x1="0" y1="228" x2="1024" y2="228" stroke="#FF6000" stroke-width="3.5" stroke-dasharray="12, 6"/>
 
   <!-- Outer Protective Edges -->
-  <line x1="0" y1="6" x2="1024" y2="6" stroke="rgba(59, 130, 246, 0.3)" stroke-width="2"/>
-  <line x1="0" y1="250" x2="1024" y2="250" stroke="rgba(59, 130, 246, 0.3)" stroke-width="2"/>
+  <line x1="0" y1="6" x2="1024" y2="6" stroke="rgba(255, 96, 0, 0.4)" stroke-width="2"/>
+  <line x1="0" y1="250" x2="1024" y2="250" stroke="rgba(255, 96, 0, 0.4)" stroke-width="2"/>
 
   <!-- Center Branded Identity Typography -->
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="34" text-anchor="middle" letter-spacing="4">
     <text x="512" y="142" fill="#F8FAFC">
-      MEDHAVI AGRAWAL <tspan fill="#3B82F6">✦</tspan> THE ANALYST'S DESK <tspan fill="#3B82F6">✦</tspan>
+      MEDHAVI AGRAWAL <tspan fill="#FF6000">✦</tspan> THE ANALYST'S DESK <tspan fill="#FF6000">✦</tspan>
     </text>
   </g>
 </svg>
