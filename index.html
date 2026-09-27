@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
 
   <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
-  <link rel="stylesheet" href="styles/styles.css?v=5.4">
+  <link rel="stylesheet" href="styles/styles.css?v=5.5">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -182,11 +182,11 @@
     </div>
   </div>
 
-  <!-- ================= SELECTED WORK ================= -->
+  <!-- ================= FEATURED PROJECTS ================= -->
   <section id="work" class="desk-section">
     <div class="section-meta">
       <span class="section-num">01</span>
-      <h2 class="section-title">SELECTED WORK</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="FEATURED PROJECTS">FEATURED PROJECTS</span></h2>
       <span class="section-annotation">FEATURED CASE STUDIES</span>
     </div>
 
@@ -340,7 +340,7 @@
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">02</span>
-      <h2 class="section-title">WHAT I DO</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="WHAT I DO">WHAT I DO</span></h2>
       <span class="section-annotation">ANALYTICAL WORKFLOW</span>
     </div>
 
@@ -388,7 +388,7 @@
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">03</span>
-      <h2 class="section-title">ANALYSIS INDEX</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="ANALYSIS INDEX">ANALYSIS INDEX</span></h2>
       <span class="section-annotation">EXPLORATORY &amp; BI DASHBOARDS</span>
     </div>
 
@@ -449,7 +449,7 @@
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">04</span>
-      <h2 class="section-title">TECHNICAL ARCHIVE</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="TECHNICAL ARCHIVE">TECHNICAL ARCHIVE</span></h2>
       <span class="section-annotation">ENGINEERING &amp; IOT PROJECTS</span>
     </div>
 
@@ -504,7 +504,7 @@
   <section id="achievements" class="desk-section">
     <div class="section-meta">
       <span class="section-num">05</span>
-      <h2 class="section-title">ACHIEVEMENTS</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="ACHIEVEMENTS">ACHIEVEMENTS</span></h2>
       <span class="section-annotation">HONORS &amp; AWARDS</span>
     </div>
 
@@ -560,7 +560,7 @@
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">06</span>
-      <h2 class="section-title">TOOLKIT</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="TOOLKIT">TOOLKIT</span></h2>
       <span class="section-annotation">SKILLS &amp; TECHNOLOGIES</span>
     </div>
 
@@ -621,7 +621,7 @@
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">07</span>
-      <h2 class="section-title">EXPERIENCE</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="EXPERIENCE">EXPERIENCE</span></h2>
       <span class="section-annotation">LEADERSHIP &amp; POSITIONS</span>
     </div>
 
@@ -681,7 +681,7 @@
   <section class="desk-section">
     <div class="section-meta">
       <span class="section-num">08</span>
-      <h2 class="section-title">EDUCATION</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="EDUCATION">EDUCATION</span></h2>
       <span class="section-annotation">ACADEMIC BACKGROUND</span>
     </div>
 
@@ -717,7 +717,7 @@
   <section class="desk-section" id="certifications">
     <div class="section-meta">
       <span class="section-num">09</span>
-      <h2 class="section-title">CERTIFICATIONS</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="CERTIFICATIONS">CERTIFICATIONS</span></h2>
       <span class="section-annotation">PROFESSIONAL CREDENTIALS</span>
     </div>
 
@@ -745,7 +745,7 @@
   <section class="desk-section" id="designs">
     <div class="section-meta">
       <span class="section-num">10</span>
-      <h2 class="section-title">DESIGNS</h2>
+      <h2 class="section-title"><span class="split-flap-target" data-split-flap="DESIGNS">DESIGNS</span></h2>
       <span class="section-annotation">DATA POSTERS &amp; VISUALS</span>
     </div>
 
@@ -1136,7 +1136,7 @@
           violetOp = 0.3 + t * 0.15;
           emeraldOp = 0.1 + t * 0.1;
         } else if (progress < 0.50) {
-          // SELECTED WORK: blue + subtle cyan
+          // FEATURED PROJECTS: blue + subtle cyan
           const t = (progress - 0.25) / 0.25;
           heroOp = 0.75 - t * 0.3;
           cyanOp = 0.85 - t * 0.35;
@@ -1236,6 +1236,7 @@
     import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js?v=4';
     import { initDecryptedText } from './Files/decrypted-text.js?v=1';
     import { initTechText } from './Files/tech-text.js?v=1';
+    import { initAllSplitFlap } from './Files/split-flap-text.js?v=1';
 
     // Initialize DecryptedText on DECISIONS with speed=120
     initDecryptedText({
@@ -1262,6 +1263,19 @@
       speed: 1.1,
       color: 'auto',
       accentColor: 'auto'
+    });
+
+    // Initialize SplitFlapText on all 10 section headers
+    initAllSplitFlap('.split-flap-target', {
+      flipDuration: 0.12,
+      stagger: 0.045,
+      cycleDelay: 2400,
+      flipsPerChar: 7,
+      charset: 'alphanumeric',
+      tileRadius: 6,
+      gap: 5,
+      fontSize: 'clamp(1.15rem, 2.1vw, 1.85rem)',
+      animateOn: 'inViewHover'
     });
 
     async function setupLanyard() {
