@@ -552,7 +552,7 @@ img {
 .hero-statement {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.45rem;
   line-height: 1.0;
 }
 
@@ -661,27 +661,28 @@ img {
 
 .hero-identity {
   border-top: 1px solid var(--border-rule);
-  padding-top: 0.65rem;
-  margin-bottom: 0.85rem;
+  padding-top: 0.45rem;
+  margin-bottom: 0.65rem;
 }
 
 .identity-name {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.05;
   color: var(--text-primary);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
   text-transform: uppercase;
   position: relative;
   width: 100%;
-  max-width: 680px;
-  height: clamp(42px, 5.5vw, 56px);
+  max-width: 840px;
+  height: clamp(56px, 5.5vw, 80px);
 }
 
 .identity-name.tech-text {
   font-size: 0;
+  height: clamp(56px, 5.5vw, 80px);
 }
 
 .tech-text {
@@ -703,7 +704,7 @@ img {
   font-size: clamp(0.85rem, 1.8vw, 1.05rem);
   color: var(--accent-green);
   letter-spacing: 0.04em;
-  margin-top: 0.1rem;
+  margin-top: 0;
 }
 
 .hero-desc {
@@ -2108,6 +2109,11 @@ img {
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 @media (max-width: 1024px) {
+  .identity-name,
+  .identity-name.tech-text {
+    height: clamp(42px, 6vw, 56px);
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;
