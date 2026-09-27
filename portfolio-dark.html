@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
 
   <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
-  <link rel="stylesheet" href="styles/styles.css?v=5.5">
+  <link rel="stylesheet" href="styles/styles.css?v=6.1">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1294,6 +1294,40 @@
           lanyardWidth: 1.3,
           cardScale: isDesktop ? 4.15 : 3.3
         });
+
+        // Intelligent mobile touch coordination:
+        // Allows native vertical page scrolling everywhere over the empty background,
+        // while capturing touches directly on the ID card for 3D physics interaction.
+        const bindNonBlockingTouch = () => {
+          const canvas = container.querySelector('canvas');
+          if (!canvas) {
+            requestAnimationFrame(bindNonBlockingTouch);
+            return;
+          }
+          canvas.style.touchAction = 'pan-y';
+
+          const isCardHit = (touch) => {
+            const rect = canvas.getBoundingClientRect();
+            const nx = (touch.clientX - rect.left) / rect.width;
+            const ny = (touch.clientY - rect.top) / rect.height;
+            return nx >= 0.22 && nx <= 0.78 && ny >= 0.20 && ny <= 0.85;
+          };
+
+          canvas.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length === 1 && isCardHit(e.touches[0])) {
+              canvas.style.touchAction = 'none';
+            } else {
+              canvas.style.touchAction = 'pan-y';
+            }
+          }, { passive: true });
+
+          const restorePan = () => {
+            canvas.style.touchAction = 'pan-y';
+          };
+          canvas.addEventListener('touchend', restorePan, { passive: true });
+          canvas.addEventListener('touchcancel', restorePan, { passive: true });
+        };
+        requestAnimationFrame(bindNonBlockingTouch);
       } catch (err) {
         console.warn('Lanyard 3D initialization fallback to static photo:', err);
         if (fallback) fallback.style.display = 'block';
