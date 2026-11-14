@@ -864,14 +864,6 @@
     function setTheme(theme) {
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
-      const certBtn = document.getElementById("viewAllCertBtn");
-      const designsBtn = document.getElementById("viewAllDesignsBtn");
-      if (certBtn) {
-        certBtn.href = theme === "light" ? "certificates.html" : "certificates-dark.html";
-      }
-      if (designsBtn) {
-        designsBtn.href = theme === "light" ? "posters.html" : "posters-dark.html";
-      }
       window.dispatchEvent(new CustomEvent("themeChanged", { detail: theme }));
     }
 
@@ -956,7 +948,8 @@
               const listRect = workflowList.getBoundingClientRect();
               const rowRect = entry.target.getBoundingClientRect();
               const progressHeight = (rowRect.top + (rowRect.height / 2)) - listRect.top;
-              workflowBar.style.height = `${Math.max(progressHeight, 0)}px`;
+              const scale = Math.min(Math.max(progressHeight / listRect.height, 0), 1);
+              workflowBar.style.transform = `scaleY(${scale.toFixed(4)})`;
             }
           }
         });

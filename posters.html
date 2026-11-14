@@ -78,6 +78,7 @@
           cursor: pointer;
           display: flex;
           flex-direction: column;
+          will-change: transform;
       }
 
       .design-card:hover,
@@ -106,6 +107,7 @@
           display: block;
           transition: transform 0.3s ease;
           background: transparent;
+          will-change: transform;
       }
 
       .design-card:hover img.design-item {
@@ -121,6 +123,7 @@
           align-items: center;
           justify-content: center;
           transition: opacity 0.2s ease;
+          will-change: opacity;
       }
 
       .design-card:hover .design-overlay,
@@ -176,6 +179,7 @@
           padding: 24px;
           opacity: 0;
           transition: opacity 0.25s ease;
+          will-change: opacity;
       }
 
       .cert-modal.active {

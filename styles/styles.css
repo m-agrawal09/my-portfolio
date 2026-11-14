@@ -39,7 +39,7 @@
   --font-display: 'Manrope', 'Inter', -apple-system, sans-serif;
 
   --max-w: 1240px;
-  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 
   /* Harmonized variables for certificates & posters compatibility */
   --bg-color: var(--bg-dark);
@@ -397,14 +397,17 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 1px;
   background: var(--accent-blue);
-  transition: width 0.2s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .desk-menu a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .desk-nav-right {
@@ -427,6 +430,7 @@ img {
   cursor: pointer;
   padding: 0;
   transition: var(--transition-fast);
+  will-change: transform, color, border-color;
   line-height: 0;
   flex-shrink: 0;
 }
@@ -564,6 +568,7 @@ img {
   color: var(--text-primary);
   text-transform: uppercase;
   opacity: 0;
+  will-change: transform, opacity;
   animation: heroLineReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -595,19 +600,22 @@ img {
   position: absolute;
   bottom: 3px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 3px;
   background: var(--accent-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
   animation: lineUnderlineSweep 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
 }
 
 @keyframes lineUnderlineSweep {
   from {
-    width: 0;
+    transform: scaleX(0);
   }
 
   to {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 
@@ -937,6 +945,7 @@ img {
   justify-content: center;
   gap: 0.5rem;
   transition: var(--transition-fast);
+  will-change: transform;
 }
 
 .btn-desk-primary {
@@ -1014,11 +1023,13 @@ img {
   pointer-events: none;
   opacity: 0.9;
   transition: opacity 0.2s ease;
+  will-change: opacity;
 }
 
 .lanyard-hint .hint-icon {
   font-size: 0.75rem;
   color: var(--accent-green);
+  will-change: transform, opacity;
   animation: pulseHint 2s infinite ease-in-out;
 }
 
@@ -1034,6 +1045,7 @@ img {
   clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
   padding: 1px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  will-change: transform;
 }
 
 .portrait-image-inner {
@@ -1051,6 +1063,7 @@ img {
   display: block;
   filter: contrast(1.02) brightness(0.94);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .portrait-meta-wrap {
@@ -1062,6 +1075,7 @@ img {
   padding: 0.6rem 0.25rem 0;
   border-top: 1px solid var(--border-rule-subtle);
   transition: transform 0.25s ease;
+  will-change: transform;
 }
 
 .portrait-tag {
@@ -1219,6 +1233,7 @@ img {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .signals-strip.revealed .signal-item {
@@ -1361,15 +1376,18 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: var(--accent-blue);
   z-index: 5;
-  transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .case-media.revealed::before {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .case-study-grid.reversed .case-media {
@@ -1393,6 +1411,7 @@ img {
     clip-path 0.65s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.3s ease,
     border-color 0.3s ease;
+  will-change: transform, opacity;
 }
 
 .case-media.revealed .case-screenshot {
@@ -1555,6 +1574,7 @@ img {
   padding: 0.45rem 1rem;
   border-radius: 2px;
   transition: var(--transition-fast);
+  will-change: transform;
 }
 
 .case-link-btn:hover {
@@ -1583,11 +1603,14 @@ img {
   left: 18px;
   top: 0;
   width: 1px;
-  height: 0;
+  height: 100%;
   background: var(--accent-blue);
   z-index: 2;
   box-shadow: 0 0 8px rgba(255, 79, 31, 0.4);
-  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .workflow-row {
@@ -1597,11 +1620,12 @@ img {
   padding: 2rem 0 2rem 2.8rem;
   border-bottom: 1px solid var(--border-rule);
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    background var(--transition-fast),
-    padding var(--transition-fast);
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
   opacity: 0.45;
   position: relative;
   z-index: 3;
+  will-change: transform, opacity;
 }
 
 .workflow-row.active {
@@ -1610,7 +1634,7 @@ img {
 
 .workflow-row:hover {
   background: rgba(255, 255, 255, 0.015);
-  padding-left: 3.1rem;
+  transform: translateX(6px);
 }
 
 .wf-index {
@@ -1650,11 +1674,14 @@ img {
   display: grid;
   grid-template-columns: 60px 1fr 140px 40px;
   align-items: center;
-  padding: 1.4rem 0;
+  padding: 1.4rem 0.8rem;
+  margin: 0 -0.8rem;
+  border-radius: 2px;
   border-bottom: 1px solid var(--border-rule);
   gap: 1.5rem;
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
   position: relative;
+  will-change: transform;
 }
 
 .index-row::before {
@@ -1668,12 +1695,12 @@ img {
   opacity: 0;
   transform: scaleY(0);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  will-change: transform, opacity;
 }
 
 .index-row:hover {
   background: var(--bg-surface-elevated);
-  padding-left: 1rem;
-  padding-right: 1rem;
+  transform: translateX(4px);
 }
 
 .index-row:hover::before {
@@ -1721,6 +1748,7 @@ img {
   background: var(--bg-surface-elevated);
   opacity: 0.75;
   transition: var(--transition-fast);
+  will-change: transform, opacity;
 }
 
 .index-row:hover .index-thumb-peek {
@@ -1742,6 +1770,7 @@ img {
   color: var(--text-muted);
   text-align: right;
   transition: var(--transition-fast);
+  will-change: transform;
 }
 
 .index-row:hover .index-arrow {
@@ -1765,6 +1794,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   transition: var(--transition-fast);
+  will-change: transform;
 }
 
 .tech-archive-card:hover {
@@ -1824,8 +1854,8 @@ img {
   transform: translateY(8px);
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    background var(--transition-fast),
-    padding var(--transition-fast);
+    background-color var(--transition-fast);
+  will-change: transform, opacity;
 }
 
 .record-row::after {
@@ -1833,10 +1863,13 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 1px;
   background: var(--border-rule);
-  transition: width 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .record-row.revealed {
@@ -1845,12 +1878,12 @@ img {
 }
 
 .record-row.revealed::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .record-row:hover {
   background: rgba(255, 255, 255, 0.015);
-  padding-left: 0.5rem;
+  transform: translateX(4px);
 }
 
 .record-title {
@@ -1927,12 +1960,13 @@ img {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 2.5rem;
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  will-change: transform;
 }
 
 .experience-entry:hover {
   background: rgba(255, 255, 255, 0.015);
-  padding-left: 0.5rem;
+  transform: translateX(4px);
 }
 
 .exp-meta {
@@ -2051,6 +2085,7 @@ img {
   align-items: center;
   justify-content: center;
   transition: var(--transition-fast);
+  will-change: transform;
 }
 
 .archive-thumb img {
@@ -2059,6 +2094,7 @@ img {
   object-fit: contain;
   background: var(--bg-surface-elevated);
   transition: var(--transition-fast);
+  will-change: transform;
 }
 
 .archive-thumb:hover {
@@ -2090,6 +2126,7 @@ img {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.3s ease,
     box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .poster-frame {
@@ -2110,6 +2147,7 @@ img {
   object-fit: contain;
   display: block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .poster-caption {
@@ -2243,14 +2281,15 @@ img {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   color: var(--text-primary);
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+  will-change: transform;
 }
 
 .contact-row-link:hover {
   border-color: var(--accent-blue);
   background: var(--bg-surface-elevated);
   color: var(--accent-blue);
-  padding-left: 1.8rem;
+  transform: translateX(6px);
 }
 
 .contact-row-link span.arrow {
@@ -2259,6 +2298,7 @@ img {
   align-items: center;
   gap: 0.4rem;
   transition: transform var(--transition-fast);
+  will-change: transform;
 }
 
 .contact-row-link:hover span.arrow {
@@ -2304,7 +2344,8 @@ img {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-fast), border-color var(--transition-fast);
+  will-change: transform, opacity;
   z-index: 999;
 }
 
@@ -2561,7 +2602,7 @@ img {
   }
 
   .statement-highlight::after {
-    width: 100% !important;
+    transform: none !important;
     animation: none !important;
   }
 
@@ -2581,8 +2622,7 @@ img {
   .case-media::before,
   .record-row::after,
   .workflow-progress-bar {
-    width: 100% !important;
-    height: 100% !important;
+    transform: none !important;
     transition: none !important;
   }
 
