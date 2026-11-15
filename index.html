@@ -27,54 +27,71 @@
   <meta property="og:image" content="Files/Profile New.jpeg">
   <meta property="og:type" content="website">
 
-  <!-- Styles & Fonts: Editorial typography (Manrope, Inter, IBM Plex Mono) -->
-  <link rel="stylesheet" href="styles/styles.css?v=7.2">
+  <!-- Styles & Fonts: Cutting-edge Space Grotesk, Inter, IBM Plex Mono, Manrope -->
+  <link rel="stylesheet" href="styles/styles.css?v=8.0">
   <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ================= CINEMATIC ATMOSPHERIC BACKGROUND (DARK THEME) ================= -->
+  <!-- ================= CINEMATIC ATMOSPHERE & BACKGROUND ================= -->
   <div class="cinematic-atmosphere" id="cinematicAtmosphere" aria-hidden="true">
+    <div class="background-grid"></div>
     <div class="ambient-glow glow-hero" id="glowHero"></div>
     <div class="ambient-glow glow-upper-left" id="glowUpperLeft"></div>
     <div class="ambient-glow glow-middle-cyan" id="glowMiddleCyan"></div>
-    <div class="ambient-glow glow-lower-emerald" id="glowLowerEmerald"></div>
     <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
   </div>
 
-  <!-- ================= BACK TO TOP ================= -->
+  <!-- ================= BACK TO TOP FLOATING BUTTON ================= -->
   <div class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="#F2F1EC" stroke-width="2" stroke-linecap="round"
+      <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"
         stroke-linejoin="round" />
     </svg>
   </div>
 
-  <!-- ================= STICKY MINIMAL NAVIGATION ================= -->
+  <!-- ================= NAVIGATION HUD (NEXUS COMMAND BAR) ================= -->
   <header class="desk-nav">
     <div class="desk-nav-inner">
       <a href="#about" class="desk-brand">
-        <span class="desk-brand-name">MEDHAVI AGRAWAL</span>
-        <span class="desk-brand-role">DATA ANALYST</span>
+        <div class="brand-badge">MA</div>
+        <div class="desk-brand-meta">
+          <span class="desk-brand-name">
+            MEDHAVI AGRAWAL
+            <span class="live-beacon" title="Available for 2026 Data Analytics Roles"></span>
+          </span>
+        </div>
       </a>
 
-      <div class="desk-nav-right">
-        <nav class="desk-menu" id="navLinks">
-          <a href="#work">WORK</a>
-          <a href="#about">ABOUT</a>
-          <a href="#achievements">ACHIEVEMENTS</a>
-          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank">RESUME</a>
-          <a href="#contact">CONTACT</a>
-        </nav>
+      <!-- Navigation Pill Menu -->
+      <nav class="desk-menu" id="navLinks">
+        <a href="#work">WORK</a>
+        <a href="#workflow">PIPELINE</a>
+        <a href="#toolkit">TOOLKIT</a>
+        <a href="#achievements">HONORS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
 
+      <div class="desk-nav-right">
+        <!-- Live Telemetry Time Pill -->
+        <div class="telemetry-time-pill" title="Live Local Observatory Time (IST)">
+          <span class="dot"></span>
+          <span id="liveTimeTicker">GWALIOR 23:30:00 [IST]</span>
+        </div>
+
+        <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="btn-nav-resume">
+          RESUME ↗
+        </a>
+
+        <!-- Minimalist Theme Toggle -->
         <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-          <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -86,7 +103,7 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -99,33 +116,57 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
+  <!-- ================= HERO SECTION (HOLOGRAPHIC COMMAND CENTER) ================= -->
   <div class="hero-wrapper" id="about">
     <div class="hero-grid">
 
       <!-- Left Column: Statement & Narrative -->
       <div class="hero-content">
+        <div class="hero-telemetry-badge">
+          <span class="badge-dot"></span>
+          <span>LIVE TELEMETRY // DATA INTELLIGENCE // 9.84 CGPA</span>
+        </div>
+
         <div class="hero-statement">
           <span class="statement-line">I TURN</span>
           <span class="statement-line">DATA</span>
           <span class="statement-line">INTO</span>
-          <span class="statement-line statement-highlight"><span class="decrypted-text-wrapper" id="decryptedDecisions" data-text="DECISIONS">DECISIONS</span>.</span>
+          <span class="statement-line statement-highlight"><span class="decrypted-text-wrapper"
+              id="decryptedDecisions">DECISIONS</span>.</span>
         </div>
 
         <div class="hero-identity">
           <div class="identity-name" id="techTextName">MEDHAVI AGRAWAL</div>
-          <div class="identity-stack">Data Analyst · Power BI · SQL · Python · Excel</div>
+          <div class="identity-stack">
+            <span>Data Analyst</span>
+            <span>·</span>
+            <span>Power BI</span>
+            <span>·</span>
+            <span>SQL</span>
+            <span>·</span>
+            <span>Python</span>
+            <span>·</span>
+            <span>Advanced DAX</span>
+          </div>
         </div>
 
         <p class="hero-desc">
-          Electronics &amp; Telecommunication Engineering student at MITS Gwalior, focused on data analysis, business
-          intelligence, dashboard development and data storytelling.
+          Electronics &amp; Telecommunication Engineering scholar at MITS Gwalior (Rank 1, 9.84 CGPA). Architecting
+          predictive dashboards, geospatial crime forensics, and automated ETL pipelines that translate noisy telemetry
+          into high-conviction executive decisions.
         </p>
 
         <div class="hero-actions">
-          <a href="#work" class="btn-desk-primary">EXPLORE WORK →</a>
+          <a href="#work" class="btn-desk-primary">EXPLORE DOSSIERS ↓</a>
           <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="btn-desk-secondary">DOWNLOAD
-            RESUME →</a>
+            RESUME ↗</a>
+          <button class="quick-email-btn" onclick="copyEmail()" title="Click to copy email address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="emailText">magrawal09.contact@gmail.com</span>
+          </button>
         </div>
       </div>
 
@@ -141,10 +182,10 @@
           </div>
         </div>
         <div class="portrait-meta-wrap">
-          <span class="portrait-tag">MEDHAVI / 2026</span>
+          <span class="portrait-tag">MEDHAVI // 2026</span>
           <div class="portrait-status-badge">
             <span class="status-pulse-dot"></span>
-            <span class="status-text">AVAILABLE FOR<br>DATA ANALYTICS ROLES</span>
+            <span class="status-text">AVAILABLE FOR DATA ROLES</span>
           </div>
         </div>
       </div>
@@ -152,238 +193,297 @@
     </div>
   </div>
 
-  <!-- ================= PROFILE SIGNALS STRIP ================= -->
+  <!-- ================= KEY METRICS SIGNALS STRIP ================= -->
   <div class="signals-strip-wrapper">
-    <div class="signals-strip" id="signalsStrip">
-      <div class="signal-item">
-        <div class="signal-number" data-target="9.84" data-decimals="2" data-denom=" / 10">9.84 <span
-            class="signal-denom">/ 10</span></div>
-        <div class="signal-label">CGPA</div>
+    <div class="signals-grid" id="signalsStrip">
+
+      <!-- Metric 1 -->
+      <div class="spotlight-card signal-card">
+        <div class="signal-top">
+          <div class="signal-number" data-target="9.84" data-decimals="2" data-denom=" / 10">9.84 <span
+              class="signal-denom">/ 10</span></div>
+        </div>
+        <div class="signal-meta">
+          <span class="signal-label">CUMULATIVE CGPA</span>
+          <span class="signal-subtext">Institute Rank 01 · Dept. of ETE</span>
+        </div>
       </div>
-      <div class="signal-divider"></div>
-      <div class="signal-item">
-        <div class="signal-number" data-target="1" data-prefix="#0">#01</div>
-        <div class="signal-label">INSTITUTE RANK</div>
+
+      <!-- Metric 2 -->
+      <div class="spotlight-card signal-card">
+        <div class="signal-top">
+          <div class="signal-number" data-target="30" data-prefix="TOP ">TOP 30</div>
+        </div>
+        <div class="signal-meta">
+          <span class="signal-label">KSP POLICE DATATHON</span>
+          <span class="signal-subtext">Statewide AI Crime Intelligence 2026</span>
+        </div>
       </div>
-      <div class="signal-divider"></div>
-      <div class="signal-item">
-        <div class="signal-number" data-target="30" data-prefix="TOP ">TOP 30</div>
-        <div class="signal-label">KSP DATATHON 2026</div>
+
+      <!-- Metric 3 -->
+      <div class="spotlight-card signal-card">
+        <div class="signal-top">
+          <div class="signal-number" data-target="3" data-suffix="×">3×</div>
+        </div>
+        <div class="signal-meta">
+          <span class="signal-label">DASHBOARD PODIUMS</span>
+          <span class="signal-subtext">1st Place IITM, Dataviz &amp; Dash-It-Up</span>
+        </div>
       </div>
-      <div class="signal-divider"></div>
-      <div class="signal-item">
-        <div class="signal-number" data-target="3" data-suffix="×">3×</div>
-        <div class="signal-label">DASHBOARD PODIUMS</div>
+
+      <!-- Metric 4 -->
+      <div class="spotlight-card signal-card">
+        <div class="signal-top">
+          <div class="signal-number" data-target="10" data-suffix="+">10+</div>
+        </div>
+        <div class="signal-meta">
+          <span class="signal-label">ANALYTICAL PIPELINES</span>
+          <span class="signal-subtext">EDA, Power BI Models, DAX &amp; IoT</span>
+        </div>
       </div>
+
     </div>
   </div>
 
-  <!-- ================= FEATURED PROJECTS ================= -->
+  <!-- ================= FEATURED PROJECTS (CLASSIFIED DOSSIERS) ================= -->
   <section id="work" class="desk-section">
     <div class="section-meta">
-      <span class="section-num">01</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="FEATURED PROJECTS">FEATURED PROJECTS</span></h2>
-      <span class="section-annotation">FEATURED CASE STUDIES</span>
+      <div class="section-meta-left">
+        <span class="section-num">01 // PORTFOLIO</span>
+        <h2 class="section-title">CASE STUDIES</h2>
+      </div>
+      <span class="section-annotation">FEATURED INTELLIGENCE FILES</span>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-tabs-bar">
+      <button class="filter-pill active" onclick="filterProjects('all', this)">ALL CASE STUDIES (3)</button>
+      <button class="filter-pill" onclick="filterProjects('crime', this)">CRIME AI &amp; GEOSPATIAL</button>
+      <button class="filter-pill" onclick="filterProjects('automotive', this)">AUTOMOTIVE &amp; DAX</button>
+      <button class="filter-pill" onclick="filterProjects('traffic', this)">TRAFFIC SAFETY</button>
     </div>
 
     <div class="case-studies-container">
 
-      <!-- PROJECT 01: Crime Intelligence -->
-      <article class="case-study">
+      <!-- PROJECT 01: KSP Crime Intelligence -->
+      <article class="case-study spotlight-card" data-category="crime">
         <div class="case-study-grid">
-
           <div class="case-media">
-            <img src="Files/Project Img/ksp-dashboard.png"
-              alt="AI-Driven Crime Intelligence &amp; Visualization Platform" class="case-screenshot">
+            <img src="Files/Project Img/ksp-dashboard.png" alt="AI-Driven Crime Intelligence Platform"
+              class="case-screenshot">
           </div>
-
           <div class="case-content">
             <div class="case-top">
-              <span class="case-header-tag">CASE STUDY 01 · DATA ANALYTICS</span>
+              <span class="case-header-tag">DOSSIER 01 · GEOSPATIAL CRIME INTELLIGENCE</span>
               <h3 class="case-title">AI-Driven Crime Intelligence &amp; Visualization Platform</h3>
               <div class="case-badge">TOP 30 — KARNATAKA STATE POLICE DATATHON 2026</div>
 
               <div class="case-breakdown">
                 <div class="breakdown-block">
-                  <span class="breakdown-title">THE PROBLEM</span>
+                  <span class="breakdown-title">OPERATIONAL PROBLEM</span>
                   <p class="breakdown-text">
                     Law enforcement authorities manage high-volume, multivariable incident records across police
-                    stations, creating operational delays in detecting rapid localized hotspots and aligning patrol
-                    deployments.
+                    jurisdictions, resulting in operational delays in isolating localized hotspots and scheduling active
+                    patrol routes.
                   </p>
                 </div>
-
                 <div class="breakdown-block">
-                  <span class="breakdown-title">THE APPROACH</span>
+                  <span class="breakdown-title">ARCHITECTURAL SOLUTION</span>
                   <p class="breakdown-text">
-                    Engineered a unified police intelligence platform for transforming crime data into actionable intelligence through geospatial analytics, trend forecasting, officer insights, and bilingual decision support.
+                    Synthesized a unified police intelligence platform for transforming crime data into actionable
+                    intelligence through geospatial analytics, trend forecasting, officer workload metrics, and
+                    bilingual decision support.
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="case-footer">
-              <div class="case-stack">STACK: React · Zoho Catalyst · AI · SQL</div>
+              <div class="case-stack">STACK: React · Zoho Catalyst · AI · SQL · Geospatial</div>
               <div class="case-links">
-                <a href="https://ksp-crime-intelligence-50044050041.development.catalystappsail.in/#/" target="_blank" class="case-link-btn">VIEW PROJECT →</a>
+                <a href="https://ksp-crime-intelligence-50044050041.development.catalystappsail.in/#/" target="_blank"
+                  class="case-link-btn">LIVE PLATFORM ↗</a>
               </div>
             </div>
           </div>
-
         </div>
       </article>
 
-      <!-- PROJECT 02: Automotive Sales Performance (Alternating layout) -->
-      <article class="case-study">
+      <!-- PROJECT 02: Automotive Sales Performance -->
+      <article class="case-study spotlight-card" data-category="automotive">
         <div class="case-study-grid reversed">
-
           <div class="case-media">
             <img src="Files/Project Img/Car Sales.jpg" alt="Automotive Sales Performance Dashboard"
               class="case-screenshot">
           </div>
-
           <div class="case-content">
             <div class="case-top">
-              <span class="case-header-tag">CASE STUDY 02 · AUTOMOTIVE BENCHMARKING</span>
-              <h3 class="case-title">Automotive Sales Performance Dashboard</h3>
-              <div class="case-badge">1ST PLACE — DASHBOARD MASTERS</div>
+              <span class="case-header-tag">DOSSIER 02 · EXECUTIVE BUSINESS INTELLIGENCE</span>
+              <h3 class="case-title">Automotive Sales Performance &amp; Margin Dashboard</h3>
+              <div class="case-badge">1ST PLACE — DASHBOARD MASTERS COMPETITION</div>
 
               <div class="case-breakdown">
                 <div class="breakdown-block">
-                  <span class="breakdown-title">THE PROBLEM</span>
+                  <span class="breakdown-title">OPERATIONAL PROBLEM</span>
                   <p class="breakdown-text">
-                    Automotive dealership groups needed instant analytical visibility into sales volume swings, average
-                    vehicle price elasticity, and fuel-type margin disparities across regional branches.
+                    Dealership group executives lacked consolidated visibility into sales volume swings, vehicle price
+                    elasticity, and fuel-type margin disparities across regional distributor networks.
                   </p>
                 </div>
-
                 <div class="breakdown-block">
-                  <span class="breakdown-title">THE APPROACH</span>
+                  <span class="breakdown-title">ARCHITECTURAL SOLUTION</span>
                   <p class="breakdown-text">
-                    Developed a KPI-driven Power BI dashboard in a live 60-minute competition sprint. Analyzed
-                    multi-year transactions, pinpointed top-performing brands and fuel segments, and structured
-                    dealership revenue drivers.
+                    Architected an executive KPI Power BI dashboard in a live 60-minute competition sprint. Formulated
+                    complex DAX measures, isolated top-performing brands, and structured revenue optimization levers.
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="case-footer">
-              <div class="case-stack">STACK: Power BI · DAX · Data Analysis</div>
+              <div class="case-stack">STACK: Power BI · Advanced DAX · Star Schema · Excel</div>
               <div class="case-links">
                 <a href="https://www.linkedin.com/posts/medhavi-agrawal_dashboardmasters-powerbi-dataanalytics-activity-7424660476350881792-hOgH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
-                  target="_blank" class="case-link-btn">VIEW PROJECT →</a>
-                <a href="Files/Car_Details.csv" download class="case-link-btn">DATASET →</a>
+                  target="_blank" class="case-link-btn">VIEW CASE POST ↗</a>
+                <a href="Files/Car_Details.csv" download class="case-link-btn">DATASET [CSV] ↓</a>
               </div>
             </div>
           </div>
-
         </div>
       </article>
 
       <!-- PROJECT 03: Road Accident Trend Analysis -->
-      <article class="case-study">
+      <article class="case-study spotlight-card" data-category="traffic">
         <div class="case-study-grid">
-
           <div class="case-media">
             <img src="Files/Project Img/Road Accidents.png" alt="Road Accident Trend Analysis Dashboard"
               class="case-screenshot">
           </div>
-
           <div class="case-content">
             <div class="case-top">
-              <span class="case-header-tag">CASE STUDY 03 · TRAFFIC SAFETY ANALYTICS</span>
-              <h3 class="case-title">Road Accident Trend Analysis</h3>
-              <div class="case-badge">NATIONAL SAFETY ANALYTICS</div>
+              <span class="case-header-tag">DOSSIER 03 · PUBLIC SAFETY &amp; EPIDEMIOLOGICAL DATA</span>
+              <h3 class="case-title">National Highway Accident Trend Analysis</h3>
+              <div class="case-badge">NATIONAL SAFETY RESEARCH</div>
 
               <div class="case-breakdown">
                 <div class="breakdown-block">
-                  <span class="breakdown-title">ANALYTICAL PURPOSE</span>
+                  <span class="breakdown-title">OPERATIONAL PROBLEM</span>
                   <p class="breakdown-text">
-                    Explored nationwide accident records to isolate high-fatality accident types, evaluate severity
-                    distributions across diverse weather conditions, and identify temporal clustering.
+                    Government traffic administrations required deep statistical insight into high-fatality accident
+                    classifications, temporal clustering across peak hours, and weather risk correlations.
                   </p>
                 </div>
-
                 <div class="breakdown-block">
-                  <span class="breakdown-title">THE APPROACH</span>
+                  <span class="breakdown-title">ARCHITECTURAL SOLUTION</span>
                   <p class="breakdown-text">
-                    Synthesized complex multivariable safety data into intuitive interactive visual layouts, pinpointing
-                    critical risk timeframes and geographic accident clusters to inform preventive highway safety
-                    strategies.
+                    Normalized messy nationwide accident telemetry, mapped severity distributions, and designed an
+                    intuitive interactive report that delivers instant visibility into accident hot-zones.
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="case-footer">
-              <div class="case-stack">STACK: Power BI · Data Analysis · DAX</div>
+              <div class="case-stack">STACK: Power BI · Python · DAX · Exploratory Data Analysis</div>
               <div class="case-links">
-                <a href="Files/accident_prediction_india.csv" download class="case-link-btn">VIEW PROJECT →</a>
+                <a href="Files/accident_prediction_india.csv" download class="case-link-btn">DATASET [CSV] ↓</a>
               </div>
             </div>
           </div>
-
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- ================= WHAT I DO ================= -->
-  <section class="desk-section">
+  <!-- ================= 5-STAGE ANALYTICAL PIPELINE (WHAT I DO) ================= -->
+  <section id="workflow" class="desk-section">
     <div class="section-meta">
-      <span class="section-num">02</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="WHAT I DO">WHAT I DO</span></h2>
-      <span class="section-annotation">ANALYTICAL WORKFLOW</span>
+      <div class="section-meta-left">
+        <span class="section-num">02 // METHODOLOGY</span>
+        <h2 class="section-title">PIPELINE</h2>
+      </div>
+      <span class="section-annotation">END-TO-END ANALYTIC ENGINE</span>
     </div>
 
-    <div class="workflow-list" id="workflowList">
-      <div class="workflow-progress-line"></div>
-      <div class="workflow-progress-bar" id="workflowProgressBar"></div>
-      <div class="workflow-row" data-step="1">
-        <span class="wf-index">01</span>
-        <div class="wf-name">COLLECT</div>
-        <div class="wf-desc">Understand the data and the question. Frame core objectives, audit source integrity, and
-          establish analytical benchmarks.</div>
+    <div class="pipeline-track">
+
+      <!-- Stage 01 -->
+      <div class="spotlight-card pipeline-node">
+        <div class="pipeline-node-top">
+          <span class="pipeline-idx">01</span>
+          <span class="pipeline-icon-glyph">[EXTRACT]</span>
+        </div>
+        <h4 class="pipeline-title">INGESTION</h4>
+        <p class="pipeline-desc">
+          Audit telemetry sources, query SQL tables, pull unstructured files, and verify schema integrity.
+        </p>
+        <span class="pipeline-deliverable">✓ Data Audit Dossier</span>
       </div>
 
-      <div class="workflow-row" data-step="2">
-        <span class="wf-index">02</span>
-        <div class="wf-name">CLEAN</div>
-        <div class="wf-desc">Prepare, transform and validate the dataset. Eliminate anomalies, normalize schemas,
-          reconcile missing attributes, and structure relational tables.</div>
+      <!-- Stage 02 -->
+      <div class="spotlight-card pipeline-node">
+        <div class="pipeline-node-top">
+          <span class="pipeline-idx">02</span>
+          <span class="pipeline-icon-glyph">[CLEAN]</span>
+        </div>
+        <h4 class="pipeline-title">WRANGLING</h4>
+        <p class="pipeline-desc">
+          Normalize anomalies, impute missing values, reconcile timestamps, and structure relational models.
+        </p>
+        <span class="pipeline-deliverable">✓ Star Schema Model</span>
       </div>
 
-      <div class="workflow-row" data-step="3">
-        <span class="wf-index">03</span>
-        <div class="wf-name">ANALYZE</div>
-        <div class="wf-desc">Identify patterns, relationships and trends. Write DAX measures, test statistical
-          correlations, construct aggregations, and compute KPI variances.</div>
+      <!-- Stage 03 -->
+      <div class="spotlight-card pipeline-node">
+        <div class="pipeline-node-top">
+          <span class="pipeline-idx">03</span>
+          <span class="pipeline-icon-glyph">[MODEL]</span>
+        </div>
+        <h4 class="pipeline-title">MODELING</h4>
+        <p class="pipeline-desc">
+          Formulate performant DAX measures, test statistical significance, and compute KPI variances.
+        </p>
+        <span class="pipeline-deliverable">✓ DAX Measure Repository</span>
       </div>
 
-      <div class="workflow-row" data-step="4">
-        <span class="wf-index">04</span>
-        <div class="wf-name">VISUALIZE</div>
-        <div class="wf-desc">Build dashboards that make findings understandable. Maintain visual hierarchy, intuitive
-          drill-down interactions, and zero-clutter information design.</div>
+      <!-- Stage 04 -->
+      <div class="spotlight-card pipeline-node">
+        <div class="pipeline-node-top">
+          <span class="pipeline-idx">04</span>
+          <span class="pipeline-icon-glyph">[SYNTHESIS]</span>
+        </div>
+        <h4 class="pipeline-title">DASHBOARDS</h4>
+        <p class="pipeline-desc">
+          Engineer zero-clutter visual dashboards featuring intuitive drill-downs and cross-filtered charts.
+        </p>
+        <span class="pipeline-deliverable">✓ Production Dashboard</span>
       </div>
 
-      <div class="workflow-row" data-step="5">
-        <span class="wf-index">05</span>
-        <div class="wf-name">COMMUNICATE</div>
-        <div class="wf-desc">Turn analysis into decisions and recommendations. Deliver executive briefings with crisp,
-          quantitative insights that drive real-world action.</div>
+      <!-- Stage 05 -->
+      <div class="spotlight-card pipeline-node">
+        <div class="pipeline-node-top">
+          <span class="pipeline-idx">05</span>
+          <span class="pipeline-icon-glyph">[EXECUTE]</span>
+        </div>
+        <h4 class="pipeline-title">BRIEFING</h4>
+        <p class="pipeline-desc">
+          Translate findings into concise executive summaries with quantitative, high-impact recommendations.
+        </p>
+        <span class="pipeline-deliverable">✓ Executive Action Brief</span>
       </div>
+
     </div>
   </section>
 
-  <!-- ================= ANALYSIS INDEX ================= -->
+  <!-- ================= ANALYSIS INDEX (INTERACTIVE DATA TABLE) ================= -->
   <section class="desk-section">
     <div class="section-meta">
-      <span class="section-num">03</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="ANALYSIS INDEX">ANALYSIS INDEX</span></h2>
-      <span class="section-annotation">EXPLORATORY &amp; BI DASHBOARDS</span>
+      <div class="section-meta-left">
+        <span class="section-num">03 // CATALOG</span>
+        <h2 class="section-title">ANALYSIS INDEX</h2>
+      </div>
+      <span class="section-annotation">EXPLORATORY &amp; BI NOTEBOOKS</span>
     </div>
 
     <div class="index-table">
@@ -392,427 +492,488 @@
         <span class="index-id">01</span>
         <div class="index-title-group">
           <h4 class="index-name">ROAD ACCIDENT TREND ANALYSIS</h4>
-          <span class="index-stack">Power BI · Data Analysis · DAX</span>
+          <span class="index-stack">Power BI · Exploratory Data Analysis · Custom DAX</span>
         </div>
         <div class="index-thumb-peek">
           <img src="Files/Project Img/Road Accidents.png" alt="Road Accident Analysis">
         </div>
-        <a href="Files/accident_prediction_india.csv" download class="index-arrow">→</a>
+        <a href="Files/accident_prediction_india.csv" download class="index-download-btn">DATASET ↓</a>
       </div>
 
       <div class="index-row">
         <span class="index-id">02</span>
         <div class="index-title-group">
-          <h4 class="index-name">IPL PLAYER AUCTION ANALYTICS</h4>
-          <span class="index-stack">Power BI · DAX · Data Visualization</span>
+          <h4 class="index-name">IPL PLAYER AUCTION &amp; STATISTICAL DOSSIER</h4>
+          <span class="index-stack">Power BI · DAX · Strike-Rate Predictive Modeling</span>
         </div>
         <div class="index-thumb-peek">
           <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Auction Analytics">
         </div>
-        <a href="Files/IPL Dataset Final.xlsx" download class="index-arrow">→</a>
+        <a href="Files/IPL Dataset Final.xlsx" download class="index-download-btn">DATASET ↓</a>
       </div>
 
       <div class="index-row">
         <span class="index-id">03</span>
         <div class="index-title-group">
-          <h4 class="index-name">ANDHRA PRADESH ELECTION ANALYSIS</h4>
-          <span class="index-stack">Power BI · Data Visualization · Statistical Analysis</span>
+          <h4 class="index-name">ANDHRA PRADESH CONSTITUENCY FORENSICS</h4>
+          <span class="index-stack">Power BI · Spatial Mapping · Demographic Swing Analysis</span>
         </div>
         <div class="index-thumb-peek">
           <img src="Files/Project Img/AP Election.png" alt="AP Election Analysis">
         </div>
-        <a href="Files/APelections.csv" download class="index-arrow">→</a>
+        <a href="Files/APelections.csv" download class="index-download-btn">DATASET ↓</a>
       </div>
 
       <div class="index-row">
         <span class="index-id">04</span>
         <div class="index-title-group">
-          <h4 class="index-name">AMAZON SALES &amp; PROFIT ANALYSIS</h4>
-          <span class="index-stack">Power BI · Business Analytics</span>
+          <h4 class="index-name">AMAZON STORE SALES &amp; PROFIT REVENUE ENGINE</h4>
+          <span class="index-stack">Power BI · E-commerce Retail Metrics · Return Margin Analysis</span>
         </div>
         <div class="index-thumb-peek">
           <img src="Files/Project Img/Amazon Sales.png" alt="Amazon Sales Analysis">
         </div>
-        <a href="Files/Amazon Store Sales Data.xlsx - Sheet1 (1) - Copy.csv" download class="index-arrow">→</a>
+        <a href="Files/Amazon Store Sales Data.xlsx - Sheet1 (1) - Copy.csv" download class="index-download-btn">DATASET
+          ↓</a>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= TECHNICAL ARCHIVE ================= -->
+  <!-- ================= TECHNICAL ARCHIVE (ENGINEERING & IOT) ================= -->
   <section class="desk-section">
     <div class="section-meta">
-      <span class="section-num">04</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="TECHNICAL ARCHIVE">TECHNICAL ARCHIVE</span></h2>
-      <span class="section-annotation">ENGINEERING &amp; IOT PROJECTS</span>
+      <div class="section-meta-left">
+        <span class="section-num">04 // ARCHIVE</span>
+        <h2 class="section-title">TECHNICAL ARCHIVE</h2>
+      </div>
+      <span class="section-annotation">HARDWARE &amp; IOT TELEMETRY</span>
     </div>
 
     <div class="tech-archive-grid">
 
-      <div class="tech-archive-card">
+      <div class="spotlight-card tech-archive-card">
         <div>
           <h4 class="tech-card-title">IoT-Based Water Quality Monitoring</h4>
           <p class="tech-card-desc">
-            Embedded Arduino system measuring pH, turbidity, TDS, and temperature for environmental parameter tracking.
+            Embedded Arduino microcontroller framework measuring real-time pH, turbidity, total dissolved solids (TDS),
+            and water temperature.
           </p>
         </div>
         <div class="tech-card-footer">
-          <span class="tech-card-stack">Arduino · Sensors</span>
-          <a href="Files/Report_Water Quality Monitoring.pdf" target="_blank" class="tech-card-arrow">VIEW REPORT →</a>
+          <span class="tech-card-stack">Arduino · Sensor Fusion</span>
+          <a href="Files/Report_Water Quality Monitoring.pdf" target="_blank" class="tech-card-arrow">VIEW REPORT ↗</a>
         </div>
       </div>
 
-      <div class="tech-archive-card">
+      <div class="spotlight-card tech-archive-card">
         <div>
-          <h4 class="tech-card-title">Smart Toll Gate Automation</h4>
+          <h4 class="tech-card-title">Automated Smart Toll Gate System</h4>
           <p class="tech-card-desc">
-            Microcontroller-driven barrier mechanism with ultrasonic vehicle detection for queue mitigation and traffic
-            control.
+            Hardware automation deploying ultrasonic vehicle distance telemetry and servo-assisted barrier control to
+            eliminate highway congestion.
           </p>
         </div>
         <div class="tech-card-footer">
-          <span class="tech-card-stack">Arduino · Hardware Automation</span>
+          <span class="tech-card-stack">Arduino · Servo · IoT</span>
           <a href="https://www.linkedin.com/posts/medhavi-agrawal_iot-arduino-innovation-activity-7311979744302927873-dE4R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
-            target="_blank" class="tech-card-arrow">VIEW PROJECT →</a>
+            target="_blank" class="tech-card-arrow">VIEW PROJECT ↗</a>
         </div>
       </div>
 
-      <div class="tech-archive-card">
+      <div class="spotlight-card tech-archive-card">
         <div>
-          <h4 class="tech-card-title">Reutilization of Fossil Fuels</h4>
+          <h4 class="tech-card-title">Reutilization of Fossil Fuels (ROFF)</h4>
           <p class="tech-card-desc">
-            Research investigation on treatment and reutilization of fossil fuel by-products; awarded State Rank 05 at
-            NCSC.
+            Environmental engineering research capturing exhaust particulate emissions and converting carbon residue
+            into printing ink. Awarded State Rank 05 at NCSC.
           </p>
         </div>
         <div class="tech-card-footer">
           <span class="tech-card-stack">Environmental Research</span>
-          <a href="Files/NCSC Presentation File.pdf" target="_blank" class="tech-card-arrow">VIEW REPORT →</a>
+          <a href="Files/NCSC Presentation File.pdf" target="_blank" class="tech-card-arrow">VIEW REPORT ↗</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= ACHIEVEMENTS ================= -->
+  <!-- ================= ACCREDITED HONORS & AWARDS ================= -->
   <section id="achievements" class="desk-section">
     <div class="section-meta">
-      <span class="section-num">05</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="ACHIEVEMENTS">ACHIEVEMENTS</span></h2>
-      <span class="section-annotation">HONORS &amp; AWARDS</span>
+      <div class="section-meta-left">
+        <span class="section-num">05 // HONORS</span>
+        <h2 class="section-title">ACHIEVEMENTS</h2>
+      </div>
+      <span class="section-annotation">ACCREDITED MERIT RECORD</span>
     </div>
 
     <div class="record-timeline">
-      <div class="record-row">
-        <span class="record-title">TOP 30</span>
-        <div class="record-desc">Karnataka State Police Datathon 2026</div>
+
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🏆</div>
+        <div class="record-content">
+          <span class="record-title">TOP 30 FINALIST — STATEWIDE POLICE DATATHON</span>
+          <p class="record-desc">Karnataka State Police Datathon 2026 for AI-driven crime intelligence.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">EASTMAN POWERUP SCHOLAR</span>
-        <div class="record-desc">1 of 32 students selected from 10,000+ applicants nationwide</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🎖️</div>
+        <div class="record-content">
+          <span class="record-title">EASTMAN POWERUP SCHOLAR</span>
+          <p class="record-desc">1 of 32 scholars selected nationwide from 10,000+ applicants.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">1ST PLACE</span>
-        <div class="record-desc">Dashboard Masters Competition (IITM Janakpuri, 2026)</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🥇</div>
+        <div class="record-content">
+          <span class="record-title">1ST PLACE — DASHBOARD MASTERS</span>
+          <p class="record-desc">National Power BI Dashboard sprint contest at IITM Janakpuri, 2026.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">1ST PLACE</span>
-        <div class="record-desc">DATAVIZ Power BI Competition (MITS Gwalior, 2025)</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🥇</div>
+        <div class="record-content">
+          <span class="record-title">1ST PLACE — DATAVIZ POWER BI COMPETITION</span>
+          <p class="record-desc">Annual data storytelling and business intelligence contest at MITS Gwalior, 2025.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">1ST RUNNER-UP</span>
-        <div class="record-desc">Dash-It-Up Power BI Contest (MITS Gwalior, 2024)</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🌟</div>
+        <div class="record-content">
+          <span class="record-title">INSTITUTE RANK 01 — TWO CONSECUTIVE YEARS</span>
+          <p class="record-desc">Department of ETE, 2024–25 &amp; 2025–26 with 9.84 cumulative CGPA.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">INSTITUTE RANK 01</span>
-        <div class="record-desc">Two consecutive academic years (2024–25 &amp; 2025–26) with 9.84 cumulative CGPA</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🎖️</div>
+        <div class="record-content">
+          <span class="record-title">RELIANCE FOUNDATION SCHOLAR</span>
+          <p class="record-desc">Selected among 5,000 top scholars from 125,000+ applicants nationwide.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">RELIANCE FOUNDATION SCHOLAR</span>
-        <div class="record-desc">Selected among 5,000 recipients from 125,000+ applicants nationwide</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🚀</div>
+        <div class="record-content">
+          <span class="record-title">TOP 22 OF 1,800+ TEAMS</span>
+          <p class="record-desc">Ujjain Simhastha Mahakumbh Hackathon (Government of Madhya Pradesh).</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">TOP 22 OF 1,800+ TEAMS</span>
-        <div class="record-desc">Ujjain Simhastha Mahakumbh Hackathon (Government of Madhya Pradesh)</div>
+      <div class="spotlight-card record-row">
+        <div class="record-badge-icon">🥈</div>
+        <div class="record-content">
+          <span class="record-title">STATE RANK 05 — NATIONAL SCIENCE CONGRESS</span>
+          <p class="record-desc">National Children's Science Congress for ROFF environmental research.</p>
+        </div>
       </div>
 
-      <div class="record-row">
-        <span class="record-title">TWO-TIME FINALIST</span>
-        <div class="record-desc">Hacksagon Hackathon, ABV-IIITM Gwalior (National Level)</div>
-      </div>
     </div>
   </section>
 
-  <!-- ================= TOOLKIT ================= -->
-  <section class="desk-section">
+  <!-- ================= INTERACTIVE SKILLS MATRIX ================= -->
+  <section id="toolkit" class="desk-section">
     <div class="section-meta">
-      <span class="section-num">06</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="TOOLKIT">TOOLKIT</span></h2>
+      <div class="section-meta-left">
+        <span class="section-num">06 // ARSENAL</span>
+        <h2 class="section-title">TOOLKIT</h2>
+      </div>
       <span class="section-annotation">SKILLS &amp; TECHNOLOGIES</span>
+    </div>
+
+    <!-- Live Search Input -->
+    <div class="toolkit-search-wrap">
+      <span class="toolkit-search-icon">🔍</span>
+      <input type="text" id="skillSearchInput" class="toolkit-search-input"
+        placeholder="Filter skills (e.g., SQL, Power BI, Python, DAX)..." oninput="filterSkills(this.value)">
     </div>
 
     <div class="toolkit-grid">
 
-      <div class="toolkit-group">
-        <div class="toolkit-cat-title">ANALYTICS</div>
+      <div class="spotlight-card toolkit-group">
+        <div class="toolkit-cat-title">ANALYTICS &amp; BI</div>
         <div class="toolkit-items">
-          <div class="toolkit-item">Power BI</div>
-          <div class="toolkit-item">SQL</div>
-          <div class="toolkit-item">Excel</div>
-          <div class="toolkit-item">DAX</div>
+          <div class="toolkit-item" data-skill="power bi"><span>Power BI</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="sql"><span>SQL (PostgreSQL/MySQL)</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="excel"><span>MS Excel (VBA/Formulas)</span> <span
+              class="toolkit-item-lvl">EXPERT</span></div>
+          <div class="toolkit-item" data-skill="dax"><span>Advanced DAX</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="power query"><span>Power Query &amp; M</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
         </div>
       </div>
 
-      <div class="toolkit-group">
-        <div class="toolkit-cat-title">PROGRAMMING</div>
+      <div class="spotlight-card toolkit-group">
+        <div class="toolkit-cat-title">PROGRAMMING &amp; DATA</div>
         <div class="toolkit-items">
-          <div class="toolkit-item">Python</div>
-          <div class="toolkit-item">Pandas</div>
-          <div class="toolkit-item">NumPy</div>
-          <div class="toolkit-item">Scikit-learn</div>
+          <div class="toolkit-item" data-skill="python"><span>Python</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="pandas"><span>Pandas &amp; DataFrames</span> <span
+              class="toolkit-item-lvl">EXPERT</span></div>
+          <div class="toolkit-item" data-skill="numpy"><span>NumPy</span> <span class="toolkit-item-lvl">ADVANCED</span>
+          </div>
+          <div class="toolkit-item" data-skill="scikit-learn"><span>Scikit-learn</span> <span
+              class="toolkit-item-lvl">INTERMEDIATE</span></div>
+          <div class="toolkit-item" data-skill="seaborn"><span>Matplotlib &amp; Seaborn</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
         </div>
       </div>
 
-      <div class="toolkit-group">
-        <div class="toolkit-cat-title">VISUALIZATION</div>
+      <div class="spotlight-card toolkit-group">
+        <div class="toolkit-cat-title">CREATIVE &amp; VISUAL</div>
         <div class="toolkit-items">
-          <div class="toolkit-item">Power BI</div>
-          <div class="toolkit-item">Excel</div>
-          <div class="toolkit-item">Matplotlib</div>
+          <div class="toolkit-item" data-skill="figma"><span>Figma (UI/UX)</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="canva"><span>Canva</span> <span class="toolkit-item-lvl">EXPERT</span>
+          </div>
+          <div class="toolkit-item" data-skill="powerpoint"><span>Executive Presentations</span> <span
+              class="toolkit-item-lvl">EXPERT</span></div>
+          <div class="toolkit-item" data-skill="storytelling"><span>Data Storytelling</span> <span
+              class="toolkit-item-lvl">EXPERT</span></div>
         </div>
       </div>
 
-      <div class="toolkit-group">
-        <div class="toolkit-cat-title">TOOLS</div>
+      <div class="spotlight-card toolkit-group">
+        <div class="toolkit-cat-title">SYSTEMS &amp; DEV</div>
         <div class="toolkit-items">
-          <div class="toolkit-item">GitHub</div>
-          <div class="toolkit-item">Figma</div>
-          <div class="toolkit-item">Canva</div>
-        </div>
-      </div>
-
-      <div class="toolkit-group">
-        <div class="toolkit-cat-title">ADDITIONAL TECHNICAL</div>
-        <div class="toolkit-items">
-          <div class="toolkit-item">HTML</div>
-          <div class="toolkit-item">CSS</div>
-          <div class="toolkit-item">Tailwind CSS</div>
-          <div class="toolkit-item">React</div>
+          <div class="toolkit-item" data-skill="git github"><span>Git &amp; GitHub</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="arduino"><span>Arduino &amp; IoT</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="html css"><span>HTML5 &amp; CSS3</span> <span
+              class="toolkit-item-lvl">ADVANCED</span></div>
+          <div class="toolkit-item" data-skill="tailwind react"><span>Tailwind &amp; React</span> <span
+              class="toolkit-item-lvl">INTERMEDIATE</span></div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= EXPERIENCE ================= -->
+  <!-- ================= LEADERSHIP & POSITIONS ================= -->
   <section class="desk-section">
     <div class="section-meta">
-      <span class="section-num">07</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="EXPERIENCE">EXPERIENCE</span></h2>
-      <span class="section-annotation">LEADERSHIP &amp; POSITIONS</span>
+      <div class="section-meta-left">
+        <span class="section-num">07 // LEADERSHIP</span>
+        <h2 class="section-title">EXPERIENCE</h2>
+      </div>
+      <span class="section-annotation">POSITIONS OF RESPONSIBILITY</span>
     </div>
 
     <div class="experience-list">
 
-      <div class="experience-entry">
+      <div class="spotlight-card experience-entry">
         <div class="exp-meta">
           <div class="exp-role">PRESIDENT</div>
           <div class="exp-org">Career Catalyst Club, MITS</div>
           <span class="exp-date">Sep 2025 — Present</span>
         </div>
-        <div class="exp-body">
-          Leading a 28-member student team and organizing career-focused initiatives, industry analytical webinars,
-          technical aptitude training sessions, and student guidance forums across departments.
-        </div>
+        <p class="exp-body">
+          Leading a 28-member team coordinating career-readiness bootcamps, technical aptitude webinars, and data
+          analytics mentorship initiatives across departments.
+        </p>
       </div>
 
-      <div class="experience-entry">
+      <div class="spotlight-card experience-entry">
         <div class="exp-meta">
           <div class="exp-role">ALUMNI COORDINATOR</div>
           <div class="exp-org">Department of ETE, MITS</div>
           <span class="exp-date">Aug 2025 — Aug 2026</span>
         </div>
-        <div class="exp-body">
-          Maintaining the departmental alumni records database, coordinating professional mentorship webinars, and
-          facilitating academic-to-industry transition events.
-        </div>
+        <p class="exp-body">
+          Directing departmental alumni database records, orchestrating high-level industry webinars, and managing
+          student transition pathways.
+        </p>
       </div>
 
-      <div class="experience-entry">
+      <div class="spotlight-card experience-entry">
         <div class="exp-meta">
           <div class="exp-role">COMMITTEE MEMBER</div>
           <div class="exp-org">Anti-Ragging Committee, MITS</div>
           <span class="exp-date">Sep 2024 — Present</span>
         </div>
-        <div class="exp-body">
-          Assisting student welfare bodies in maintaining campus standards, peer support mechanisms, and campus
-          monitoring.
-        </div>
+        <p class="exp-body">
+          Collaborating with administrative faculties to uphold campus safety benchmarks, peer welfare, and conflict
+          mediation.
+        </p>
       </div>
 
-      <div class="experience-entry">
+      <div class="spotlight-card experience-entry">
         <div class="exp-meta">
-          <div class="exp-role">MEMBER &amp; DESIGNER</div>
+          <div class="exp-role">MEMBER &amp; GRAPHIC DESIGNER</div>
           <div class="exp-org">Artistry Club &amp; Innovation DIY Club, MITS</div>
           <span class="exp-date">Oct 2024 — Present</span>
         </div>
-        <div class="exp-body">
-          Creating visual designs, technical exhibition materials, and interdisciplinary hardware automation projects.
-        </div>
+        <p class="exp-body">
+          Authoring creative brand collaterals, digital event posters, technical exhibition brochures, and
+          interdisciplinary IoT projects.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
+  <!-- ================= ACADEMIC EDUCATION ================= -->
   <section class="desk-section">
     <div class="section-meta">
-      <span class="section-num">08</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="EDUCATION">EDUCATION</span></h2>
+      <div class="section-meta-left">
+        <span class="section-num">08 // ACADEMIA</span>
+        <h2 class="section-title">EDUCATION</h2>
+      </div>
       <span class="section-annotation">ACADEMIC BACKGROUND</span>
     </div>
 
-    <div class="education-editorial">
+    <div class="education-editorial spotlight-card">
       <div class="edu-primary">
-        <h3>MITS GWALIOR</h3>
-        <div class="edu-deg">B.Tech — Electronics &amp; Telecommunication Engineering</div>
-        <span class="edu-span">2024 — 2028 · Full-time Undergraduate</span>
+        <h3>MADHAV INSTITUTE OF TECHNOLOGY &amp; SCIENCE</h3>
+        <div class="edu-deg">B.Tech in Electronics &amp; Telecommunication Engineering</div>
+        <span class="edu-span">2024 — 2028 · Gwalior, Madhya Pradesh</span>
       </div>
 
       <div class="edu-stats-grid">
         <div class="edu-stat-item">
-          <div class="edu-stat-val">9.84</div>
-          <div class="edu-stat-lbl">CGPA (RANK 1)</div>
+          <div class="edu-stat-val" style="color: var(--accent-orange);">9.84</div>
+          <div class="edu-stat-lbl">CGPA (INSTITUTE RANK 1)</div>
         </div>
         <div class="edu-stat-item">
-          <div class="edu-stat-val">10.00</div>
-          <div class="edu-stat-lbl">SEM 01 SGPA</div>
+          <div class="edu-stat-val" style="color: var(--accent-green);">10.00</div>
+          <div class="edu-stat-lbl">SEM 01 SGPA (PERFECT)</div>
         </div>
         <div class="edu-stat-item">
           <div class="edu-stat-val">93.4%</div>
-          <div class="edu-stat-lbl">CLASS XII (CBSE)</div>
+          <div class="edu-stat-lbl">CLASS XII (CBSE BOARD)</div>
         </div>
         <div class="edu-stat-item">
           <div class="edu-stat-val">92.6%</div>
-          <div class="edu-stat-lbl">CLASS X (CBSE)</div>
+          <div class="edu-stat-lbl">CLASS X (CBSE BOARD)</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= CERTIFICATIONS ================= -->
+  <!-- ================= CERTIFICATIONS ARCHIVE ================= -->
   <section class="desk-section" id="certifications">
     <div class="section-meta">
-      <span class="section-num">09</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="CERTIFICATIONS">CERTIFICATIONS</span></h2>
-      <span class="section-annotation">PROFESSIONAL CREDENTIALS</span>
+      <div class="section-meta-left">
+        <span class="section-num">09 // CREDENTIALS</span>
+        <h2 class="section-title">CERTIFICATES</h2>
+      </div>
+      <span class="section-annotation">VERIFIED CREDENTIALS</span>
     </div>
 
     <div class="archive-preview-grid">
-      <div class="archive-thumb">
+      <div class="spotlight-card archive-thumb"
+        onclick="openLightbox('Files/Certificates/IMG-20250804-WA0019.jpg', 'Google / Industry Certification')">
         <img src="Files/Certificates/IMG-20250804-WA0019.jpg" alt="Certification 1" loading="lazy">
       </div>
-      <div class="archive-thumb">
+      <div class="spotlight-card archive-thumb"
+        onclick="openLightbox('Files/Certificates/IMG-202603-04-WA0002.jpeg', 'Power BI & Data Analytics Credential')">
         <img src="Files/Certificates/IMG-202603-04-WA0002.jpeg" alt="Certification 2" loading="lazy">
       </div>
-      <div class="archive-thumb">
+      <div class="spotlight-card archive-thumb"
+        onclick="openLightbox('Files/Certificates/IMG-20251009-WA0001.jpg', 'Data Science & Python Credential')">
         <img src="Files/Certificates/IMG-20251009-WA0001.jpg" alt="Certification 3" loading="lazy">
       </div>
-      <div class="archive-thumb">
+      <div class="spotlight-card archive-thumb"
+        onclick="openLightbox('Files/Certificates/IMG-20250804-WA0007.jpg', 'Academic Excellence Honor')">
         <img src="Files/Certificates/IMG-20250804-WA0007.jpg" alt="Certification 4" loading="lazy">
       </div>
     </div>
 
     <div class="archive-view-more">
-      <a href="certificates.html" class="archive-btn" id="viewAllCertBtn">VIEW ALL CERTIFICATIONS &rarr;</a>
+      <a href="certificates.html" class="archive-btn" id="viewAllCertBtn">EXPLORE ALL 25+ CERTIFICATIONS →</a>
     </div>
   </section>
 
-  <!-- ================= DESIGNS ================= -->
+  <!-- ================= VISUAL DESIGNS & POSTERS ================= -->
   <section class="desk-section" id="designs">
     <div class="section-meta">
-      <span class="section-num">10</span>
-      <h2 class="section-title"><span class="split-flap-target" data-split-flap="DESIGNS">DESIGNS</span></h2>
-      <span class="section-annotation">DATA POSTERS &amp; VISUALS</span>
+      <div class="section-meta-left">
+        <span class="section-num">10 // CREATIVE</span>
+        <h2 class="section-title">DESIGNS</h2>
+      </div>
+      <span class="section-annotation">DATA VISUALS &amp; POSTERS</span>
     </div>
 
     <div class="poster-preview-grid">
-      <div class="poster-thumb-card">
+      <div class="spotlight-card poster-thumb-card"
+        onclick="openLightbox('Files/Posters & Dashboards/Dash-It-Up Poster.jpg', 'Dash-It-Up Contest Poster')">
         <div class="poster-frame">
           <img src="Files/Posters & Dashboards/Dash-It-Up Poster.jpg" alt="Dash-It-Up Poster" loading="lazy">
         </div>
-        <div class="poster-caption">
-          <span class="poster-title">Dash-It-Up Contest</span>
-        </div>
+        <span class="poster-title">Dash-It-Up Contest</span>
       </div>
-      <div class="poster-thumb-card">
+
+      <div class="spotlight-card poster-thumb-card"
+        onclick="openLightbox('Files/Posters & Dashboards/VIKASIT BHARAT.jpg', 'Vikasit Bharat 2047 Visual')">
         <div class="poster-frame">
           <img src="Files/Posters & Dashboards/VIKASIT BHARAT.jpg" alt="Vikasit Bharat Poster" loading="lazy">
         </div>
-        <div class="poster-caption">
-          <span class="poster-title">Vikasit Bharat 2047</span>
-        </div>
+        <span class="poster-title">Vikasit Bharat 2047</span>
       </div>
-      <div class="poster-thumb-card">
+
+      <div class="spotlight-card poster-thumb-card"
+        onclick="openLightbox('Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg', 'Prompt-E-Pic Event Poster')">
         <div class="poster-frame">
           <img src="Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg" alt="PROMPT-E-PIC Event Poster"
             loading="lazy">
         </div>
-        <div class="poster-caption">
-          <span class="poster-title">Prompt-E-Pic Contest</span>
-        </div>
+        <span class="poster-title">Prompt-E-Pic Contest</span>
       </div>
-      <div class="poster-thumb-card">
+
+      <div class="spotlight-card poster-thumb-card"
+        onclick="openLightbox('Files/Posters & Dashboards/CCC Recruitment.jpg', 'CCC Recruitment Campaign')">
         <div class="poster-frame">
           <img src="Files/Posters & Dashboards/CCC Recruitment.jpg" alt="CCC Recruitment Poster" loading="lazy">
         </div>
-        <div class="poster-caption">
-          <span class="poster-title">CCC Recruitment Drive</span>
-        </div>
+        <span class="poster-title">CCC Recruitment Campaign</span>
       </div>
     </div>
 
     <div class="archive-view-more">
-      <a href="posters.html" class="archive-btn" id="viewAllDesignsBtn">VIEW ALL DESIGNS &rarr;</a>
+      <a href="posters.html" class="archive-btn" id="viewAllDesignsBtn">EXPLORE ALL VISUAL DESIGNS →</a>
     </div>
   </section>
 
-  <!-- ================= CONTACT ================= -->
+  <!-- ================= CONTACT SECTION ================= -->
   <section class="contact-section" id="contact">
-    <div class="contact-box">
+    <div class="contact-box spotlight-card">
       <div>
         <div class="contact-headline">
           <span>LET'S WORK</span>
           <span class="highlight">WITH DATA.</span>
         </div>
         <p class="contact-subtext">
-          I'm currently exploring opportunities in data analytics, business intelligence and dashboard development.
+          Currently exploring Summer &amp; Full-Time opportunities across Data Analytics, Business Intelligence, Data
+          Engineering, and Predictive Modeling. Let's create something extraordinary together.
         </p>
       </div>
 
       <div class="contact-channels">
         <a href="mailto:magrawal09.contact@gmail.com" class="contact-row-link">
-          <span>EMAIL</span>
-          <span class="arrow"><span class="contact-detail">magrawal09.contact@gmail.com</span> &rarr;</span>
+          <span>EMAIL TRANSMISSION</span>
+          <span class="arrow">magrawal09.contact@gmail.com &rarr;</span>
         </a>
         <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" class="contact-row-link">
-          <span>LINKEDIN</span>
-          <span class="arrow"><span class="contact-detail">linkedin.com/in/medhavi-agrawal</span> &rarr;</span>
+          <span>LINKEDIN NETWORK</span>
+          <span class="arrow">linkedin.com/in/medhavi-agrawal &rarr;</span>
         </a>
         <a href="https://github.com/m-agrawal09" target="_blank" class="contact-row-link">
-          <span>GITHUB</span>
-          <span class="arrow"><span class="contact-detail">github.com/m-agrawal09</span> &rarr;</span>
+          <span>GITHUB REPOSITORY</span>
+          <span class="arrow">github.com/m-agrawal09 &rarr;</span>
         </a>
         <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="contact-row-link">
-          <span>RESUME</span>
-          <span class="arrow"><span class="contact-detail">DOWNLOAD PDF</span> &rarr;</span>
+          <span>OFFICIAL RESUME</span>
+          <span class="arrow">DOWNLOAD [PDF] &rarr;</span>
         </a>
       </div>
     </div>
@@ -822,19 +983,46 @@
   <footer class="desk-footer">
     <div class="footer-inner">
       <span>MEDHAVI AGRAWAL — THE ANALYST'S DESK</span>
-      <span>2026 // DATA ANALYST PORTFOLIO</span>
+      <span>DESIGNED FOR HIGH-CONVICTION DECISIONS // 2026</span>
     </div>
   </footer>
 
-  <!-- ================= SCRIPT ================= -->
+  <!-- ================= GLOBAL LIGHTBOX MODAL ================= -->
+  <div class="global-lightbox-modal" id="globalLightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content-box">
+      <button class="lightbox-close-btn" onclick="forceCloseLightbox()">&times;</button>
+      <img id="lightboxImg" src="" alt="Fullscreen Preview">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div class="toast-notice" id="toastNotice">
+    <span>✓</span>
+    <span id="toastMessage">Email copied to clipboard!</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    // Navigation toggle for mobile
+    // Live IST Clock Telemetry
+    function updateLiveClock() {
+      const ticker = document.getElementById('liveTimeTicker');
+      if (!ticker) return;
+      const now = new Date();
+      // Format in UTC+5:30 (IST)
+      const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const timeStr = now.toLocaleTimeString('en-GB', options);
+      ticker.textContent = `GWALIOR ${timeStr} [IST]`;
+    }
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+
+    // Mobile Navigation Drawer Toggle
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("active");
     }
 
-    // Close menu on link click
     document.querySelectorAll(".desk-menu a").forEach(link => {
       link.addEventListener("click", () => {
         const navLinks = document.getElementById("navLinks");
@@ -844,7 +1032,7 @@
       });
     });
 
-    // Back to top button visibility and smooth scroll
+    // Back to top floating button
     const backToTopBtn = document.getElementById("backToTop");
     if (backToTopBtn) {
       window.addEventListener("scroll", () => {
@@ -859,7 +1047,7 @@
       });
     }
 
-    // Theme toggle & persistence logic
+    // Theme Toggle Logic
     const themeToggleBtn = document.getElementById("themeToggle");
     function setTheme(theme) {
       document.documentElement.setAttribute("data-theme", theme);
@@ -875,13 +1063,99 @@
       });
     }
 
-    // Initialize links based on active theme
-    const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
-    setTheme(activeTheme);
-
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Stat Strip Reveal & Count-Up
+    // Interactive Spotlight Cursor Glow for .spotlight-card
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // Copy Email Helper with Toast
+    function copyEmail() {
+      navigator.clipboard.writeText('magrawal09.contact@gmail.com').then(() => {
+        showToast('Email copied to clipboard: magrawal09.contact@gmail.com');
+      }).catch(() => {
+        showToast('Contact: magrawal09.contact@gmail.com');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotice');
+      const toastMsg = document.getElementById('toastMessage');
+      if (!toast) return;
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Project Category Filtering
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const articles = document.querySelectorAll('.case-study');
+      articles.forEach(art => {
+        const itemCat = art.dataset.category;
+        if (cat === 'all' || itemCat === cat) {
+          art.style.display = 'block';
+        } else {
+          art.style.display = 'none';
+        }
+      });
+    }
+
+    // Skills Matrix Search Filter
+    function filterSkills(query) {
+      const q = query.toLowerCase().trim();
+      const items = document.querySelectorAll('.toolkit-item');
+      items.forEach(item => {
+        const skill = (item.dataset.skill || item.textContent).toLowerCase();
+        if (!q || skill.includes(q)) {
+          item.style.display = 'flex';
+          if (q) item.classList.add('highlighted');
+          else item.classList.remove('highlighted');
+        } else {
+          item.style.display = 'none';
+          item.classList.remove('highlighted');
+        }
+      });
+    }
+
+    // Global Lightbox Modal
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('globalLightbox');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      if (!modal || !img) return;
+      img.src = src;
+      cap.textContent = caption || '';
+      modal.classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'globalLightbox') {
+        forceCloseLightbox();
+      }
+    }
+
+    function forceCloseLightbox() {
+      const modal = document.getElementById('globalLightbox');
+      if (modal) modal.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') forceCloseLightbox();
+    });
+
+    // Stat Count-Up on Scroll
     const signalsStrip = document.getElementById('signalsStrip');
     if (signalsStrip) {
       const statObserver = new IntersectionObserver((entries) => {
@@ -907,9 +1181,7 @@
                   const currentVal = startVal + (target - startVal) * easeProgress;
                   const formattedVal = decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal);
                   statEl.innerHTML = `${prefix}${formattedVal}${suffix}${denom}`;
-                  if (progress < 1) {
-                    requestAnimationFrame(updateCount);
-                  }
+                  if (progress < 1) requestAnimationFrame(updateCount);
                 }
                 requestAnimationFrame(updateCount);
               });
@@ -921,7 +1193,7 @@
       statObserver.observe(signalsStrip);
     }
 
-    // Project Image Reveal (Case Studies)
+    // Case Media Intersection Reveal
     const caseMediaList = document.querySelectorAll('.case-media');
     if (caseMediaList.length > 0) {
       const caseObserver = new IntersectionObserver((entries) => {
@@ -935,53 +1207,13 @@
       caseMediaList.forEach(cm => caseObserver.observe(cm));
     }
 
-    // What I Do Progress Indicator
-    const workflowList = document.getElementById('workflowList');
-    const workflowBar = document.getElementById('workflowProgressBar');
-    const workflowRows = document.querySelectorAll('.workflow-row');
-    if (workflowList && workflowRows.length > 0) {
-      const wfObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            if (workflowBar && !prefersReduced) {
-              const listRect = workflowList.getBoundingClientRect();
-              const rowRect = entry.target.getBoundingClientRect();
-              const progressHeight = (rowRect.top + (rowRect.height / 2)) - listRect.top;
-              const scale = Math.min(Math.max(progressHeight / listRect.height, 0), 1);
-              workflowBar.style.transform = `scaleY(${scale.toFixed(4)})`;
-            }
-          }
-        });
-      }, { threshold: 0.35 });
-      workflowRows.forEach(row => wfObserver.observe(row));
-    }
-
-    // Achievement Record Animation (Row reveal & separator line draw)
-    const recordRows = document.querySelectorAll('.record-row');
-    if (recordRows.length > 0) {
-      const recordObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            recordObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      recordRows.forEach(row => recordObserver.observe(row));
-    }
-
-    // ===== CINEMATIC ATMOSPHERIC SYSTEM (DARK THEME) =====
+    // Particle Constellation Ambient Canvas
     (function initAtmosphere() {
       const canvas = document.getElementById('ambientCanvas');
-      const atmosphereEl = document.getElementById('cinematicAtmosphere');
-      if (!canvas || !atmosphereEl) return;
+      if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      let animationFrameId = null;
-      let width = 0;
-      let height = 0;
+      let width = 0, height = 0;
       let particles = [];
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function resize() {
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -994,105 +1226,52 @@
 
       function createParticles() {
         particles = [];
-        // Restrained, sparse data points: ~36-44 on desktop, ~18-22 on mobile
-        const count = Math.max(18, Math.min(44, Math.floor(width / 36)));
-        
-        // Exact 6-8 featured points across the entire viewport
-        const featuredCount = Math.max(4, Math.min(8, Math.floor(count * 0.16)));
-        
+        const count = Math.max(20, Math.min(48, Math.floor(width / 32)));
         for (let i = 0; i < count; i++) {
-          let tier = 'distant';
-          let radius = 0.55 + Math.random() * 0.25;
-          let baseAlpha = 0.10 + Math.random() * 0.12;
-
-          if (i < featuredCount) {
-            tier = 'featured';
-            radius = 1.4 + Math.random() * 0.4;
-            baseAlpha = 0.60 + Math.random() * 0.16;
-          } else if (i < count * 0.55) {
-            tier = 'normal';
-            radius = 0.85 + Math.random() * 0.35;
-            baseAlpha = 0.28 + Math.random() * 0.15;
-          }
-
           particles.push({
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.045,
-            vy: (Math.random() - 0.5) * 0.038,
-            radius,
-            baseAlpha,
-            tier,
-            pulseSpeed: 0.004 + Math.random() * 0.007,
-            pulsePhase: Math.random() * Math.PI * 2
+            vx: (Math.random() - 0.5) * 0.05,
+            vy: (Math.random() - 0.5) * 0.04,
+            radius: 0.6 + Math.random() * 0.8,
+            alpha: 0.15 + Math.random() * 0.35
           });
         }
       }
 
       function draw() {
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        if (isLight) {
-          ctx.clearRect(0, 0, width, height);
-          return;
-        }
-
         ctx.clearRect(0, 0, width, height);
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        if (isLight) return;
 
-        // Draw sparse data points (3 tiers: distant, normal, featured)
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
           if (!prefersReduced) {
             p.x += p.vx;
             p.y += p.vy;
-
-            // Wrap smoothly around screen edges
-            if (p.x < -10) p.x = width + 10;
-            else if (p.x > width + 10) p.x = -10;
-            if (p.y < -10) p.y = height + 10;
-            else if (p.y > height + 10) p.y = -10;
-
-            if (p.tier === 'featured') {
-              p.pulsePhase += p.pulseSpeed;
-            }
-          }
-
-          let alpha = p.baseAlpha;
-          if (p.tier === 'featured' && !prefersReduced) {
-            alpha += Math.sin(p.pulsePhase) * 0.08;
+            if (p.x < 0) p.x = width;
+            else if (p.x > width) p.x = 0;
+            if (p.y < 0) p.y = height;
+            else if (p.y > height) p.y = 0;
           }
 
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-
-          if (p.tier === 'featured') {
-            ctx.shadowColor = 'rgba(225, 29, 72, 0.45)';
-            ctx.shadowBlur = 5;
-            ctx.fillStyle = `rgba(245, 248, 255, ${Math.min(Math.max(alpha, 0.45), 0.85)})`;
-          } else if (p.tier === 'normal') {
-            ctx.shadowBlur = 0;
-            ctx.fillStyle = `rgba(235, 242, 252, ${Math.min(Math.max(alpha, 0.20), 0.48)})`;
-          } else {
-            // Distant tiny point
-            ctx.shadowBlur = 0;
-            ctx.fillStyle = `rgba(205, 218, 235, ${Math.min(Math.max(alpha, 0.08), 0.24)})`;
-          }
-
+          ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
           ctx.fill();
-          ctx.shadowBlur = 0;
         }
 
-        // Very small number of extremely faint connections between nearby points (< 70px)
+        // Faint connecting lines
         ctx.lineWidth = 0.5;
-        let connectionCount = 0;
-        for (let i = 0; i < particles.length && connectionCount < 6; i++) {
-          for (let j = i + 1; j < particles.length && connectionCount < 6; j++) {
+        let connections = 0;
+        for (let i = 0; i < particles.length && connections < 8; i++) {
+          for (let j = i + 1; j < particles.length && connections < 8; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.hypot(dx, dy);
-            if (dist < 70) {
-              connectionCount++;
-              const lineAlpha = (1 - dist / 70) * 0.04;
-              ctx.strokeStyle = `rgba(225, 29, 72, ${lineAlpha})`;
+            if (dist < 80) {
+              connections++;
+              ctx.strokeStyle = `rgba(255, 87, 34, ${(1 - dist / 80) * 0.08})`;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -1100,126 +1279,30 @@
             }
           }
         }
-      }
 
-      // Continuous subtle scroll atmosphere modulation
-      let ticking = false;
-      function updateScrollAtmosphere() {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-        const progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-
-        let heroOp, cyanOp, violetOp, emeraldOp;
-
-        if (progress < 0.25) {
-          // HERO: blue dominant
-          const t = progress / 0.25;
-          heroOp = 1.0 - t * 0.25;
-          cyanOp = 0.2 + t * 0.65;
-          violetOp = 0.3 + t * 0.15;
-          emeraldOp = 0.1 + t * 0.1;
-        } else if (progress < 0.50) {
-          // FEATURED PROJECTS: blue + subtle cyan
-          const t = (progress - 0.25) / 0.25;
-          heroOp = 0.75 - t * 0.3;
-          cyanOp = 0.85 - t * 0.35;
-          violetOp = 0.45 + t * 0.5;
-          emeraldOp = 0.2 + t * 0.15;
-        } else if (progress < 0.75) {
-          // ANALYSIS INDEX: slightly more violet
-          const t = (progress - 0.50) / 0.25;
-          heroOp = 0.45 - t * 0.1;
-          cyanOp = 0.5 - t * 0.15;
-          violetOp = 0.95 - t * 0.5;
-          emeraldOp = 0.35 + t * 0.55;
-        } else {
-          // ACHIEVEMENTS / CONTACT: very subtle emerald, return toward deep blue
-          const t = (progress - 0.75) / 0.25;
-          heroOp = 0.35 + t * 0.55;
-          cyanOp = 0.35 - t * 0.05;
-          violetOp = 0.45 - t * 0.1;
-          emeraldOp = 0.9 - t * 0.65;
-        }
-
-        atmosphereEl.style.setProperty('--hero-opacity', heroOp.toFixed(3));
-        atmosphereEl.style.setProperty('--cyan-opacity', cyanOp.toFixed(3));
-        atmosphereEl.style.setProperty('--violet-opacity', violetOp.toFixed(3));
-        atmosphereEl.style.setProperty('--emerald-opacity', emeraldOp.toFixed(3));
-        ticking = false;
-      }
-
-      function onScroll() {
-        if (!ticking) {
-          requestAnimationFrame(updateScrollAtmosphere);
-          ticking = true;
-        }
-      }
-
-      function loop() {
-        draw();
         if (!prefersReduced && !document.hidden) {
-          animationFrameId = requestAnimationFrame(loop);
-        }
-      }
-
-      function start() {
-        if (!animationFrameId && !prefersReduced) {
-          animationFrameId = requestAnimationFrame(loop);
-        }
-      }
-
-      function stop() {
-        if (animationFrameId) {
-          cancelAnimationFrame(animationFrameId);
-          animationFrameId = null;
+          requestAnimationFrame(draw);
         }
       }
 
       resize();
       createParticles();
       draw();
-      updateScrollAtmosphere();
-
-      if (!prefersReduced) {
-        start();
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
 
       window.addEventListener('resize', () => {
         resize();
         createParticles();
-        draw();
       }, { passive: true });
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          stop();
-        } else {
-          start();
-        }
-      });
-
-      window.addEventListener('themeChanged', (e) => {
-        if (e.detail === 'light') {
-          stop();
-          ctx.clearRect(0, 0, width, height);
-        } else {
-          start();
-          updateScrollAtmosphere();
-        }
-      });
     })();
   </script>
 
-  <!-- ================= 3D PHYSICS LANYARD ID CARD (REACT BITS) ================= -->
+  <!-- ================= 3D PHYSICS LANYARD BADGE & TYPOGRAPHY ENGINES ================= -->
   <link rel="stylesheet" href="Files/lanyard-dist/style.css">
   <script type="module">
     import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js?v=4';
     import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js?v=5';
-    import { initDecryptedText } from './Files/decrypted-text.js?v=1';
+    import { initDecryptedText } from './Files/decrypted-text.js?v=2';
     import { initTechText } from './Files/tech-text.js?v=1';
-    import { initAllSplitFlap } from './Files/split-flap-text.js?v=1';
 
     // Initialize DecryptedText on DECISIONS with speed=120
     initDecryptedText({
@@ -1232,7 +1315,7 @@
       animateOn: 'inViewHover'
     });
 
-    // Initialize TechText on MEDHAVI AGRAWAL with exact React Bits configuration
+    // Initialize TechText on MEDHAVI AGRAWAL with exact configuration
     initTechText('#techTextName', {
       text: 'MEDHAVI AGRAWAL',
       fontWeight: 700,
@@ -1246,19 +1329,6 @@
       speed: 1.1,
       color: 'auto',
       accentColor: 'auto'
-    });
-
-    // Initialize SplitFlapText on all 10 section headers
-    initAllSplitFlap('.split-flap-target', {
-      flipDuration: 0.12,
-      stagger: 0.045,
-      cycleDelay: 2400,
-      flipsPerChar: 7,
-      charset: 'alphanumeric',
-      tileRadius: 6,
-      gap: 5,
-      fontSize: 'clamp(1.15rem, 2.1vw, 1.85rem)',
-      animateOn: 'inViewHover'
     });
 
     async function setupLanyard() {
@@ -1284,9 +1354,7 @@
           cardScale: isDesktop ? 4.15 : 3.3
         });
 
-        // Intelligent mobile touch coordination:
-        // Allows native vertical page scrolling everywhere over the empty background,
-        // while capturing touches directly on the ID card for 3D physics interaction.
+        // Non-blocking touch coordination
         const bindNonBlockingTouch = () => {
           const canvas = container.querySelector('canvas');
           if (!canvas) {
@@ -1318,7 +1386,7 @@
         };
         requestAnimationFrame(bindNonBlockingTouch);
       } catch (err) {
-        console.warn('Lanyard 3D initialization fallback to static photo:', err);
+        console.warn('Lanyard 3D fallback:', err);
         if (fallback) fallback.style.display = 'block';
       }
     }

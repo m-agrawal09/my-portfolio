@@ -71,7 +71,7 @@ export function initDecryptedText({
   }
 
   function render(currentText, revealedSet, animating) {
-    let html = `<span class="decrypted-sr-only">${text}</span><span aria-hidden="true" class="decrypted-chars-container">`;
+    let html = '<span class="decrypted-chars-container">';
     for (let i = 0; i < currentText.length; i++) {
       const isRevealedOrDone = revealedSet.has(i) || (!animating && isDecrypted);
       const cls = isRevealedOrDone ? className : encryptedClassName;
