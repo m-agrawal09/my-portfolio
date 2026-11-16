@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medhavi Agrawal — Data Analyst | The Analyst's Desk</title>
+
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -14,49 +15,41 @@
 
   <!-- SEO META TAGS -->
   <meta name="description"
-    content="Medhavi Agrawal — Data Analyst specializing in Power BI, SQL, Python, Excel and data intelligence. 9.84 CGPA, Institute Rank 1, Top 30 KSP Datathon.">
+    content="Medhavi Agrawal — Data Analyst and Business Intelligence Developer. B.Tech ETE at MITS Gwalior (Rank 1, 9.84 CGPA). Top 30 KSP Police Datathon. Specializing in Power BI, SQL, Python, Advanced DAX, and Data Storytelling.">
   <meta name="keywords"
-    content="Data Analyst, Power BI, SQL, Python, Excel, Business Intelligence, Medhavi Agrawal, Portfolio, MITS Gwalior">
+    content="Data Analyst, Business Intelligence Developer, Power BI, SQL, Python, DAX, Medhavi Agrawal, MITS Gwalior, The Analyst's Desk, Portfolio">
   <meta name="author" content="Medhavi Agrawal">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph Tags -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Medhavi Agrawal — Data Analyst | The Analyst's Desk">
   <meta property="og:description"
-    content="Personal data-intelligence workspace and case-study portfolio. 9.84 CGPA | Institute Rank 1 | Top 30 KSP Datathon.">
+    content="Personal data intelligence workspace and executive case-study portfolio. 9.84 CGPA | Institute Rank 1 | Top 30 KSP Datathon.">
   <meta property="og:image" content="Files/Profile New.jpeg">
   <meta property="og:type" content="website">
 
-  <!-- Styles & Fonts: Cutting-edge Space Grotesk, Inter, IBM Plex Mono, Manrope -->
-  <link rel="stylesheet" href="styles/styles.css?v=8.0">
-  <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
+  <!-- Typography & Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/styles.css?v=9.0">
+  <link rel="icon" href="Files/Icons/Avatar.png" type="image/png">
 </head>
 
 <body>
 
-  <!-- ================= CINEMATIC ATMOSPHERE & BACKGROUND ================= -->
-  <div class="cinematic-atmosphere" id="cinematicAtmosphere" aria-hidden="true">
-    <div class="background-grid"></div>
-    <div class="ambient-glow glow-hero" id="glowHero"></div>
-    <div class="ambient-glow glow-upper-left" id="glowUpperLeft"></div>
-    <div class="ambient-glow glow-middle-cyan" id="glowMiddleCyan"></div>
-    <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
-  </div>
-
   <!-- ================= BACK TO TOP FLOATING BUTTON ================= -->
-  <div class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round" />
+  <div class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7" />
     </svg>
   </div>
 
-  <!-- ================= NAVIGATION HUD (NEXUS COMMAND BAR) ================= -->
+  <!-- ================= STICKY MINIMAL COMMAND BAR ================= -->
   <header class="desk-nav">
     <div class="desk-nav-inner">
       <a href="#about" class="desk-brand">
@@ -64,25 +57,29 @@
         <div class="desk-brand-meta">
           <span class="desk-brand-name">
             MEDHAVI AGRAWAL
-            <span class="live-beacon" title="Available for 2026 Data Analytics Roles"></span>
           </span>
+          <span class="desk-brand-sub">THE ANALYST'S DESK</span>
         </div>
       </a>
 
-      <!-- Navigation Pill Menu -->
+      <!-- Navigation Links -->
       <nav class="desk-menu" id="navLinks">
+        <a href="#about">HOME</a>
         <a href="#work">WORK</a>
-        <a href="#workflow">PIPELINE</a>
+        <a href="#workflow">PROCESS</a>
         <a href="#toolkit">TOOLKIT</a>
-        <a href="#achievements">HONORS</a>
+        <a href="#achievements">RECOGNITION</a>
+        <a href="#beyond">ABOUT</a>
+        <a href="certificates.html">CERTIFICATES</a>
+        <a href="posters.html">DESIGNS</a>
         <a href="#contact">CONTACT</a>
       </nav>
 
       <div class="desk-nav-right">
-        <!-- Live Telemetry Time Pill -->
+        <!-- Live IST Clock Telemetry -->
         <div class="telemetry-time-pill" title="Live Local Observatory Time (IST)">
           <span class="dot"></span>
-          <span id="liveTimeTicker">GWALIOR 23:30:00 [IST]</span>
+          <span id="liveTimeTicker">GWALIOR 23:30 [IST]</span>
         </div>
 
         <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="btn-nav-resume">
@@ -90,7 +87,7 @@
         </a>
 
         <!-- Minimalist Theme Toggle -->
-        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
           <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -109,907 +106,1399 @@
           </svg>
         </button>
 
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">
           ☰
-        </div>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (HOLOGRAPHIC COMMAND CENTER) ================= -->
-  <div class="hero-wrapper" id="about">
-    <div class="hero-grid">
+  <main class="editorial-shell">
 
-      <!-- Left Column: Statement & Narrative -->
-      <div class="hero-content">
-        <div class="hero-telemetry-badge">
-          <span class="badge-dot"></span>
-          <span>LIVE TELEMETRY // DATA INTELLIGENCE // 9.84 CGPA</span>
-        </div>
+    <!-- ================= 01. INTRODUCTION (HERO SECTION) ================= -->
+    <section class="hero-editorial" id="about">
+      <div class="hero-grid">
 
-        <div class="hero-statement">
-          <span class="statement-line">I TURN</span>
-          <span class="statement-line">DATA</span>
-          <span class="statement-line">INTO</span>
-          <span class="statement-line statement-highlight"><span class="decrypted-text-wrapper"
-              id="decryptedDecisions">DECISIONS</span>.</span>
-        </div>
+        <!-- Left Column: Asymmetrical Editorial Narrative -->
+        <div class="hero-primary">
+          <div class="hero-status-bar">
+            <span class="status-beacon-live"></span>
+            <span>AVAILABLE FOR SUMMER &amp; FULL-TIME ROLES 2026</span>
+          </div>
 
-        <div class="hero-identity">
-          <div class="identity-name" id="techTextName">MEDHAVI AGRAWAL</div>
-          <div class="identity-stack">
-            <span>Data Analyst</span>
-            <span>·</span>
-            <span>Power BI</span>
-            <span>·</span>
-            <span>SQL</span>
-            <span>·</span>
-            <span>Python</span>
-            <span>·</span>
-            <span>Advanced DAX</span>
+          <h1 class="hero-headline">
+            <span class="headline-break">I MAKE SENSE</span>
+            <span class="headline-break">OF DATA.</span>
+            <span class="headline-break headline-accent">AND BUILD WHAT'S NEXT.</span>
+          </h1>
+
+          <p class="hero-subhead">
+            Transforming complex information into meaningful insights, intelligent products and better decisions.
+          </p>
+
+          <p class="hero-narrative">
+            I am <strong>Medhavi Agrawal</strong> — a Data Analyst, Business Intelligence Developer, and Technology
+            Enthusiast pursuing Electronics &amp; Telecommunication Engineering at MITS Gwalior (Rank 01, 9.84 CGPA). I
+            combine analytical engineering rigor with Swiss-inspired visual storytelling to build high-conviction decision
+            systems.
+          </p>
+
+          <div class="hero-actions-row">
+            <a href="#work" class="btn-editorial-primary">EXPLORE SELECTED WORK ↓</a>
+            <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="btn-editorial-secondary">DOWNLOAD
+              RESUME ↗</a>
+            <button class="hero-quick-copy" onclick="copyEmail()" title="Click to copy email address">
+              <span>magrawal09.contact@gmail.com</span>
+              <span class="mono-label">[COPY]</span>
+            </button>
+          </div>
+
+          <div class="hero-coordinates">
+            <div class="coord-item">
+              <span class="coord-lbl">SPECIALIZATION</span>
+              <span class="coord-val">BI, DAX &amp; Predictive Analytics</span>
+            </div>
+            <div class="coord-item">
+              <span class="coord-lbl">ACADEMIC STANDING</span>
+              <span class="coord-val">9.84 CGPA // Institute Rank 01</span>
+            </div>
+            <div class="coord-item">
+              <span class="coord-lbl">BASE LOCATION</span>
+              <span class="coord-val">Gwalior, India · Remote Ready</span>
+            </div>
           </div>
         </div>
 
-        <p class="hero-desc">
-          Electronics &amp; Telecommunication Engineering scholar at MITS Gwalior (Rank 1, 9.84 CGPA). Architecting
-          predictive dashboards, geospatial crime forensics, and automated ETL pipelines that translate noisy telemetry
-          into high-conviction executive decisions.
+        <!-- Right Column: Art-Directed Editorial Portrait -->
+        <div class="hero-portrait-frame">
+          <div class="portrait-photo-wrap">
+            <img src="Files/Profile New.jpeg" alt="Medhavi Agrawal — Data Analyst" class="hero-editorial-img"
+              width="600" height="750" fetchpriority="high">
+          </div>
+          <div class="portrait-caption-strip">
+            <span class="portrait-id-tag">MEDHAVI AGRAWAL // ETE SCHOLAR</span>
+            <span class="portrait-available-badge">ACTIVE TELEMETRY</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= KEY SIGNALS STRIP ================= -->
+    <section class="signals-telemetry-bar">
+      <div class="signals-grid-editorial" id="signalsStrip">
+
+        <div class="signal-cell">
+          <div class="signal-big-num" data-target="9.84" data-decimals="2" data-denom=" / 10">9.84<span
+              class="signal-cell-denom"> / 10</span></div>
+          <span class="signal-cell-lbl">CUMULATIVE CGPA</span>
+          <span class="signal-cell-sub">Institute Rank 01 · Department of ETE (Two Consecutive Years)</span>
+        </div>
+
+        <div class="signal-cell">
+          <div class="signal-big-num" data-target="30" data-prefix="TOP ">TOP 30</div>
+          <span class="signal-cell-lbl">KSP POLICE DATATHON</span>
+          <span class="signal-cell-sub">Karnataka State Police AI Crime Intelligence 2026</span>
+        </div>
+
+        <div class="signal-cell">
+          <div class="signal-big-num" data-target="3" data-suffix="×">3×</div>
+          <span class="signal-cell-lbl">1ST PLACE PODIUMS</span>
+          <span class="signal-cell-sub">Dashboard Masters (IITM), DataViz &amp; Dash-It-Up Contests</span>
+        </div>
+
+        <div class="signal-cell">
+          <div class="signal-big-num" data-target="10" data-suffix="+">10+</div>
+          <span class="signal-cell-lbl">DATA PIPELINES &amp; MODELS</span>
+          <span class="signal-cell-sub">Production Power BI, Star Schemas, Custom DAX &amp; IoT</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 02. SELECTED WORK (PROJECT SHOWCASE) ================= -->
+    <section id="work" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">01 // SELECTED WORK</span>
+          <h2 class="section-title">FLAGSHIP PROJECTS</h2>
+        </div>
+        <p class="section-tagline">
+          Dominant technical platforms, operational business intelligence, and real-world predictive modeling.
         </p>
-
-        <div class="hero-actions">
-          <a href="#work" class="btn-desk-primary">EXPLORE DOSSIERS ↓</a>
-          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="btn-desk-secondary">DOWNLOAD
-            RESUME ↗</a>
-          <button class="quick-email-btn" onclick="copyEmail()" title="Click to copy email address">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            <span id="emailText">magrawal09.contact@gmail.com</span>
-          </button>
-        </div>
       </div>
 
-      <!-- Right Column: Interactive 3D Physics Lanyard ID Card -->
-      <div class="hero-aside">
-        <div class="hero-lanyard-wrapper" id="heroLanyardWrap">
-          <div id="lanyardContainer" class="lanyard-container">
-            <div class="portrait-image-container" id="lanyardFallback">
-              <div class="portrait-image-inner">
-                <img src="Files/Profile New.jpeg" alt="Medhavi Agrawal — Data Analyst" class="hero-portrait-img">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portrait-meta-wrap">
-          <span class="portrait-tag">MEDHAVI // 2026</span>
-          <div class="portrait-status-badge">
-            <span class="status-pulse-dot"></span>
-            <span class="status-text">AVAILABLE FOR DATA ROLES</span>
-          </div>
-        </div>
-      </div>
+      <div class="selected-work-dossier">
 
-    </div>
-  </div>
-
-  <!-- ================= KEY METRICS SIGNALS STRIP ================= -->
-  <div class="signals-strip-wrapper">
-    <div class="signals-grid" id="signalsStrip">
-
-      <!-- Metric 1 -->
-      <div class="spotlight-card signal-card">
-        <div class="signal-top">
-          <div class="signal-number" data-target="9.84" data-decimals="2" data-denom=" / 10">9.84 <span
-              class="signal-denom">/ 10</span></div>
-        </div>
-        <div class="signal-meta">
-          <span class="signal-label">CUMULATIVE CGPA</span>
-          <span class="signal-subtext">Institute Rank 01 · Dept. of ETE</span>
-        </div>
-      </div>
-
-      <!-- Metric 2 -->
-      <div class="spotlight-card signal-card">
-        <div class="signal-top">
-          <div class="signal-number" data-target="30" data-prefix="TOP ">TOP 30</div>
-        </div>
-        <div class="signal-meta">
-          <span class="signal-label">KSP POLICE DATATHON</span>
-          <span class="signal-subtext">Statewide AI Crime Intelligence 2026</span>
-        </div>
-      </div>
-
-      <!-- Metric 3 -->
-      <div class="spotlight-card signal-card">
-        <div class="signal-top">
-          <div class="signal-number" data-target="3" data-suffix="×">3×</div>
-        </div>
-        <div class="signal-meta">
-          <span class="signal-label">DASHBOARD PODIUMS</span>
-          <span class="signal-subtext">1st Place IITM, Dataviz &amp; Dash-It-Up</span>
-        </div>
-      </div>
-
-      <!-- Metric 4 -->
-      <div class="spotlight-card signal-card">
-        <div class="signal-top">
-          <div class="signal-number" data-target="10" data-suffix="+">10+</div>
-        </div>
-        <div class="signal-meta">
-          <span class="signal-label">ANALYTICAL PIPELINES</span>
-          <span class="signal-subtext">EDA, Power BI Models, DAX &amp; IoT</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ================= FEATURED PROJECTS (CLASSIFIED DOSSIERS) ================= -->
-  <section id="work" class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">01 // PORTFOLIO</span>
-        <h2 class="section-title">CASE STUDIES</h2>
-      </div>
-      <span class="section-annotation">FEATURED INTELLIGENCE FILES</span>
-    </div>
-
-    <!-- Category Filter Bar -->
-    <div class="filter-tabs-bar">
-      <button class="filter-pill active" onclick="filterProjects('all', this)">ALL CASE STUDIES (3)</button>
-      <button class="filter-pill" onclick="filterProjects('crime', this)">CRIME AI &amp; GEOSPATIAL</button>
-      <button class="filter-pill" onclick="filterProjects('automotive', this)">AUTOMOTIVE &amp; DAX</button>
-      <button class="filter-pill" onclick="filterProjects('traffic', this)">TRAFFIC SAFETY</button>
-    </div>
-
-    <div class="case-studies-container">
-
-      <!-- PROJECT 01: KSP Crime Intelligence -->
-      <article class="case-study spotlight-card" data-category="crime">
-        <div class="case-study-grid">
-          <div class="case-media">
-            <img src="Files/Project Img/ksp-dashboard.png" alt="AI-Driven Crime Intelligence Platform"
-              class="case-screenshot">
-          </div>
-          <div class="case-content">
-            <div class="case-top">
-              <span class="case-header-tag">DOSSIER 01 · GEOSPATIAL CRIME INTELLIGENCE</span>
-              <h3 class="case-title">AI-Driven Crime Intelligence &amp; Visualization Platform</h3>
-              <div class="case-badge">TOP 30 — KARNATAKA STATE POLICE DATATHON 2026</div>
-
-              <div class="case-breakdown">
-                <div class="breakdown-block">
-                  <span class="breakdown-title">OPERATIONAL PROBLEM</span>
-                  <p class="breakdown-text">
-                    Law enforcement authorities manage high-volume, multivariable incident records across police
-                    jurisdictions, resulting in operational delays in isolating localized hotspots and scheduling active
-                    patrol routes.
-                  </p>
+        <!-- PROJECT 01: Karnataka State Police AI Crime Intelligence -->
+        <article class="project-dossier-entry">
+          <div class="dossier-media-column">
+            <div class="dossier-window">
+              <div class="dossier-window-bar">
+                <div class="window-dots">
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
                 </div>
-                <div class="breakdown-block">
-                  <span class="breakdown-title">ARCHITECTURAL SOLUTION</span>
-                  <p class="breakdown-text">
-                    Synthesized a unified police intelligence platform for transforming crime data into actionable
-                    intelligence through geospatial analytics, trend forecasting, officer workload metrics, and
-                    bilingual decision support.
-                  </p>
-                </div>
+                <span class="window-path">ksp-intelligence://geospatial-telemetry</span>
+                <span class="window-verified-pill">● PRODUCTION LIVE</span>
               </div>
-            </div>
-
-            <div class="case-footer">
-              <div class="case-stack">STACK: React · Zoho Catalyst · AI · SQL · Geospatial</div>
-              <div class="case-links">
-                <a href="https://ksp-crime-intelligence-50044050041.development.catalystappsail.in/#/" target="_blank"
-                  class="case-link-btn">LIVE PLATFORM ↗</a>
+              <div class="dossier-image-holder"
+                onclick="openLightbox('Files/Project Img/ksp-dashboard.png', 'Karnataka State Police AI Crime Intelligence &amp; Visualization Platform')">
+                <img src="Files/Project Img/ksp-dashboard.png" alt="AI-Driven Crime Intelligence Platform"
+                  loading="lazy" width="900" height="562">
+                <span class="zoom-indicator">ENLARGE PREVIEW ↗</span>
               </div>
             </div>
           </div>
-        </div>
-      </article>
 
-      <!-- PROJECT 02: Automotive Sales Performance -->
-      <article class="case-study spotlight-card" data-category="automotive">
-        <div class="case-study-grid reversed">
-          <div class="case-media">
-            <img src="Files/Project Img/Car Sales.jpg" alt="Automotive Sales Performance Dashboard"
-              class="case-screenshot">
-          </div>
-          <div class="case-content">
-            <div class="case-top">
-              <span class="case-header-tag">DOSSIER 02 · EXECUTIVE BUSINESS INTELLIGENCE</span>
-              <h3 class="case-title">Automotive Sales Performance &amp; Margin Dashboard</h3>
-              <div class="case-badge">1ST PLACE — DASHBOARD MASTERS COMPETITION</div>
+          <div class="dossier-text-column">
+            <span class="dossier-index-tag">PROJECT 01 · GEOSPATIAL INTELLIGENCE</span>
+            <h3 class="dossier-project-title">Karnataka State Police AI Crime Intelligence Platform</h3>
+            <div class="dossier-podium-badge">TOP 30 FINALIST — STATEWIDE POLICE DATATHON 2026</div>
 
-              <div class="case-breakdown">
-                <div class="breakdown-block">
-                  <span class="breakdown-title">OPERATIONAL PROBLEM</span>
-                  <p class="breakdown-text">
-                    Dealership group executives lacked consolidated visibility into sales volume swings, vehicle price
-                    elasticity, and fuel-type margin disparities across regional distributor networks.
-                  </p>
-                </div>
-                <div class="breakdown-block">
-                  <span class="breakdown-title">ARCHITECTURAL SOLUTION</span>
-                  <p class="breakdown-text">
-                    Architected an executive KPI Power BI dashboard in a live 60-minute competition sprint. Formulated
-                    complex DAX measures, isolated top-performing brands, and structured revenue optimization levers.
-                  </p>
-                </div>
+            <div class="dossier-deep-dive">
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">OPERATIONAL PROBLEM</span>
+                <p class="deep-dive-text">
+                  Police jurisdictions faced severe operational delays parsing multivariable incident logs across 40+
+                  stations, hindering real-time hotspot isolation and dynamic patrol dispatching.
+                </p>
+              </div>
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">ARCHITECTURAL SOLUTION</span>
+                <p class="deep-dive-text">
+                  Engineered an end-to-end intelligence web application integrating spatial density clustering, crime
+                  rate trajectory forecasting, officer workload load-balancing, and bilingual English/Kannada decision
+                  reporting.
+                </p>
               </div>
             </div>
 
-            <div class="case-footer">
-              <div class="case-stack">STACK: Power BI · Advanced DAX · Star Schema · Excel</div>
-              <div class="case-links">
-                <a href="https://www.linkedin.com/posts/medhavi-agrawal_dashboardmasters-powerbi-dataanalytics-activity-7424660476350881792-hOgH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
-                  target="_blank" class="case-link-btn">VIEW CASE POST ↗</a>
-                <a href="Files/Car_Details.csv" download class="case-link-btn">DATASET [CSV] ↓</a>
+            <div class="dossier-kpi-bar">
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">100K+</span>
+                <span class="kpi-unit-lbl">Incidents Analyzed</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">7 Zones</span>
+                <span class="kpi-unit-lbl">Critical Hotspots</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">&lt; 2.5s</span>
+                <span class="kpi-unit-lbl">Query Response</span>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
 
-      <!-- PROJECT 03: Road Accident Trend Analysis -->
-      <article class="case-study spotlight-card" data-category="traffic">
-        <div class="case-study-grid">
-          <div class="case-media">
-            <img src="Files/Project Img/Road Accidents.png" alt="Road Accident Trend Analysis Dashboard"
-              class="case-screenshot">
-          </div>
-          <div class="case-content">
-            <div class="case-top">
-              <span class="case-header-tag">DOSSIER 03 · PUBLIC SAFETY &amp; EPIDEMIOLOGICAL DATA</span>
-              <h3 class="case-title">National Highway Accident Trend Analysis</h3>
-              <div class="case-badge">NATIONAL SAFETY RESEARCH</div>
+            <div class="dossier-stack-row">
+              <span class="dossier-tag">React</span>
+              <span class="dossier-tag">Zoho Catalyst</span>
+              <span class="dossier-tag">Geospatial AI</span>
+              <span class="dossier-tag">SQL</span>
+              <span class="dossier-tag">Power BI</span>
+            </div>
 
-              <div class="case-breakdown">
-                <div class="breakdown-block">
-                  <span class="breakdown-title">OPERATIONAL PROBLEM</span>
-                  <p class="breakdown-text">
-                    Government traffic administrations required deep statistical insight into high-fatality accident
-                    classifications, temporal clustering across peak hours, and weather risk correlations.
-                  </p>
+            <div class="dossier-actions-row">
+              <a href="https://ksp-crime-intelligence-50044050041.development.catalystappsail.in/#/" target="_blank"
+                class="btn-dossier-action btn-dossier-highlight">
+                LAUNCH LIVE PLATFORM ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: AgroWalls — Agricultural & Resource Intelligence -->
+        <article class="project-dossier-entry layout-reversed">
+          <div class="dossier-media-column">
+            <div class="dossier-window">
+              <div class="dossier-window-bar">
+                <div class="window-dots">
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
                 </div>
-                <div class="breakdown-block">
-                  <span class="breakdown-title">ARCHITECTURAL SOLUTION</span>
-                  <p class="breakdown-text">
-                    Normalized messy nationwide accident telemetry, mapped severity distributions, and designed an
-                    intuitive interactive report that delivers instant visibility into accident hot-zones.
-                  </p>
-                </div>
+                <span class="window-path">agrowalls://sensor-mesh-analytics</span>
+                <span class="window-verified-pill">● VERIFIED PROTOTYPE</span>
               </div>
-            </div>
-
-            <div class="case-footer">
-              <div class="case-stack">STACK: Power BI · Python · DAX · Exploratory Data Analysis</div>
-              <div class="case-links">
-                <a href="Files/accident_prediction_india.csv" download class="case-link-btn">DATASET [CSV] ↓</a>
+              <div class="dossier-image-holder"
+                onclick="openLightbox('Files/Project Img/Dashboard.jpg', 'AgroWalls — Agricultural Resource Telemetry &amp; Environmental Intelligence')">
+                <img src="Files/Project Img/Dashboard.jpg"
+                  alt="AgroWalls Agricultural Resource Intelligence Dashboard" loading="lazy" width="900" height="562">
+                <span class="zoom-indicator">ENLARGE PREVIEW ↗</span>
               </div>
             </div>
           </div>
-        </div>
-      </article>
 
-    </div>
-  </section>
+          <div class="dossier-text-column">
+            <span class="dossier-index-tag">PROJECT 02 · PRECISION AGRO-TECH</span>
+            <h3 class="dossier-project-title">AgroWalls — Agricultural &amp; Resource Intelligence</h3>
+            <div class="dossier-podium-badge">ENGINEERING INNOVATION INITIATIVE</div>
 
-  <!-- ================= 5-STAGE ANALYTICAL PIPELINE (WHAT I DO) ================= -->
-  <section id="workflow" class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">02 // METHODOLOGY</span>
-        <h2 class="section-title">PIPELINE</h2>
+            <div class="dossier-deep-dive">
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">OPERATIONAL PROBLEM</span>
+                <p class="deep-dive-text">
+                  Vertical micro-farms and high-density controlled crop installations suffer significant yield losses
+                  due to unmonitored soil moisture gradients, pH spikes, and delayed irrigation interventions.
+                </p>
+              </div>
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">ARCHITECTURAL SOLUTION</span>
+                <p class="deep-dive-text">
+                  Architected an automated multi-sensor environmental telemetry mesh. Streams continuous pH, moisture,
+                  and temperature readings into an analytical pipeline that calculates resource depletion variances and
+                  triggers predictive water cycles.
+                </p>
+              </div>
+            </div>
+
+            <div class="dossier-kpi-bar">
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">28%</span>
+                <span class="kpi-unit-lbl">Water Conservation</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">24/7</span>
+                <span class="kpi-unit-lbl">Sensor Telemetry</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">Zero</span>
+                <span class="kpi-unit-lbl">Critical Crop Outages</span>
+              </div>
+            </div>
+
+            <div class="dossier-stack-row">
+              <span class="dossier-tag">Python</span>
+              <span class="dossier-tag">Arduino Telemetry</span>
+              <span class="dossier-tag">Power BI</span>
+              <span class="dossier-tag">Pandas</span>
+              <span class="dossier-tag">Sensor Fusion</span>
+            </div>
+
+            <div class="dossier-actions-row">
+              <button class="btn-dossier-action"
+                onclick="openLightbox('Files/Project Img/Dashboard.jpg', 'AgroWalls Agricultural Resource Intelligence')">
+                VIEW TECHNICAL SCHEMATIC ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: Road Accident Safety & Severity Modeling -->
+        <article class="project-dossier-entry">
+          <div class="dossier-media-column">
+            <div class="dossier-window">
+              <div class="dossier-window-bar">
+                <div class="window-dots">
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                </div>
+                <span class="window-path">safety://highway-accident-analysis</span>
+                <span class="window-verified-pill">● DATA AUDITED</span>
+              </div>
+              <div class="dossier-image-holder"
+                onclick="openLightbox('Files/Project Img/Road Accidents.png', 'National Highway Accident Safety &amp; Severity Modeling')">
+                <img src="Files/Project Img/Road Accidents.png" alt="National Highway Accident Safety Dashboard"
+                  loading="lazy" width="900" height="562">
+                <span class="zoom-indicator">ENLARGE PREVIEW ↗</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dossier-text-column">
+            <span class="dossier-index-tag">PROJECT 03 · PUBLIC SAFETY &amp; EPIDEMIOLOGY</span>
+            <h3 class="dossier-project-title">National Highway Accident Analysis Dashboard</h3>
+            <div class="dossier-podium-badge">NATIONAL SAFETY RESEARCH DOSSIER</div>
+
+            <div class="dossier-deep-dive">
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">OPERATIONAL PROBLEM</span>
+                <p class="deep-dive-text">
+                  Federal highway planning committees required quantitative evidence on collision severity variables,
+                  peak-hour temporal fatality spikes, and weather hazard risks across national transit corridors.
+                </p>
+              </div>
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">ARCHITECTURAL SOLUTION</span>
+                <p class="deep-dive-text">
+                  Standardized nationwide collision records into a relational schema. Implemented custom DAX fatality
+                  indexes, isolated high-probability collision geometries, and designed an interactive public safety
+                  report.
+                </p>
+              </div>
+            </div>
+
+            <div class="dossier-kpi-bar">
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">485K+</span>
+                <span class="kpi-unit-lbl">Incident Rows</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">6 Zones</span>
+                <span class="kpi-unit-lbl">Hazard Corridors</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">100%</span>
+                <span class="kpi-unit-lbl">Star Schema Clean</span>
+              </div>
+            </div>
+
+            <div class="dossier-stack-row">
+              <span class="dossier-tag">Power BI</span>
+              <span class="dossier-tag">Python (EDA)</span>
+              <span class="dossier-tag">Advanced DAX</span>
+              <span class="dossier-tag">Pandas</span>
+              <span class="dossier-tag">Data Cleansing</span>
+            </div>
+
+            <div class="dossier-actions-row">
+              <a href="Files/accident_prediction_india.csv" download class="btn-dossier-action">
+                DOWNLOAD DATASET [CSV] ↓
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 04: IPL Player Auction & Strike-Rate Predictive Modeling -->
+        <article class="project-dossier-entry layout-reversed">
+          <div class="dossier-media-column">
+            <div class="dossier-window">
+              <div class="dossier-window-bar">
+                <div class="window-dots">
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                </div>
+                <span class="window-path">sports-intel://ipl-auction-dossier</span>
+                <span class="window-verified-pill">● AUDITED MODEL</span>
+              </div>
+              <div class="dossier-image-holder"
+                onclick="openLightbox('Files/Project Img/IPL Dashboard.png', 'IPL Player Auction &amp; Strike-Rate Predictive Modeling')">
+                <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Player Auction &amp; Statistical Dossier"
+                  loading="lazy" width="900" height="562">
+                <span class="zoom-indicator">ENLARGE PREVIEW ↗</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dossier-text-column">
+            <span class="dossier-index-tag">PROJECT 04 · SPORTS ANALYTICS &amp; VALUATION</span>
+            <h3 class="dossier-project-title">IPL Player Auction &amp; Statistical Dossier</h3>
+            <div class="dossier-podium-badge">QUANTITATIVE VALUATION SYSTEM</div>
+
+            <div class="dossier-deep-dive">
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">OPERATIONAL PROBLEM</span>
+                <p class="deep-dive-text">
+                  Franchise management groups struggle to objectively reconcile historic strike rates, death-over economy
+                  rates, and auction bidding margins under strict salary cap regulations.
+                </p>
+              </div>
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">ARCHITECTURAL SOLUTION</span>
+                <p class="deep-dive-text">
+                  Developed an interactive live auction simulation cockpit. Formulated dynamic player valuation DAX
+                  measures, player performance clusters, and purse allocation projections for tactical bidding.
+                </p>
+              </div>
+            </div>
+
+            <div class="dossier-kpi-bar">
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">15+</span>
+                <span class="kpi-unit-lbl">Tournament Seasons</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">250+</span>
+                <span class="kpi-unit-lbl">Player Models</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">100%</span>
+                <span class="kpi-unit-lbl">Dynamic Purse DAX</span>
+              </div>
+            </div>
+
+            <div class="dossier-stack-row">
+              <span class="dossier-tag">Power BI</span>
+              <span class="dossier-tag">Advanced DAX</span>
+              <span class="dossier-tag">Excel Modeling</span>
+              <span class="dossier-tag">Predictive Valuation</span>
+            </div>
+
+            <div class="dossier-actions-row">
+              <a href="Files/IPL Dataset Final.xlsx" download class="btn-dossier-action">
+                DOWNLOAD DATASET [XLSX] ↓
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 05: Andhra Pradesh Elections Analysis -->
+        <article class="project-dossier-entry">
+          <div class="dossier-media-column">
+            <div class="dossier-window">
+              <div class="dossier-window-bar">
+                <div class="window-dots">
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                  <span class="w-dot"></span>
+                </div>
+                <span class="window-path">forensics://ap-election-swings</span>
+                <span class="window-verified-pill">● SPATIAL MAP VALIDATED</span>
+              </div>
+              <div class="dossier-image-holder"
+                onclick="openLightbox('Files/Project Img/AP Election.png', 'Andhra Pradesh Assembly Constituency Forensics &amp; Swing Analytics')">
+                <img src="Files/Project Img/AP Election.png" alt="Andhra Pradesh Election Analysis Dashboard"
+                  loading="lazy" width="900" height="562">
+                <span class="zoom-indicator">ENLARGE PREVIEW ↗</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dossier-text-column">
+            <span class="dossier-index-tag">PROJECT 05 · ELECTORAL FORENSICS &amp; DEMOGRAPHY</span>
+            <h3 class="dossier-project-title">Andhra Pradesh Constituency Forensics</h3>
+            <div class="dossier-podium-badge">DEMOGRAPHIC SPATIAL RESEARCH</div>
+
+            <div class="dossier-deep-dive">
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">OPERATIONAL PROBLEM</span>
+                <p class="deep-dive-text">
+                  Electoral strategy foundations lacked granular visual evidence of constituency margin swings,
+                  regional voter turnout shifts, and alliance vote-consolidation trends across 175 assembly seats.
+                </p>
+              </div>
+              <div class="deep-dive-cell">
+                <span class="deep-dive-lbl">ARCHITECTURAL SOLUTION</span>
+                <p class="deep-dive-text">
+                  Architected a demographic election intelligence report. Features spatial constituency boundary
+                  cross-filtering, victory margin tiering, and historical vote swing calculations.
+                </p>
+              </div>
+            </div>
+
+            <div class="dossier-kpi-bar">
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">175</span>
+                <span class="kpi-unit-lbl">Constituencies</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">4 Alliances</span>
+                <span class="kpi-unit-lbl">Modeled</span>
+              </div>
+              <div class="kpi-unit">
+                <span class="kpi-unit-val">100%</span>
+                <span class="kpi-unit-lbl">Spatial Mapped</span>
+              </div>
+            </div>
+
+            <div class="dossier-stack-row">
+              <span class="dossier-tag">Power BI</span>
+              <span class="dossier-tag">Spatial Mapping</span>
+              <span class="dossier-tag">Custom DAX</span>
+              <span class="dossier-tag">Demographic Analytics</span>
+            </div>
+
+            <div class="dossier-actions-row">
+              <a href="Files/APelections.csv" download class="btn-dossier-action">
+                DOWNLOAD DATASET [CSV] ↓
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <span class="section-annotation">END-TO-END ANALYTIC ENGINE</span>
-    </div>
+    </section>
 
-    <div class="pipeline-track">
-
-      <!-- Stage 01 -->
-      <div class="spotlight-card pipeline-node">
-        <div class="pipeline-node-top">
-          <span class="pipeline-idx">01</span>
-          <span class="pipeline-icon-glyph">[EXTRACT]</span>
+    <!-- ================= 03. HOW I THINK (ANALYTICAL WORKFLOW) ================= -->
+    <section id="workflow" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">02 // METHODOLOGY</span>
+          <h2 class="section-title">HOW I THINK</h2>
         </div>
-        <h4 class="pipeline-title">INGESTION</h4>
-        <p class="pipeline-desc">
-          Audit telemetry sources, query SQL tables, pull unstructured files, and verify schema integrity.
+        <p class="section-tagline">
+          The 5-stage analytical pipeline: transforming raw telemetry into high-conviction executive decisions.
         </p>
-        <span class="pipeline-deliverable">✓ Data Audit Dossier</span>
       </div>
 
-      <!-- Stage 02 -->
-      <div class="spotlight-card pipeline-node">
-        <div class="pipeline-node-top">
-          <span class="pipeline-idx">02</span>
-          <span class="pipeline-icon-glyph">[CLEAN]</span>
+      <div class="workflow-pipeline-track">
+
+        <!-- Stage 01: Ingest -->
+        <div class="workflow-stage-node">
+          <div class="stage-top-meta">
+            <span class="stage-num-badge">01</span>
+            <span class="stage-code-pill">[INGEST]</span>
+          </div>
+          <h4 class="stage-title">INGEST</h4>
+          <p class="stage-desc">
+            Collect, inspect, and understand raw telemetry sources. Query relational SQL tables, pull unstructured
+            files, audit null patterns, and verify source schema integrity.
+          </p>
+          <div class="stage-deliverable-strip">
+            <span>✓ Data Audit Dossier</span>
+          </div>
         </div>
-        <h4 class="pipeline-title">WRANGLING</h4>
-        <p class="pipeline-desc">
-          Normalize anomalies, impute missing values, reconcile timestamps, and structure relational models.
+
+        <!-- Stage 02: Transform -->
+        <div class="workflow-stage-node">
+          <div class="stage-top-meta">
+            <span class="stage-num-badge">02</span>
+            <span class="stage-code-pill">[TRANSFORM]</span>
+          </div>
+          <h4 class="stage-title">TRANSFORM</h4>
+          <p class="stage-desc">
+            Clean, validate, and structure information. Resolve anomalies, impute missing values, reconcile timestamps,
+            and establish high-performance star schema relational models.
+          </p>
+          <div class="stage-deliverable-strip">
+            <span>✓ Star Schema Architecture</span>
+          </div>
+        </div>
+
+        <!-- Stage 03: Analyze -->
+        <div class="workflow-stage-node">
+          <div class="stage-top-meta">
+            <span class="stage-num-badge">03</span>
+            <span class="stage-code-pill">[ANALYZE]</span>
+          </div>
+          <h4 class="stage-title">ANALYZE</h4>
+          <p class="stage-desc">
+            Discover patterns, relationships, and trends. Formulate performant DAX measures, test statistical
+            significance, run regressions, and isolate key performance variances.
+          </p>
+          <div class="stage-deliverable-strip">
+            <span>✓ DAX Measure Repository</span>
+          </div>
+        </div>
+
+        <!-- Stage 04: Visualize -->
+        <div class="workflow-stage-node">
+          <div class="stage-top-meta">
+            <span class="stage-num-badge">04</span>
+            <span class="stage-code-pill">[VISUALIZE]</span>
+          </div>
+          <h4 class="stage-title">VISUALIZE</h4>
+          <p class="stage-desc">
+            Build interactive dashboards and analytical reports. Engineer zero-clutter visual interfaces featuring
+            intuitive drill-downs, cross-filtering, and cognitive visual hierarchy.
+          </p>
+          <div class="stage-deliverable-strip">
+            <span>✓ Production BI Dashboard</span>
+          </div>
+        </div>
+
+        <!-- Stage 05: Communicate -->
+        <div class="workflow-stage-node">
+          <div class="stage-top-meta">
+            <span class="stage-num-badge">05</span>
+            <span class="stage-code-pill">[COMMUNICATE]</span>
+          </div>
+          <h4 class="stage-title">COMMUNICATE</h4>
+          <p class="stage-desc">
+            Translate findings into actionable insights. Author concise executive briefs highlighting quantitative
+            conclusions, operational risks, and high-impact business recommendations.
+          </p>
+          <div class="stage-deliverable-strip">
+            <span>✓ Executive Action Brief</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 04. MY TOOLKIT (INTERACTIVE SKILLS) ================= -->
+    <section id="toolkit" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">03 // ARSENAL</span>
+          <h2 class="section-title">MY TOOLKIT</h2>
+        </div>
+        <p class="section-tagline">
+          Categorized technical competencies and analytical tools. Filter by domain or search by keyword.
         </p>
-        <span class="pipeline-deliverable">✓ Star Schema Model</span>
       </div>
 
-      <!-- Stage 03 -->
-      <div class="spotlight-card pipeline-node">
-        <div class="pipeline-node-top">
-          <span class="pipeline-idx">03</span>
-          <span class="pipeline-icon-glyph">[MODEL]</span>
+      <!-- Controls: Category Pills & Live Search -->
+      <div class="toolkit-controls-wrap">
+        <div class="toolkit-filter-tabs">
+          <button class="toolkit-filter-btn active" onclick="filterToolkitCategory('all', this)">ALL CATEGORIES</button>
+          <button class="toolkit-filter-btn" onclick="filterToolkitCategory('bi', this)">BUSINESS INTELLIGENCE</button>
+          <button class="toolkit-filter-btn" onclick="filterToolkitCategory('analytics', this)">DATA ANALYTICS</button>
+          <button class="toolkit-filter-btn" onclick="filterToolkitCategory('science', this)">DATA SCIENCE</button>
+          <button class="toolkit-filter-btn" onclick="filterToolkitCategory('dev', this)">DEVELOPMENT</button>
+          <button class="toolkit-filter-btn" onclick="filterToolkitCategory('creative', this)">CREATIVE</button>
         </div>
-        <h4 class="pipeline-title">MODELING</h4>
-        <p class="pipeline-desc">
-          Formulate performant DAX measures, test statistical significance, and compute KPI variances.
+
+        <div class="toolkit-search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="skillSearchInput" placeholder="Filter skills (e.g. Power BI, SQL, Python)..."
+            oninput="searchToolkitSkills(this.value)">
+        </div>
+      </div>
+
+      <!-- 5-Column Ecosystem Grid -->
+      <div class="toolkit-ecosystem-grid">
+
+        <!-- Column 1: BI -->
+        <div class="toolkit-category-column" data-cat="bi">
+          <span class="toolkit-col-title">BUSINESS INTELLIGENCE</span>
+          <div class="toolkit-skills-list">
+            <div class="skill-item-row" data-name="power bi">
+              <span class="skill-item-name">Power BI</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="advanced dax">
+              <span class="skill-item-name">Advanced DAX</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="power query m">
+              <span class="skill-item-name">Power Query &amp; M</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="ms excel vba">
+              <span class="skill-item-name">MS Excel &amp; VBA</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+            <div class="skill-item-row" data-name="data modeling star schema">
+              <span class="skill-item-name">Star Schema Modeling</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Data Analytics -->
+        <div class="toolkit-category-column" data-cat="analytics">
+          <span class="toolkit-col-title">DATA ANALYTICS</span>
+          <div class="toolkit-skills-list">
+            <div class="skill-item-row" data-name="sql">
+              <span class="skill-item-name">SQL</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="postgresql mysql">
+              <span class="skill-item-name">MySQL &amp; PostgreSQL</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="python">
+              <span class="skill-item-name">Python</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="pandas dataframes">
+              <span class="skill-item-name">Pandas DataFrames</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+            <div class="skill-item-row" data-name="numpy">
+              <span class="skill-item-name">NumPy</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Data Science -->
+        <div class="toolkit-category-column" data-cat="science">
+          <span class="toolkit-col-title">DATA SCIENCE</span>
+          <div class="toolkit-skills-list">
+            <div class="skill-item-row" data-name="scikit-learn">
+              <span class="skill-item-name">Scikit-learn</span>
+              <span class="skill-item-tier">INTERMEDIATE</span>
+            </div>
+            <div class="skill-item-row" data-name="matplotlib seaborn">
+              <span class="skill-item-name">Matplotlib &amp; Seaborn</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="statistical analysis">
+              <span class="skill-item-name">Statistical Modeling</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="eda exploratory data analysis">
+              <span class="skill-item-name">Exploratory Data Analysis</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: Development -->
+        <div class="toolkit-category-column" data-cat="dev">
+          <span class="toolkit-col-title">DEVELOPMENT</span>
+          <div class="toolkit-skills-list">
+            <div class="skill-item-row" data-name="html5 css3">
+              <span class="skill-item-name">HTML5 &amp; CSS3</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="tailwind css">
+              <span class="skill-item-name">Tailwind CSS</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="react">
+              <span class="skill-item-name">React</span>
+              <span class="skill-item-tier">INTERMEDIATE</span>
+            </div>
+            <div class="skill-item-row" data-name="node js mongodb">
+              <span class="skill-item-name">Node.js &amp; MongoDB</span>
+              <span class="skill-item-tier">INTERMEDIATE</span>
+            </div>
+            <div class="skill-item-row" data-name="git github">
+              <span class="skill-item-name">Git &amp; GitHub</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="arduino iot">
+              <span class="skill-item-name">Arduino &amp; IoT</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 5: Creative -->
+        <div class="toolkit-category-column" data-cat="creative">
+          <span class="toolkit-col-title">CREATIVE</span>
+          <div class="toolkit-skills-list">
+            <div class="skill-item-row" data-name="figma ui ux">
+              <span class="skill-item-name">Figma (UI/UX)</span>
+              <span class="skill-item-tier">ADVANCED</span>
+            </div>
+            <div class="skill-item-row" data-name="canva">
+              <span class="skill-item-name">Canva Graphic Suite</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+            <div class="skill-item-row" data-name="data storytelling">
+              <span class="skill-item-name">Data Storytelling</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+            <div class="skill-item-row" data-name="presentation design">
+              <span class="skill-item-name">Presentation Design</span>
+              <span class="skill-item-tier">EXPERT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 05. RECOGNITION (ACHIEVEMENTS) ================= -->
+    <section id="achievements" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">04 // RECOGNITION</span>
+          <h2 class="section-title">ACHIEVEMENTS</h2>
+        </div>
+        <p class="section-tagline">
+          Verified academic podiums, prestigious competitive scholarships, and government hackathon selections.
         </p>
-        <span class="pipeline-deliverable">✓ DAX Measure Repository</span>
       </div>
 
-      <!-- Stage 04 -->
-      <div class="spotlight-card pipeline-node">
-        <div class="pipeline-node-top">
-          <span class="pipeline-idx">04</span>
-          <span class="pipeline-icon-glyph">[SYNTHESIS]</span>
+      <div class="recognition-merit-wall">
+
+        <!-- Featured Major Honor: Top 30 KSP Police Datathon -->
+        <div class="merit-card featured-merit">
+          <div class="merit-badge-icon">01</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">TOP 30 FINALIST — KARNATAKA STATE POLICE DATATHON 2026</h4>
+              <span class="merit-year-tag">STATEWIDE POLICE HACKATHON</span>
+            </div>
+            <p class="merit-desc">
+              Selected among the Top 30 teams across Karnataka for architecting an operational AI-driven police crime
+              intelligence and spatial patrol resource allocation platform.
+            </p>
+          </div>
         </div>
-        <h4 class="pipeline-title">DASHBOARDS</h4>
-        <p class="pipeline-desc">
-          Engineer zero-clutter visual dashboards featuring intuitive drill-downs and cross-filtered charts.
+
+        <!-- Eastman PowerUp Scholar -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">02</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">EASTMAN POWERUP SCHOLAR</h4>
+              <span class="merit-year-tag">TOP 0.3% NATIONWIDE</span>
+            </div>
+            <p class="merit-desc">
+              Awarded prestigious national scholarship; 1 of only 32 scholars selected nationwide from over 10,000+
+              applicants evaluated on technical excellence and problem-solving capability.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1st Place Dashboard Masters -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">03</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">1ST PLACE — DASHBOARD MASTERS</h4>
+              <span class="merit-year-tag">NATIONAL SPRINT 2026</span>
+            </div>
+            <p class="merit-desc">
+              Captured First Place in a timed live 60-minute Power BI dashboard sprint at IITM Janakpuri, architecting
+              the Automotive Sales Margin DAX engine under strict sprint constraints.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1st Place DataViz Competition -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">04</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">1ST PLACE — DATAVIZ POWER BI CONTEST</h4>
+              <span class="merit-year-tag">ANNUAL CONTEST 2025</span>
+            </div>
+            <p class="merit-desc">
+              Ranked 1st place in the institutional data visualization and business storytelling championship at MITS
+              Gwalior for executive clarity and DAX data modeling.
+            </p>
+          </div>
+        </div>
+
+        <!-- Institute Rank 01 -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">05</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">INSTITUTE RANK 01 — TWO CONSECUTIVE YEARS</h4>
+              <span class="merit-year-tag">ACADEMIC EXCELLENCE</span>
+            </div>
+            <p class="merit-desc">
+              Rank 01 scholar in the Department of Electronics &amp; Telecommunication Engineering for both academic years
+              (2024–25 &amp; 2025–26) with a cumulative 9.84 CGPA.
+            </p>
+          </div>
+        </div>
+
+        <!-- Reliance Foundation Scholar -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">06</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">RELIANCE FOUNDATION SCHOLAR</h4>
+              <span class="merit-year-tag">TOP 4% NATIONWIDE</span>
+            </div>
+            <p class="merit-desc">
+              Chosen among the top 5,000 scholars selected from 125,000+ applicants nationwide for undergraduate
+              excellence in technical and quantitative sciences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Simhastha Hackathon -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">07</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">TOP 22 OF 1,800+ TEAMS — SIMHASTHA HACKATHON</h4>
+              <span class="merit-year-tag">GOVERNMENT OF MP</span>
+            </div>
+            <p class="merit-desc">
+              Finalist team in the Ujjain Simhastha Mahakumbh Hackathon sponsored by the Government of Madhya Pradesh for
+              crowd-telemetry and urban safety modeling.
+            </p>
+          </div>
+        </div>
+
+        <!-- State Rank 05 NCSC -->
+        <div class="merit-card">
+          <div class="merit-badge-icon">08</div>
+          <div class="merit-info-wrap">
+            <div class="merit-header-row">
+              <h4 class="merit-title">STATE RANK 05 — NATIONAL CHILDREN'S SCIENCE CONGRESS</h4>
+              <span class="merit-year-tag">STATE LEVEL RESEARCH</span>
+            </div>
+            <p class="merit-desc">
+              Awarded State Rank 05 at the National Children's Science Congress for experimental engineering research on
+              the Reutilization of Fossil Fuels (ROFF) particulate carbon recovery.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 06. EXPERIENCE & EDUCATION ================= -->
+    <section id="experience" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">05 // TRAJECTORY</span>
+          <h2 class="section-title">EXPERIENCE &amp; EDUCATION</h2>
+        </div>
+        <p class="section-tagline">
+          Institutional leadership appointments and verified undergraduate engineering credentials.
         </p>
-        <span class="pipeline-deliverable">✓ Production Dashboard</span>
       </div>
 
-      <!-- Stage 05 -->
-      <div class="spotlight-card pipeline-node">
-        <div class="pipeline-node-top">
-          <span class="pipeline-idx">05</span>
-          <span class="pipeline-icon-glyph">[EXECUTE]</span>
+      <div class="exp-edu-dual-layout">
+
+        <!-- Left Column: Leadership Positions -->
+        <div class="timeline-column">
+          <span class="column-section-title">POSITIONS OF RESPONSIBILITY</span>
+
+          <div class="timeline-entry">
+            <div class="timeline-entry-top">
+              <h4 class="timeline-role">PRESIDENT</h4>
+              <span class="timeline-dates">Sep 2025 — Present</span>
+            </div>
+            <span class="timeline-org">Career Catalyst Club, MITS</span>
+            <p class="timeline-text">
+              Directing a 28-member cross-departmental team coordinating data analytics workshops, industry placement
+              bootcamps, and technical skill development programs across campus.
+            </p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-entry-top">
+              <h4 class="timeline-role">ALUMNI COORDINATOR</h4>
+              <span class="timeline-dates">Aug 2025 — Aug 2026</span>
+            </div>
+            <span class="timeline-org">Department of ETE, MITS</span>
+            <p class="timeline-text">
+              Maintaining alumni telemetry database records, curating high-level executive webinars, and structuring
+              undergraduate mentorship pipelines.
+            </p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-entry-top">
+              <h4 class="timeline-role">COMMITTEE MEMBER</h4>
+              <span class="timeline-dates">Sep 2024 — Present</span>
+            </div>
+            <span class="timeline-org">Anti-Ragging Committee, MITS</span>
+            <p class="timeline-text">
+              Collaborating with institute leadership and faculty officers to maintain campus safety standards, peer
+              advocacy, and ethical student conduct.
+            </p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-entry-top">
+              <h4 class="timeline-role">GRAPHIC DESIGNER &amp; CORE MEMBER</h4>
+              <span class="timeline-dates">Oct 2024 — Present</span>
+            </div>
+            <span class="timeline-org">Artistic Club &amp; Innovation DIY Club, MITS</span>
+            <p class="timeline-text">
+              Authoring official branding collaterals, digital event creatives, hackathon brochures, and technical
+              exhibition promotional media.
+            </p>
+          </div>
         </div>
-        <h4 class="pipeline-title">BRIEFING</h4>
-        <p class="pipeline-desc">
-          Translate findings into concise executive summaries with quantitative, high-impact recommendations.
+
+        <!-- Right Column: Academic Credentials -->
+        <div class="timeline-column">
+          <span class="column-section-title">ACADEMIC BACKGROUND</span>
+
+          <div class="academic-dossier-box">
+            <div class="academic-inst">
+              <h3>MADHAV INSTITUTE OF TECHNOLOGY &amp; SCIENCE</h3>
+              <div class="academic-deg">B.Tech in Electronics &amp; Telecommunication Engineering</div>
+              <span class="academic-span">2024 — 2028 · Gwalior, Madhya Pradesh, India</span>
+            </div>
+
+            <div class="academic-scores-grid">
+              <div class="score-cell">
+                <span class="score-val" style="color: var(--accent-coral);">9.84</span>
+                <span class="score-lbl">Cumulative CGPA (Rank 01)</span>
+              </div>
+              <div class="score-cell">
+                <span class="score-val" style="color: var(--accent-lime);">10.00</span>
+                <span class="score-lbl">Semester 01 SGPA (Perfect)</span>
+              </div>
+              <div class="score-cell">
+                <span class="score-val">93.4%</span>
+                <span class="score-lbl">Class XII (CBSE Board)</span>
+              </div>
+              <div class="score-cell">
+                <span class="score-val">92.6%</span>
+                <span class="score-lbl">Class X (CBSE Board)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 07. BEYOND THE DATA (PERSONAL INTRODUCTION) ================= -->
+    <section id="beyond" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">06 // PERSONA</span>
+          <h2 class="section-title">BEYOND THE DATA</h2>
+        </div>
+        <p class="section-tagline">
+          The engineering roots, hackathon instincts, and design philosophy behind the numbers.
         </p>
-        <span class="pipeline-deliverable">✓ Executive Action Brief</span>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ================= ANALYSIS INDEX (INTERACTIVE DATA TABLE) ================= -->
-  <section class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">03 // CATALOG</span>
-        <h2 class="section-title">ANALYSIS INDEX</h2>
-      </div>
-      <span class="section-annotation">EXPLORATORY &amp; BI NOTEBOOKS</span>
-    </div>
-
-    <div class="index-table">
-
-      <div class="index-row">
-        <span class="index-id">01</span>
-        <div class="index-title-group">
-          <h4 class="index-name">ROAD ACCIDENT TREND ANALYSIS</h4>
-          <span class="index-stack">Power BI · Exploratory Data Analysis · Custom DAX</span>
-        </div>
-        <div class="index-thumb-peek">
-          <img src="Files/Project Img/Road Accidents.png" alt="Road Accident Analysis">
-        </div>
-        <a href="Files/accident_prediction_india.csv" download class="index-download-btn">DATASET ↓</a>
-      </div>
-
-      <div class="index-row">
-        <span class="index-id">02</span>
-        <div class="index-title-group">
-          <h4 class="index-name">IPL PLAYER AUCTION &amp; STATISTICAL DOSSIER</h4>
-          <span class="index-stack">Power BI · DAX · Strike-Rate Predictive Modeling</span>
-        </div>
-        <div class="index-thumb-peek">
-          <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Auction Analytics">
-        </div>
-        <a href="Files/IPL Dataset Final.xlsx" download class="index-download-btn">DATASET ↓</a>
-      </div>
-
-      <div class="index-row">
-        <span class="index-id">03</span>
-        <div class="index-title-group">
-          <h4 class="index-name">ANDHRA PRADESH CONSTITUENCY FORENSICS</h4>
-          <span class="index-stack">Power BI · Spatial Mapping · Demographic Swing Analysis</span>
-        </div>
-        <div class="index-thumb-peek">
-          <img src="Files/Project Img/AP Election.png" alt="AP Election Analysis">
-        </div>
-        <a href="Files/APelections.csv" download class="index-download-btn">DATASET ↓</a>
-      </div>
-
-      <div class="index-row">
-        <span class="index-id">04</span>
-        <div class="index-title-group">
-          <h4 class="index-name">AMAZON STORE SALES &amp; PROFIT REVENUE ENGINE</h4>
-          <span class="index-stack">Power BI · E-commerce Retail Metrics · Return Margin Analysis</span>
-        </div>
-        <div class="index-thumb-peek">
-          <img src="Files/Project Img/Amazon Sales.png" alt="Amazon Sales Analysis">
-        </div>
-        <a href="Files/Amazon Store Sales Data.xlsx - Sheet1 (1) - Copy.csv" download class="index-download-btn">DATASET
-          ↓</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= TECHNICAL ARCHIVE (ENGINEERING & IOT) ================= -->
-  <section class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">04 // ARCHIVE</span>
-        <h2 class="section-title">TECHNICAL ARCHIVE</h2>
-      </div>
-      <span class="section-annotation">HARDWARE &amp; IOT TELEMETRY</span>
-    </div>
-
-    <div class="tech-archive-grid">
-
-      <div class="spotlight-card tech-archive-card">
-        <div>
-          <h4 class="tech-card-title">IoT-Based Water Quality Monitoring</h4>
-          <p class="tech-card-desc">
-            Embedded Arduino microcontroller framework measuring real-time pH, turbidity, total dissolved solids (TDS),
-            and water temperature.
+      <div class="beyond-data-grid">
+        <div class="beyond-narrative-prose">
+          <p>
+            My journey into data did not begin inside spreadsheet cells — it started in the <strong>hardware lab</strong>.
+            As an Electronics and Telecommunication Engineering scholar, I spent hours wiring microcontrollers, ultrasonic
+            sensors, and water quality probes. Working with physical telemetry taught me an enduring lesson: <em>every
+              sensor reading is a data point, but without synthesis, data remains just noise</em>.
+          </p>
+          <p>
+            That realization drove my transition into <strong>Business Intelligence and Analytical Architecture</strong>.
+            I dove deep into SQL schema normalization, complex DAX formulation, and statistical modeling because I wanted
+            to bridge the gap between raw machine output and high-stakes executive decisions.
+          </p>
+          <p>
+            Competitive hackathons are where I feel most at home. Sprints like the <strong>Karnataka State Police
+              Datathon</strong> and <strong>Simhastha Hackathon</strong> demand calm execution under intense time pressure:
+            taking messy, incomplete real-world records and rapidly structuring them into clear, operational decision
+            dashboards.
+          </p>
+          <p>
+            Above all, I treat <strong>visual presentation as an engineering discipline</strong>. A technically brilliant
+            model that is cluttered or unintuitive is useless to leadership. By combining Swiss-inspired typography,
+            thoughtful negative space, and disciplined color restraint, I ensure that critical insights are immediately
+            understood and acted upon.
           </p>
         </div>
-        <div class="tech-card-footer">
-          <span class="tech-card-stack">Arduino · Sensor Fusion</span>
-          <a href="Files/Report_Water Quality Monitoring.pdf" target="_blank" class="tech-card-arrow">VIEW REPORT ↗</a>
+
+        <div class="beyond-philosophies-col">
+          <div class="philosophy-cell">
+            <span class="philosophy-idx">PRINCIPLE // 01</span>
+            <h4 class="philosophy-title">Signal Over Noise</h4>
+            <p class="philosophy-text">
+              Eliminate vanity metrics. Every chart, card, and indicator must directly answer a concrete operational
+              question.
+            </p>
+          </div>
+
+          <div class="philosophy-cell">
+            <span class="philosophy-idx">PRINCIPLE // 02</span>
+            <h4 class="philosophy-title">Engineering Discipline</h4>
+            <p class="philosophy-text">
+              Prioritize performant star schemas, verified timestamps, and audited DAX over surface-level visual gimmicks.
+            </p>
+          </div>
+
+          <div class="philosophy-cell">
+            <span class="philosophy-idx">PRINCIPLE // 03</span>
+            <h4 class="philosophy-title">Clarity is Conviction</h4>
+            <p class="philosophy-text">
+              Clean typography and intentional negative space build trust with executive stakeholders faster than complex
+              clutter.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="spotlight-card tech-archive-card">
-        <div>
-          <h4 class="tech-card-title">Automated Smart Toll Gate System</h4>
-          <p class="tech-card-desc">
-            Hardware automation deploying ultrasonic vehicle distance telemetry and servo-assisted barrier control to
-            eliminate highway congestion.
+    <!-- ================= 08. CREATIVE WORK (DESIGN GALLERY) ================= -->
+    <section id="designs" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">07 // CREATIVE</span>
+          <h2 class="section-title">CREATIVE WORK</h2>
+        </div>
+        <p class="section-tagline">
+          Graphic design collaterals, event branding posters, and visual communication assets.
+        </p>
+      </div>
+
+      <div class="creative-gallery-editorial">
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/Dash-It-Up Poster.jpg', 'Dash-It-Up Contest Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/Dash-It-Up Poster.jpg" alt="Dash-It-Up Contest Poster" loading="lazy"
+              width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">Dash-It-Up Contest</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/VIKASIT BHARAT.jpg', 'Vikasit Bharat 2047 Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/VIKASIT BHARAT.jpg" alt="Vikasit Bharat 2047 Poster" loading="lazy"
+              width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">Vikasit Bharat 2047</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg', 'Prompt-E-Pic Contest Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg" alt="Prompt-E-Pic Contest Poster"
+              loading="lazy" width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">Prompt-E-Pic Contest</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/CCC Recruitment.jpg', 'Career Catalyst Club Recruitment Drive')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/CCC Recruitment.jpg" alt="CCC Recruitment Drive Poster" loading="lazy"
+              width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">CCC Recruitment Drive</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/MATLAB Poster.png', 'MATLAB Technical Workshop Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/MATLAB Poster.png" alt="MATLAB Workshop Poster" loading="lazy"
+              width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">MATLAB Workshop</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/Python Poster.png', 'Python Bootcamp Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/Python Poster.png" alt="Python Bootcamp Poster" loading="lazy"
+              width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">Python Bootcamp</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/Smart Shelf Poster.png', 'Smart Shelf Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/Smart Shelf Poster.png" alt="Smart Shelf Poster" loading="lazy"
+              width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">Smart Shelf Exhibition</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+        <div class="poster-gallery-item"
+          onclick="openLightbox('Files/Posters & Dashboards/Pat Cummins Player Dashboard.png', 'Pat Cummins Player Analytics Poster')">
+          <div class="poster-img-aspect">
+            <img src="Files/Posters & Dashboards/Pat Cummins Player Dashboard.png" alt="Player Dashboard Poster"
+              loading="lazy" width="400" height="533">
+          </div>
+          <div class="poster-caption-row">
+            <span class="poster-title-text">Pat Cummins Analytics</span>
+            <span class="poster-view-arrow">VIEW ↗</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gallery-action-footer">
+        <a href="posters.html" class="btn-archive-link">EXPLORE ALL 21+ VISUAL DESIGNS →</a>
+      </div>
+    </section>
+
+    <!-- ================= 09. CERTIFICATES & TECHNICAL ARCHIVE ================= -->
+    <section id="archive" class="desk-section">
+      <div class="section-head">
+        <div class="section-num-title">
+          <span class="section-idx">08 // REPOSITORY</span>
+          <h2 class="section-title">CERTIFICATES &amp; HARDWARE</h2>
+        </div>
+        <p class="section-tagline">
+          Compact verified credential vault and embedded electronics engineering projects.
+        </p>
+      </div>
+
+      <div class="vault-archive-split">
+
+        <!-- Left: Certificates Vault -->
+        <div class="vault-subcolumn">
+          <div class="vault-col-head">
+            <span class="vault-col-title">VERIFIED CREDENTIALS</span>
+            <a href="certificates.html" class="vault-view-all-link">ALL 50+ CREDENTIALS →</a>
+          </div>
+
+          <div class="cert-preview-compact-grid">
+            <div class="cert-preview-card"
+              onclick="openLightbox('Files/Certificates/IMG-202603-04-WA0002.jpeg', 'Power BI &amp; Data Analytics Credential')">
+              <img src="Files/Certificates/IMG-202603-04-WA0002.jpeg" alt="Credential 1" loading="lazy" width="300"
+                height="214">
+            </div>
+            <div class="cert-preview-card"
+              onclick="openLightbox('Files/Certificates/IMG-20251009-WA0001.jpg', 'Python for Data Science Credential')">
+              <img src="Files/Certificates/IMG-20251009-WA0001.jpg" alt="Credential 2" loading="lazy" width="300"
+                height="214">
+            </div>
+            <div class="cert-preview-card"
+              onclick="openLightbox('Files/Certificates/IMG-20250804-WA0007.jpg', 'Academic Excellence Honor')">
+              <img src="Files/Certificates/IMG-20250804-WA0007.jpg" alt="Credential 3" loading="lazy" width="300"
+                height="214">
+            </div>
+            <div class="cert-preview-card"
+              onclick="openLightbox('Files/Certificates/IMG-20250804-WA0019.jpg', 'Industry Certification')">
+              <img src="Files/Certificates/IMG-20250804-WA0019.jpg" alt="Credential 4" loading="lazy" width="300"
+                height="214">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Technical Hardware Archive -->
+        <div class="vault-subcolumn">
+          <div class="vault-col-head">
+            <span class="vault-col-title">TECHNICAL ARCHIVE (IOT &amp; HARDWARE)</span>
+            <span class="mono-label">3 PROTOTYPES</span>
+          </div>
+
+          <div class="tech-hardware-card">
+            <div>
+              <div class="tech-hw-top">
+                <span class="tech-hw-badge">EMBEDDED SENSORS</span>
+                <span class="tech-hw-status">● VERIFIED HARDWARE</span>
+              </div>
+              <h4 class="tech-hw-title">IoT-Based Water Quality Monitoring</h4>
+              <p class="tech-hw-desc">
+                Embedded Arduino microcontroller framework measuring real-time pH, turbidity, total dissolved solids
+                (TDS), and water temperature.
+              </p>
+            </div>
+            <div class="tech-hw-foot">
+              <span class="tech-hw-stack">Arduino · Sensor Fusion</span>
+              <a href="Files/Report_Water Quality Monitoring.pdf" target="_blank" class="tech-hw-action">VIEW REPORT ↗</a>
+            </div>
+          </div>
+
+          <div class="tech-hardware-card">
+            <div>
+              <div class="tech-hw-top">
+                <span class="tech-hw-badge">AUTOMATION &amp; IOT</span>
+                <span class="tech-hw-status">● PROTOTYPE VERIFIED</span>
+              </div>
+              <h4 class="tech-hw-title">Automated Smart Toll Gate System</h4>
+              <p class="tech-hw-desc">
+                Hardware automation deploying ultrasonic vehicle distance telemetry and servo-assisted barrier control to
+                eliminate highway congestion.
+              </p>
+            </div>
+            <div class="tech-hw-foot">
+              <span class="tech-hw-stack">Arduino · Servo · IoT</span>
+              <a href="https://www.linkedin.com/posts/medhavi-agrawal_iot-arduino-innovation-activity-7311979744302927873-dE4R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
+                target="_blank" class="tech-hw-action">VIEW PROJECT ↗</a>
+            </div>
+          </div>
+
+          <div class="tech-hardware-card">
+            <div>
+              <div class="tech-hw-top">
+                <span class="tech-hw-badge">ENVIRONMENTAL R&amp;D</span>
+                <span class="tech-hw-status">● STATE RANK 05</span>
+              </div>
+              <h4 class="tech-hw-title">Reutilization of Fossil Fuels (ROFF)</h4>
+              <p class="tech-hw-desc">
+                Environmental engineering research capturing exhaust particulate emissions and converting carbon residue
+                into printing ink. Awarded State Rank 05 at NCSC.
+              </p>
+            </div>
+            <div class="tech-hw-foot">
+              <span class="tech-hw-stack">Particulate Recovery</span>
+              <a href="Files/NCSC Presentation File.pdf" target="_blank" class="tech-hw-action">VIEW REPORT ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 10. CONTACT SECTION ================= -->
+    <section id="contact" class="desk-section">
+      <div class="contact-dossier-card">
+        <div class="contact-statement-side">
+          <div class="contact-telemetry-badge">
+            <span class="status-beacon-live"></span>
+            <span>AVAILABLE FOR IMMEDIATE ENGAGEMENT</span>
+          </div>
+
+          <h2 class="contact-headline">
+            LET'S BUILD<br>
+            <span class="headline-highlight">SOMETHING</span><br>
+            MEANINGFUL.
+          </h2>
+
+          <div class="contact-telemetry-meta">
+            <span class="telemetry-meta-pill">LOCATION: GWALIOR / REMOTE</span>
+            <span class="telemetry-meta-pill">AVG RESPONSE: &lt; 4 HOURS</span>
+            <span class="telemetry-meta-pill">TIMEZONE: IST (UTC+5:30)</span>
+          </div>
+
+          <p class="contact-prose">
+            Interested in data, technology, collaboration or new internship and full-time opportunities? Whether it's an
+            executive BI dashboard, an analytical pipeline, or a high-impact technical product, let's connect.
           </p>
         </div>
-        <div class="tech-card-footer">
-          <span class="tech-card-stack">Arduino · Servo · IoT</span>
-          <a href="https://www.linkedin.com/posts/medhavi-agrawal_iot-arduino-innovation-activity-7311979744302927873-dE4R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
-            target="_blank" class="tech-card-arrow">VIEW PROJECT ↗</a>
+
+        <div class="contact-channels-column">
+          <a href="mailto:magrawal09.contact@gmail.com" class="contact-link-row">
+            <span>EMAIL TRANSMISSION</span>
+            <span class="arrow-indicator">magrawal09.contact@gmail.com →</span>
+          </a>
+          <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" class="contact-link-row">
+            <span>LINKEDIN NETWORK</span>
+            <span class="arrow-indicator">linkedin.com/in/medhavi-agrawal →</span>
+          </a>
+          <a href="https://github.com/m-agrawal09" target="_blank" class="contact-link-row">
+            <span>GITHUB REPOSITORY</span>
+            <span class="arrow-indicator">github.com/m-agrawal09 →</span>
+          </a>
+          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="contact-link-row">
+            <span>OFFICIAL RÉSUMÉ</span>
+            <span class="arrow-indicator">DOWNLOAD [PDF] →</span>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="spotlight-card tech-archive-card">
-        <div>
-          <h4 class="tech-card-title">Reutilization of Fossil Fuels (ROFF)</h4>
-          <p class="tech-card-desc">
-            Environmental engineering research capturing exhaust particulate emissions and converting carbon residue
-            into printing ink. Awarded State Rank 05 at NCSC.
-          </p>
-        </div>
-        <div class="tech-card-footer">
-          <span class="tech-card-stack">Environmental Research</span>
-          <a href="Files/NCSC Presentation File.pdf" target="_blank" class="tech-card-arrow">VIEW REPORT ↗</a>
-        </div>
+  </main>
+
+  <!-- ================= EDITORIAL FOOTER & COLOPHON ================= -->
+  <footer class="desk-editorial-footer">
+    <div class="footer-colophon-inner">
+      <div class="footer-identity">
+        <span class="footer-identity-title">MEDHAVI AGRAWAL — THE ANALYST'S DESK</span>
+        <span>ENGINEERED FOR HIGH-CONVICTION DECISIONS // 2026</span>
       </div>
-
-    </div>
-  </section>
-
-  <!-- ================= ACCREDITED HONORS & AWARDS ================= -->
-  <section id="achievements" class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">05 // HONORS</span>
-        <h2 class="section-title">ACHIEVEMENTS</h2>
-      </div>
-      <span class="section-annotation">ACCREDITED MERIT RECORD</span>
-    </div>
-
-    <div class="record-timeline">
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🏆</div>
-        <div class="record-content">
-          <span class="record-title">TOP 30 FINALIST — STATEWIDE POLICE DATATHON</span>
-          <p class="record-desc">Karnataka State Police Datathon 2026 for AI-driven crime intelligence.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🎖️</div>
-        <div class="record-content">
-          <span class="record-title">EASTMAN POWERUP SCHOLAR</span>
-          <p class="record-desc">1 of 32 scholars selected nationwide from 10,000+ applicants.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🥇</div>
-        <div class="record-content">
-          <span class="record-title">1ST PLACE — DASHBOARD MASTERS</span>
-          <p class="record-desc">National Power BI Dashboard sprint contest at IITM Janakpuri, 2026.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🥇</div>
-        <div class="record-content">
-          <span class="record-title">1ST PLACE — DATAVIZ POWER BI COMPETITION</span>
-          <p class="record-desc">Annual data storytelling and business intelligence contest at MITS Gwalior, 2025.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🌟</div>
-        <div class="record-content">
-          <span class="record-title">INSTITUTE RANK 01 — TWO CONSECUTIVE YEARS</span>
-          <p class="record-desc">Department of ETE, 2024–25 &amp; 2025–26 with 9.84 cumulative CGPA.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🎖️</div>
-        <div class="record-content">
-          <span class="record-title">RELIANCE FOUNDATION SCHOLAR</span>
-          <p class="record-desc">Selected among 5,000 top scholars from 125,000+ applicants nationwide.</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🚀</div>
-        <div class="record-content">
-          <span class="record-title">TOP 22 OF 1,800+ TEAMS</span>
-          <p class="record-desc">Ujjain Simhastha Mahakumbh Hackathon (Government of Madhya Pradesh).</p>
-        </div>
-      </div>
-
-      <div class="spotlight-card record-row">
-        <div class="record-badge-icon">🥈</div>
-        <div class="record-content">
-          <span class="record-title">STATE RANK 05 — NATIONAL SCIENCE CONGRESS</span>
-          <p class="record-desc">National Children's Science Congress for ROFF environmental research.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= INTERACTIVE SKILLS MATRIX ================= -->
-  <section id="toolkit" class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">06 // ARSENAL</span>
-        <h2 class="section-title">TOOLKIT</h2>
-      </div>
-      <span class="section-annotation">SKILLS &amp; TECHNOLOGIES</span>
-    </div>
-
-    <!-- Live Search Input -->
-    <div class="toolkit-search-wrap">
-      <span class="toolkit-search-icon">🔍</span>
-      <input type="text" id="skillSearchInput" class="toolkit-search-input"
-        placeholder="Filter skills (e.g., SQL, Power BI, Python, DAX)..." oninput="filterSkills(this.value)">
-    </div>
-
-    <div class="toolkit-grid">
-
-      <div class="spotlight-card toolkit-group">
-        <div class="toolkit-cat-title">ANALYTICS &amp; BI</div>
-        <div class="toolkit-items">
-          <div class="toolkit-item" data-skill="power bi"><span>Power BI</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="sql"><span>SQL (PostgreSQL/MySQL)</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="excel"><span>MS Excel (VBA/Formulas)</span> <span
-              class="toolkit-item-lvl">EXPERT</span></div>
-          <div class="toolkit-item" data-skill="dax"><span>Advanced DAX</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="power query"><span>Power Query &amp; M</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-        </div>
-      </div>
-
-      <div class="spotlight-card toolkit-group">
-        <div class="toolkit-cat-title">PROGRAMMING &amp; DATA</div>
-        <div class="toolkit-items">
-          <div class="toolkit-item" data-skill="python"><span>Python</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="pandas"><span>Pandas &amp; DataFrames</span> <span
-              class="toolkit-item-lvl">EXPERT</span></div>
-          <div class="toolkit-item" data-skill="numpy"><span>NumPy</span> <span class="toolkit-item-lvl">ADVANCED</span>
-          </div>
-          <div class="toolkit-item" data-skill="scikit-learn"><span>Scikit-learn</span> <span
-              class="toolkit-item-lvl">INTERMEDIATE</span></div>
-          <div class="toolkit-item" data-skill="seaborn"><span>Matplotlib &amp; Seaborn</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-        </div>
-      </div>
-
-      <div class="spotlight-card toolkit-group">
-        <div class="toolkit-cat-title">CREATIVE &amp; VISUAL</div>
-        <div class="toolkit-items">
-          <div class="toolkit-item" data-skill="figma"><span>Figma (UI/UX)</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="canva"><span>Canva</span> <span class="toolkit-item-lvl">EXPERT</span>
-          </div>
-          <div class="toolkit-item" data-skill="powerpoint"><span>Executive Presentations</span> <span
-              class="toolkit-item-lvl">EXPERT</span></div>
-          <div class="toolkit-item" data-skill="storytelling"><span>Data Storytelling</span> <span
-              class="toolkit-item-lvl">EXPERT</span></div>
-        </div>
-      </div>
-
-      <div class="spotlight-card toolkit-group">
-        <div class="toolkit-cat-title">SYSTEMS &amp; DEV</div>
-        <div class="toolkit-items">
-          <div class="toolkit-item" data-skill="git github"><span>Git &amp; GitHub</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="arduino"><span>Arduino &amp; IoT</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="html css"><span>HTML5 &amp; CSS3</span> <span
-              class="toolkit-item-lvl">ADVANCED</span></div>
-          <div class="toolkit-item" data-skill="tailwind react"><span>Tailwind &amp; React</span> <span
-              class="toolkit-item-lvl">INTERMEDIATE</span></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= LEADERSHIP & POSITIONS ================= -->
-  <section class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">07 // LEADERSHIP</span>
-        <h2 class="section-title">EXPERIENCE</h2>
-      </div>
-      <span class="section-annotation">POSITIONS OF RESPONSIBILITY</span>
-    </div>
-
-    <div class="experience-list">
-
-      <div class="spotlight-card experience-entry">
-        <div class="exp-meta">
-          <div class="exp-role">PRESIDENT</div>
-          <div class="exp-org">Career Catalyst Club, MITS</div>
-          <span class="exp-date">Sep 2025 — Present</span>
-        </div>
-        <p class="exp-body">
-          Leading a 28-member team coordinating career-readiness bootcamps, technical aptitude webinars, and data
-          analytics mentorship initiatives across departments.
-        </p>
-      </div>
-
-      <div class="spotlight-card experience-entry">
-        <div class="exp-meta">
-          <div class="exp-role">ALUMNI COORDINATOR</div>
-          <div class="exp-org">Department of ETE, MITS</div>
-          <span class="exp-date">Aug 2025 — Aug 2026</span>
-        </div>
-        <p class="exp-body">
-          Directing departmental alumni database records, orchestrating high-level industry webinars, and managing
-          student transition pathways.
-        </p>
-      </div>
-
-      <div class="spotlight-card experience-entry">
-        <div class="exp-meta">
-          <div class="exp-role">COMMITTEE MEMBER</div>
-          <div class="exp-org">Anti-Ragging Committee, MITS</div>
-          <span class="exp-date">Sep 2024 — Present</span>
-        </div>
-        <p class="exp-body">
-          Collaborating with administrative faculties to uphold campus safety benchmarks, peer welfare, and conflict
-          mediation.
-        </p>
-      </div>
-
-      <div class="spotlight-card experience-entry">
-        <div class="exp-meta">
-          <div class="exp-role">MEMBER &amp; GRAPHIC DESIGNER</div>
-          <div class="exp-org">Artistry Club &amp; Innovation DIY Club, MITS</div>
-          <span class="exp-date">Oct 2024 — Present</span>
-        </div>
-        <p class="exp-body">
-          Authoring creative brand collaterals, digital event posters, technical exhibition brochures, and
-          interdisciplinary IoT projects.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= ACADEMIC EDUCATION ================= -->
-  <section class="desk-section">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">08 // ACADEMIA</span>
-        <h2 class="section-title">EDUCATION</h2>
-      </div>
-      <span class="section-annotation">ACADEMIC BACKGROUND</span>
-    </div>
-
-    <div class="education-editorial spotlight-card">
-      <div class="edu-primary">
-        <h3>MADHAV INSTITUTE OF TECHNOLOGY &amp; SCIENCE</h3>
-        <div class="edu-deg">B.Tech in Electronics &amp; Telecommunication Engineering</div>
-        <span class="edu-span">2024 — 2028 · Gwalior, Madhya Pradesh</span>
-      </div>
-
-      <div class="edu-stats-grid">
-        <div class="edu-stat-item">
-          <div class="edu-stat-val" style="color: var(--accent-orange);">9.84</div>
-          <div class="edu-stat-lbl">CGPA (INSTITUTE RANK 1)</div>
-        </div>
-        <div class="edu-stat-item">
-          <div class="edu-stat-val" style="color: var(--accent-green);">10.00</div>
-          <div class="edu-stat-lbl">SEM 01 SGPA (PERFECT)</div>
-        </div>
-        <div class="edu-stat-item">
-          <div class="edu-stat-val">93.4%</div>
-          <div class="edu-stat-lbl">CLASS XII (CBSE BOARD)</div>
-        </div>
-        <div class="edu-stat-item">
-          <div class="edu-stat-val">92.6%</div>
-          <div class="edu-stat-lbl">CLASS X (CBSE BOARD)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CERTIFICATIONS ARCHIVE ================= -->
-  <section class="desk-section" id="certifications">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">09 // CREDENTIALS</span>
-        <h2 class="section-title">CERTIFICATES</h2>
-      </div>
-      <span class="section-annotation">VERIFIED CREDENTIALS</span>
-    </div>
-
-    <div class="archive-preview-grid">
-      <div class="spotlight-card archive-thumb"
-        onclick="openLightbox('Files/Certificates/IMG-20250804-WA0019.jpg', 'Google / Industry Certification')">
-        <img src="Files/Certificates/IMG-20250804-WA0019.jpg" alt="Certification 1" loading="lazy">
-      </div>
-      <div class="spotlight-card archive-thumb"
-        onclick="openLightbox('Files/Certificates/IMG-202603-04-WA0002.jpeg', 'Power BI & Data Analytics Credential')">
-        <img src="Files/Certificates/IMG-202603-04-WA0002.jpeg" alt="Certification 2" loading="lazy">
-      </div>
-      <div class="spotlight-card archive-thumb"
-        onclick="openLightbox('Files/Certificates/IMG-20251009-WA0001.jpg', 'Data Science & Python Credential')">
-        <img src="Files/Certificates/IMG-20251009-WA0001.jpg" alt="Certification 3" loading="lazy">
-      </div>
-      <div class="spotlight-card archive-thumb"
-        onclick="openLightbox('Files/Certificates/IMG-20250804-WA0007.jpg', 'Academic Excellence Honor')">
-        <img src="Files/Certificates/IMG-20250804-WA0007.jpg" alt="Certification 4" loading="lazy">
-      </div>
-    </div>
-
-    <div class="archive-view-more">
-      <a href="certificates.html" class="archive-btn" id="viewAllCertBtn">EXPLORE ALL 25+ CERTIFICATIONS →</a>
-    </div>
-  </section>
-
-  <!-- ================= VISUAL DESIGNS & POSTERS ================= -->
-  <section class="desk-section" id="designs">
-    <div class="section-meta">
-      <div class="section-meta-left">
-        <span class="section-num">10 // CREATIVE</span>
-        <h2 class="section-title">DESIGNS</h2>
-      </div>
-      <span class="section-annotation">DATA VISUALS &amp; POSTERS</span>
-    </div>
-
-    <div class="poster-preview-grid">
-      <div class="spotlight-card poster-thumb-card"
-        onclick="openLightbox('Files/Posters & Dashboards/Dash-It-Up Poster.jpg', 'Dash-It-Up Contest Poster')">
-        <div class="poster-frame">
-          <img src="Files/Posters & Dashboards/Dash-It-Up Poster.jpg" alt="Dash-It-Up Poster" loading="lazy">
-        </div>
-        <span class="poster-title">Dash-It-Up Contest</span>
-      </div>
-
-      <div class="spotlight-card poster-thumb-card"
-        onclick="openLightbox('Files/Posters & Dashboards/VIKASIT BHARAT.jpg', 'Vikasit Bharat 2047 Visual')">
-        <div class="poster-frame">
-          <img src="Files/Posters & Dashboards/VIKASIT BHARAT.jpg" alt="Vikasit Bharat Poster" loading="lazy">
-        </div>
-        <span class="poster-title">Vikasit Bharat 2047</span>
-      </div>
-
-      <div class="spotlight-card poster-thumb-card"
-        onclick="openLightbox('Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg', 'Prompt-E-Pic Event Poster')">
-        <div class="poster-frame">
-          <img src="Files/Posters & Dashboards/PROMPT-E-PIC Event Poster.jpg" alt="PROMPT-E-PIC Event Poster"
-            loading="lazy">
-        </div>
-        <span class="poster-title">Prompt-E-Pic Contest</span>
-      </div>
-
-      <div class="spotlight-card poster-thumb-card"
-        onclick="openLightbox('Files/Posters & Dashboards/CCC Recruitment.jpg', 'CCC Recruitment Campaign')">
-        <div class="poster-frame">
-          <img src="Files/Posters & Dashboards/CCC Recruitment.jpg" alt="CCC Recruitment Poster" loading="lazy">
-        </div>
-        <span class="poster-title">CCC Recruitment Campaign</span>
-      </div>
-    </div>
-
-    <div class="archive-view-more">
-      <a href="posters.html" class="archive-btn" id="viewAllDesignsBtn">EXPLORE ALL VISUAL DESIGNS →</a>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT SECTION ================= -->
-  <section class="contact-section" id="contact">
-    <div class="contact-box spotlight-card">
       <div>
-        <div class="contact-headline">
-          <span>LET'S WORK</span>
-          <span class="highlight">WITH DATA.</span>
-        </div>
-        <p class="contact-subtext">
-          Currently exploring Summer &amp; Full-Time opportunities across Data Analytics, Business Intelligence, Data
-          Engineering, and Predictive Modeling. Let's create something extraordinary together.
-        </p>
+        <span>PALETTE: INK BLACK · WARM PAPER · ELECTRIC LIME · CORAL</span>
       </div>
-
-      <div class="contact-channels">
-        <a href="mailto:magrawal09.contact@gmail.com" class="contact-row-link">
-          <span>EMAIL TRANSMISSION</span>
-          <span class="arrow">magrawal09.contact@gmail.com &rarr;</span>
-        </a>
-        <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" class="contact-row-link">
-          <span>LINKEDIN NETWORK</span>
-          <span class="arrow">linkedin.com/in/medhavi-agrawal &rarr;</span>
-        </a>
-        <a href="https://github.com/m-agrawal09" target="_blank" class="contact-row-link">
-          <span>GITHUB REPOSITORY</span>
-          <span class="arrow">github.com/m-agrawal09 &rarr;</span>
-        </a>
-        <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" class="contact-row-link">
-          <span>OFFICIAL RESUME</span>
-          <span class="arrow">DOWNLOAD [PDF] &rarr;</span>
-        </a>
+      <div class="footer-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span>BACK TO TOP ↑</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="desk-footer">
-    <div class="footer-inner">
-      <span>MEDHAVI AGRAWAL — THE ANALYST'S DESK</span>
-      <span>DESIGNED FOR HIGH-CONVICTION DECISIONS // 2026</span>
     </div>
   </footer>
 
   <!-- ================= GLOBAL LIGHTBOX MODAL ================= -->
-  <div class="global-lightbox-modal" id="globalLightbox" onclick="closeLightbox(event)">
-    <div class="lightbox-content-box">
+  <div class="editorial-lightbox-modal" id="globalLightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-modal-content">
       <button class="lightbox-close-btn" onclick="forceCloseLightbox()">&times;</button>
-      <img id="lightboxImg" src="" alt="Fullscreen Preview">
-      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <img id="lightboxImg" src="" alt="Fullscreen Inspection">
+      <div class="lightbox-modal-caption" id="lightboxCaption"></div>
     </div>
   </div>
 
   <!-- ================= TOAST NOTIFICATION ================= -->
   <div class="toast-notice" id="toastNotice">
-    <span>✓</span>
+    <span class="toast-check">✓</span>
     <span id="toastMessage">Email copied to clipboard!</span>
   </div>
 
-  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <!-- ================= JAVASCRIPT INTERACTIONS ================= -->
   <script>
     // Live IST Clock Telemetry
     function updateLiveClock() {
       const ticker = document.getElementById('liveTimeTicker');
       if (!ticker) return;
       const now = new Date();
-      // Format in UTC+5:30 (IST)
       const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
       const timeStr = now.toLocaleTimeString('en-GB', options);
       ticker.textContent = `GWALIOR ${timeStr} [IST]`;
@@ -1032,7 +1521,7 @@
       });
     });
 
-    // Back to top floating button
+    // Back to top floating button visibility
     const backToTopBtn = document.getElementById("backToTop");
     if (backToTopBtn) {
       window.addEventListener("scroll", () => {
@@ -1041,13 +1530,13 @@
         } else {
           backToTopBtn.classList.remove("visible");
         }
-      });
+      }, { passive: true });
       backToTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     }
 
-    // Theme Toggle Logic
+    // Minimal Theme Switching
     const themeToggleBtn = document.getElementById("themeToggle");
     function setTheme(theme) {
       document.documentElement.setAttribute("data-theme", theme);
@@ -1062,19 +1551,6 @@
         setTheme(nextTheme);
       });
     }
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Interactive Spotlight Cursor Glow for .spotlight-card
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
 
     // Copy Email Helper with Toast
     function copyEmail() {
@@ -1096,40 +1572,66 @@
       }, 3000);
     }
 
-    // Project Category Filtering
-    function filterProjects(cat, btn) {
-      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    // Toolkit Category Pill Filtering
+    function filterToolkitCategory(cat, btn) {
+      document.querySelectorAll('.toolkit-filter-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
 
-      const articles = document.querySelectorAll('.case-study');
-      articles.forEach(art => {
-        const itemCat = art.dataset.category;
-        if (cat === 'all' || itemCat === cat) {
-          art.style.display = 'block';
+      const searchInput = document.getElementById('skillSearchInput');
+      if (searchInput) searchInput.value = '';
+
+      const columns = document.querySelectorAll('.toolkit-category-column');
+      columns.forEach(col => {
+        col.querySelectorAll('.skill-item-row').forEach(it => {
+          it.style.display = 'flex';
+          it.classList.remove('skill-highlighted');
+        });
+
+        if (cat === 'all' || col.dataset.cat === cat) {
+          col.style.display = 'flex';
         } else {
-          art.style.display = 'none';
+          col.style.display = 'none';
         }
       });
     }
 
-    // Skills Matrix Search Filter
-    function filterSkills(query) {
+    // Toolkit Search Filtering
+    function searchToolkitSkills(query) {
       const q = query.toLowerCase().trim();
-      const items = document.querySelectorAll('.toolkit-item');
-      items.forEach(item => {
-        const skill = (item.dataset.skill || item.textContent).toLowerCase();
-        if (!q || skill.includes(q)) {
-          item.style.display = 'flex';
-          if (q) item.classList.add('highlighted');
-          else item.classList.remove('highlighted');
+      const columns = document.querySelectorAll('.toolkit-category-column');
+
+      columns.forEach(col => {
+        const rows = col.querySelectorAll('.skill-item-row');
+        let hasMatch = false;
+
+        rows.forEach(row => {
+          const name = (row.dataset.name || row.textContent).toLowerCase();
+          if (!q || name.includes(q)) {
+            row.style.display = 'flex';
+            if (q) row.classList.add('skill-highlighted');
+            else row.classList.remove('skill-highlighted');
+            hasMatch = true;
+          } else {
+            row.style.display = 'none';
+            row.classList.remove('skill-highlighted');
+          }
+        });
+
+        if (!q) {
+          const activeBtn = document.querySelector('.toolkit-filter-btn.active');
+          const currentCat = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'all';
+          if (currentCat === 'all' || col.dataset.cat === currentCat) {
+            col.style.display = 'flex';
+          } else {
+            col.style.display = 'none';
+          }
         } else {
-          item.style.display = 'none';
-          item.classList.remove('highlighted');
+          col.style.display = hasMatch ? 'flex' : 'none';
         }
       });
     }
 
-    // Global Lightbox Modal
+    // Lightbox Modal
     function openLightbox(src, caption) {
       const modal = document.getElementById('globalLightbox');
       const img = document.getElementById('lightboxImg');
@@ -1155,22 +1657,22 @@
       if (e.key === 'Escape') forceCloseLightbox();
     });
 
-    // Stat Count-Up on Scroll
+    // Numerical Count-Up on Scroll
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const signalsStrip = document.getElementById('signalsStrip');
     if (signalsStrip) {
       const statObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            signalsStrip.classList.add('revealed');
             if (!prefersReduced) {
-              const statNumbers = signalsStrip.querySelectorAll('.signal-number');
+              const statNumbers = signalsStrip.querySelectorAll('.signal-big-num');
               statNumbers.forEach(statEl => {
                 const target = parseFloat(statEl.dataset.target);
                 const decimals = parseInt(statEl.dataset.decimals || '0', 10);
                 const prefix = statEl.dataset.prefix || '';
                 const suffix = statEl.dataset.suffix || '';
-                const denom = statEl.dataset.denom ? `<span class="signal-denom">${statEl.dataset.denom}</span>` : '';
-                const duration = 1200;
+                const denom = statEl.dataset.denom ? `<span class="signal-cell-denom">${statEl.dataset.denom}</span>` : '';
+                const duration = 1100;
                 const startTime = performance.now();
                 const startVal = decimals > 0 ? target * 0.75 : 0;
 
@@ -1191,210 +1693,6 @@
         });
       }, { threshold: 0.25 });
       statObserver.observe(signalsStrip);
-    }
-
-    // Case Media Intersection Reveal
-    const caseMediaList = document.querySelectorAll('.case-media');
-    if (caseMediaList.length > 0) {
-      const caseObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            caseObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      caseMediaList.forEach(cm => caseObserver.observe(cm));
-    }
-
-    // Particle Constellation Ambient Canvas
-    (function initAtmosphere() {
-      const canvas = document.getElementById('ambientCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let width = 0, height = 0;
-      let particles = [];
-
-      function resize() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
-      }
-
-      function createParticles() {
-        particles = [];
-        const count = Math.max(20, Math.min(48, Math.floor(width / 32)));
-        for (let i = 0; i < count; i++) {
-          particles.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.05,
-            vy: (Math.random() - 0.5) * 0.04,
-            radius: 0.6 + Math.random() * 0.8,
-            alpha: 0.15 + Math.random() * 0.35
-          });
-        }
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, width, height);
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        if (isLight) return;
-
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          if (!prefersReduced) {
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < 0) p.x = width;
-            else if (p.x > width) p.x = 0;
-            if (p.y < 0) p.y = height;
-            else if (p.y > height) p.y = 0;
-          }
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-          ctx.fill();
-        }
-
-        // Faint connecting lines
-        ctx.lineWidth = 0.5;
-        let connections = 0;
-        for (let i = 0; i < particles.length && connections < 8; i++) {
-          for (let j = i + 1; j < particles.length && connections < 8; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.hypot(dx, dy);
-            if (dist < 80) {
-              connections++;
-              ctx.strokeStyle = `rgba(255, 87, 34, ${(1 - dist / 80) * 0.08})`;
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        if (!prefersReduced && !document.hidden) {
-          requestAnimationFrame(draw);
-        }
-      }
-
-      resize();
-      createParticles();
-      draw();
-
-      window.addEventListener('resize', () => {
-        resize();
-        createParticles();
-      }, { passive: true });
-    })();
-  </script>
-
-  <!-- ================= 3D PHYSICS LANYARD BADGE & TYPOGRAPHY ENGINES ================= -->
-  <link rel="stylesheet" href="Files/lanyard-dist/style.css">
-  <script type="module">
-    import { initLanyard } from './Files/lanyard-dist/lanyard.bundle.js?v=4';
-    import { generateIdCardTextures } from './Files/lanyard-dist/id-card-generator.js?v=5';
-    import { initDecryptedText } from './Files/decrypted-text.js?v=2';
-    import { initTechText } from './Files/tech-text.js?v=1';
-
-    // Initialize DecryptedText on DECISIONS with speed=120
-    initDecryptedText({
-      target: '#decryptedDecisions',
-      text: 'DECISIONS',
-      speed: 120,
-      maxIterations: 10,
-      sequential: true,
-      characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
-      animateOn: 'inViewHover'
-    });
-
-    // Initialize TechText on MEDHAVI AGRAWAL with exact configuration
-    initTechText('#techTextName', {
-      text: 'MEDHAVI AGRAWAL',
-      fontWeight: 700,
-      fontSize: 150,
-      reveal: 'letter',
-      dashLength: 4,
-      dashGap: 2,
-      specks: 15,
-      letterSpacing: -0.03,
-      strokeWidth: 1.75,
-      speed: 1.1,
-      color: 'auto',
-      accentColor: 'auto'
-    });
-
-    async function setupLanyard() {
-      const container = document.getElementById('lanyardContainer');
-      const fallback = document.getElementById('lanyardFallback');
-      if (!container) return;
-
-      try {
-        const { frontImage, backImage } = await generateIdCardTextures('Files/Profile New.jpeg');
-        if (fallback) fallback.style.display = 'none';
-
-        const isDesktop = window.innerWidth >= 1024;
-        initLanyard(container, {
-          frontImage,
-          backImage,
-          lanyardImage: 'Files/lanyard/lanyard.png?v=2',
-          position: isDesktop ? [0, -0.32, 12.0] : [0, -0.4, 13],
-          gravity: [0, -40, 0],
-          fov: isDesktop ? 27 : 26,
-          transparent: true,
-          imageFit: 'cover',
-          lanyardWidth: 1.3,
-          cardScale: isDesktop ? 4.15 : 3.3
-        });
-
-        // Non-blocking touch coordination
-        const bindNonBlockingTouch = () => {
-          const canvas = container.querySelector('canvas');
-          if (!canvas) {
-            requestAnimationFrame(bindNonBlockingTouch);
-            return;
-          }
-          canvas.style.touchAction = 'pan-y';
-
-          const isCardHit = (touch) => {
-            const rect = canvas.getBoundingClientRect();
-            const nx = (touch.clientX - rect.left) / rect.width;
-            const ny = (touch.clientY - rect.top) / rect.height;
-            return nx >= 0.22 && nx <= 0.78 && ny >= 0.20 && ny <= 0.85;
-          };
-
-          canvas.addEventListener('touchstart', (e) => {
-            if (e.touches && e.touches.length === 1 && isCardHit(e.touches[0])) {
-              canvas.style.touchAction = 'none';
-            } else {
-              canvas.style.touchAction = 'pan-y';
-            }
-          }, { passive: true });
-
-          const restorePan = () => {
-            canvas.style.touchAction = 'pan-y';
-          };
-          canvas.addEventListener('touchend', restorePan, { passive: true });
-          canvas.addEventListener('touchcancel', restorePan, { passive: true });
-        };
-        requestAnimationFrame(bindNonBlockingTouch);
-      } catch (err) {
-        console.warn('Lanyard 3D fallback:', err);
-        if (fallback) fallback.style.display = 'block';
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupLanyard);
-    } else {
-      setupLanyard();
     }
   </script>
 
