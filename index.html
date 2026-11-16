@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medhavi Agrawal — /26 Data & BI Intelligence Portfolio</title>
+  <title>Medhavi Agrawal — /26 Data &amp; BI Intelligence Portfolio</title>
   <meta name="description"
     content="Medhavi Agrawal — Data Analyst, BI Developer, and ETE Scholar at MITS Gwalior (9.84 CGPA, Department Rank 1). Top 30 KSP Police Datathon 2026 Finalist, Eastman PowerUp Scholar, and Reliance Foundation Scholar.">
   <link rel="canonical" href="https://m-agrawal09.github.io/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Medhavi Agrawal — /26 Data & BI Intelligence Portfolio">
+  <meta property="og:title" content="Medhavi Agrawal — /26 Data &amp; BI Intelligence Portfolio">
   <meta property="og:description"
-    content="Data Analyst & BI Developer. Department Rank 1 (9.84 CGPA), KSP Datathon 2026 Top 30 Finalist, Eastman PowerUp Scholar.">
+    content="Data Analyst &amp; BI Developer. Department Rank 1 (9.84 CGPA), KSP Datathon 2026 Top 30 Finalist, Eastman PowerUp Scholar.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="Files/Profile New.jpeg">
 
@@ -27,81 +27,111 @@
        01. HERO COVER (DARK ATMOSPHERIC HEADER & HERO)
        ========================================================================== -->
   <header class="hero-cover" id="hero">
+    <div class="hero-interactive-spotlight" id="heroSpotlight"></div>
 
-    <!-- Top Navigation Bar -->
-    <nav class="hero-nav" aria-label="Primary Navigation">
-      <div class="hero-brand">MEDHAVI AGRAWAL</div>
-      <a href="mailto:magrawal09.contact@gmail.com" class="hero-email-link" onclick="copyContactEmail(); return false;">
-        magrawal09.contact@gmail.com
-      </a>
-      <div class="hero-meta-right">
-        <span class="live-dot"></span>
-        <span id="liveClockDisplay">GWALIOR / LIVE IST</span>
-      </div>
-    </nav>
+    <div class="hero-inner-container">
 
-    <!-- Center Hero Body -->
-    <div class="hero-body">
-      <div class="hero-titles">
-        <div class="hero-role-meta">
-          Data Analyst · BI Developer · ETE Scholar<br>
-          MITS Gwalior · Department Rank 1 (9.84 CGPA)
+      <!-- Operational Cockpit Telemetry Strip -->
+      <div class="hero-hud-strip">
+        <div class="hud-item">
+          <span>BASE COORD:</span>
+          <span class="hud-val">26.2183° N, 78.1828° E [GWALIOR]</span>
         </div>
-
-        <div class="hero-slug-row">
-          <span class="hero-slug-num">/26</span>
-          <span class="hero-slug-tag">DATA & BI</span>
+        <div class="hud-item">
+          <span>SYSTEM RUNTIME:</span>
+          <span class="hud-val" id="liveClockDisplay">LIVE IST</span>
         </div>
-
-        <h1 class="hero-giant-heading">
-          INTELLIGENCE<br>PORTFOLIO
-        </h1>
+        <div class="hud-item">
+          <span>MODEL INTEGRITY:</span>
+          <span class="hud-val" style="color: var(--accent-green);">100% AUDITED (ZERO CARTESIAN)</span>
+        </div>
+        <div class="hud-item">
+          <span>SCHOLAR RANK:</span>
+          <span class="hud-val" style="color: var(--accent-amber);">#1 ETE // 9.84 CGPA</span>
+        </div>
       </div>
 
-      <!-- Right Column: Atmospheric Portrait Frame -->
-      <div class="hero-visual-wrap">
-        <div class="hero-portrait-frame">
-          <img src="Files/Profile New.jpeg" alt="Medhavi Agrawal — Data Analyst & BI Developer" class="hero-portrait-img"
-            fetchpriority="high">
-          <div class="hero-portrait-badge">
-            <span>MEDHAVI AGRAWAL // ANALYST</span>
-            <span>9.84 CGPA · RANK 1</span>
+      <!-- Top Navigation Bar -->
+      <nav class="hero-nav" aria-label="Primary Navigation">
+        <div class="hero-brand">MEDHAVI AGRAWAL</div>
+        <a href="mailto:magrawal09.contact@gmail.com" class="hero-email-link"
+          onclick="copyContactEmail(); return false;">
+          magrawal09.contact@gmail.com
+        </a>
+        <div class="hero-meta-right">
+          <span class="live-dot"></span>
+          <span>AVAILABLE FOR 2026 ROLES</span>
+        </div>
+      </nav>
+
+      <!-- Center Hero Body -->
+      <div class="hero-body">
+        <div class="hero-titles">
+          <div class="hero-role-meta">
+            DATA ANALYST · BI DEVELOPER · ETE SCHOLAR<br>
+            MITS GWALIOR · INSTITUTE RANK 1 (9.84 CGPA)
+          </div>
+
+          <div class="hero-slug-row">
+            <span class="hero-slug-num">/26</span>
+            <span class="hero-slug-tag">DATA &amp; BI</span>
+          </div>
+
+          <h1 class="hero-giant-heading">
+            <span id="decryptedHeroTitle">INTELLIGENCE</span><br>PORTFOLIO
+          </h1>
+        </div>
+
+        <!-- Right Column: Atmospheric Portrait Frame with 3D Parallax & Magnetic Badges -->
+        <div class="hero-visual-wrap" id="heroVisualWrap">
+          <div class="hero-floating-chip chip-top-left">
+            <span style="color: var(--accent-amber); font-weight: 700;">★ TOP 0.3%</span> EASTMAN SCHOLAR
+          </div>
+
+          <div class="hero-portrait-frame" id="heroPortraitFrame">
+            <img src="Files/Profile New.jpeg" alt="Medhavi Agrawal — Data Analyst &amp; BI Developer"
+              class="hero-portrait-img" fetchpriority="high">
+            <div class="hero-portrait-badge">
+              <span>MEDHAVI AGRAWAL // ANALYST</span>
+              <span>9.84 CGPA · RANK 1</span>
+            </div>
+          </div>
+
+          <div class="hero-floating-chip chip-bottom-right">
+            <span style="color: var(--accent-green); font-weight: 700;">● FINALIST</span> KSP POLICE DATATHON
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Hero Bottom Bar -->
-    <div class="hero-footer">
-      <div>PORTFOLIO / SELECTED INTELLIGENCE SYSTEMS</div>
-      <div class="hero-social-links">
-        <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" rel="noopener">LI</a>
-        <a href="https://github.com/m-agrawal09" target="_blank" rel="noopener">GH</a>
-        <a href="mailto:magrawal09.contact@gmail.com">EM</a>
-        <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener">PDF</a>
+      <!-- Hero Bottom Bar -->
+      <div class="hero-footer">
+        <div>PORTFOLIO / SELECTED INTELLIGENCE SYSTEMS</div>
+        <div class="hero-social-links">
+          <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" rel="noopener">LINKEDIN</a>
+          <a href="https://github.com/m-agrawal09" target="_blank" rel="noopener">GITHUB</a>
+          <a href="mailto:magrawal09.contact@gmail.com">EMAIL</a>
+          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener">RÉSUMÉ [PDF]</a>
+        </div>
       </div>
-    </div>
 
+    </div>
   </header>
 
   <!-- ==========================================================================
-       SECTION 01: /about me (PAGE 1)
+       MAIN EDITORIAL SECTIONS (UNIFIED 2-TRACK GRID)
        ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">01</span>
-    <span class="rail-tag">/INTRODUCTION</span>
-  </div>
+  <main class="site-section-wrapper">
 
-  <section class="editorial-section" id="about">
-    <div class="editorial-layout">
-
-      <!-- Left Gutter Vertical Watermark -->
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/about me</span>
+    <!-- ================= SECTION 01: /about me ================= -->
+    <section class="editorial-row" id="about">
+      <div class="track-rail-col">
+        <span class="track-section-num">01</span>
+        <span class="track-watermark-text">/about me</span>
       </div>
 
-      <!-- Content Area -->
-      <div class="editorial-content">
+      <div class="track-main-col">
+        <div class="track-top-meta">/INTRODUCTION</div>
+
         <h2 class="two-tone-statement">
           I craft analytical systems where data meets executive decision.
           <span class="muted">My work blends human curiosity with statistical precision —</span>
@@ -115,10 +145,10 @@
           </div>
 
           <p class="about-bio-text">
-            I am <strong>Medhavi Agrawal</strong> — Data Analyst, BI Developer, and Department Rank 1 Scholar in Electronics & Telecommunication at MITS Gwalior (9.84 CGPA). Top 30 Finalist in Karnataka State Police Datathon 2026, Eastman PowerUp Scholar (Top 0.3% Nationwide), and Reliance Foundation Scholar. I design end-to-end telemetry platforms that turn messy datasets into high-conviction decisions.
+            I am <strong>Medhavi Agrawal</strong> — Data Analyst, BI Developer, and Department Rank 1 Scholar in Electronics &amp; Telecommunication at MITS Gwalior (9.84 CGPA). Top 30 Finalist in Karnataka State Police Datathon 2026, Eastman PowerUp Scholar (Top 0.3% Nationwide), and Reliance Foundation Scholar. I design end-to-end telemetry platforms that turn messy datasets into high-conviction decisions.
           </p>
 
-          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener" class="corner-btn corner-btn-fill">
+          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener" class="corner-btn">
             <span class="c-mark c-tl"></span>
             <span class="c-mark c-tr"></span>
             <span class="c-mark c-bl"></span>
@@ -135,49 +165,75 @@
             <span class="tool-badge">Advanced DAX</span>
             <span class="tool-badge">Python</span>
             <span class="tool-badge">SQL (PostgreSQL)</span>
-            <span class="tool-badge">Pandas & NumPy</span>
+            <span class="tool-badge">Pandas &amp; NumPy</span>
             <span class="tool-badge">Zoho Catalyst</span>
             <span class="tool-badge">MongoDB</span>
-            <span class="tool-badge">GIS & Spatial AI</span>
+            <span class="tool-badge">GIS &amp; Spatial AI</span>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==========================================================================
-       SECTION 02: /featured (PAGES 1 & 2) — BEST WORKS
-       ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">02</span>
-    <span class="rail-tag">/FEATURED</span>
-  </div>
-
-  <section class="editorial-section" id="featured">
-    <div class="editorial-layout">
-
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/featured</span>
+    <!-- ================= SECTION 02: .. best works (INTERACTIVE DOSSIERS) ================= -->
+    <section class="editorial-row" id="featured">
+      <div class="track-rail-col">
+        <span class="track-section-num">02</span>
+        <span class="track-watermark-text">/featured</span>
       </div>
 
-      <div class="editorial-content">
+      <div class="track-main-col">
+        <div class="track-top-meta">/FEATURED</div>
+
         <h2 class="dotted-heading">best works</h2>
 
         <div class="featured-showcase-stack">
 
           <!-- Project 01: KSP Crime Intelligence Platform -->
-          <article class="featured-project-card">
-            <div class="featured-img-stage" onclick="openImageLightbox('Files/Project Img/ksp-dashboard.png', 'Karnataka State Police Crime Intelligence Platform — Spatial AI & DAX')">
-              <img src="Files/Project Img/ksp-dashboard.png" alt="KSP Crime Intelligence Platform" loading="lazy">
+          <article class="featured-project-card" id="card-ksp">
+            <!-- Interactive Dossier Tab Bar -->
+            <div class="dossier-tab-strip">
+              <button class="dossier-tab-btn active" onclick="switchDossierTab('ksp', 'telemetry', this)">01 // Telemetry Preview</button>
+              <button class="dossier-tab-btn" onclick="switchDossierTab('ksp', 'architecture', this)">02 // Spatial Architecture</button>
+              <button class="dossier-tab-btn" onclick="switchDossierTab('ksp', 'impact', this)">03 // Police Impact</button>
             </div>
-        </div>
 
-        <div class="project-details-column">
-          <div class="project-meta-strip">
-            <span class="project-index-pill">FLAGSHIP CASE STUDY // 01</span>
-            <span class="project-award-badge">TOP 30 FINALIST — STATEWIDE POLICE DATATHON 2026</span>
-          <h3 class="project-title">Karnataka State Police AI Crime Intelligence Platform</h3>
+            <!-- Tab 1: Telemetry View -->
+            <div class="dossier-tab-content active" id="ksp-tab-telemetry" style="padding: 0;">
+              <div class="featured-img-stage" onclick="openImageLightbox('Files/Project Img/ksp-dashboard.png', 'Karnataka State Police Crime Intelligence Platform — Spatial AI &amp; DAX')">
+                <img src="Files/Project Img/ksp-dashboard.png" alt="KSP Crime Intelligence Platform" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Tab 2: Architecture View -->
+            <div class="dossier-tab-content" id="ksp-tab-architecture">
+              <div style="background-color: var(--bg-subtle); padding: 24px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-light);">
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Spatial Clustering &amp; Data Pipeline Architecture</h4>
+                <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                  Engineered an end-to-end full-stack analytics platform integrating kernel density spatial clustering, police jurisdiction load-balancing, and bilingual Kannada/English reporting for field officers.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="metric-tag">Zoho Catalyst Serverless</span>
+                  <span class="metric-tag">React Frontend</span>
+                  <span class="metric-tag">PostGIS Geospatial DB</span>
+                  <span class="metric-tag">DAX In-Memory VertiPaq</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3: Impact View -->
+            <div class="dossier-tab-content" id="ksp-tab-impact">
+              <div style="background-color: var(--bg-subtle); padding: 24px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-light);">
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Statewide Hackathon Podiums &amp; Operational Metrics</h4>
+                <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                  Selected as Top 30 Finalist out of hundreds of engineering teams across India. Achieved sub-2.5 second query latency across 7 statewide police ranges with 98.6% hotspot categorization yield.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="metric-tag">Top 30 Finalist Nationally</span>
+                  <span class="metric-tag">&lt; 2.5s Query Response</span>
+                  <span class="metric-tag">7 Police Ranges</span>
+                </div>
+              </div>
+            </div>
 
             <div class="featured-caption-row">
               <div>
@@ -189,7 +245,8 @@
                 <span class="metric-tag">TOP 30 FINALIST</span>
                 <span class="metric-tag">7 POLICE RANGES</span>
                 <span class="metric-tag">&lt; 2.5S QUERY RESPONSE</span>
-                <a href="https://ksp-crime-intelligence-50044050041.development.catalystappsail.in/#/" target="_blank" rel="noopener" class="btn-card-link">
+                <a href="https://ksp-crime-intelligence-50044050041.development.catalystappsail.in/#/" target="_blank"
+                  rel="noopener" class="btn-card-link">
                   LIVE APP ↗
                 </a>
               </div>
@@ -197,9 +254,47 @@
           </article>
 
           <!-- Project 02: Reconnect Network (Agro-Walls) -->
-          <article class="featured-project-card">
-            <div class="featured-img-stage" onclick="openImageLightbox('Files/Project Img/agrowalls-reconnect.png', 'Reconnect Network (Agro-Walls) — Disaster Incident Command System')">
-              <img src="Files/Project Img/agrowalls-reconnect.png" alt="Reconnect Network Disaster Incident Command" loading="lazy">
+          <article class="featured-project-card" id="card-reconnect">
+            <div class="dossier-tab-strip">
+              <button class="dossier-tab-btn active" onclick="switchDossierTab('reconnect', 'telemetry', this)">01 // Incident Command</button>
+              <button class="dossier-tab-btn" onclick="switchDossierTab('reconnect', 'mesh', this)">02 // Offline P2P Mesh</button>
+              <button class="dossier-tab-btn" onclick="switchDossierTab('reconnect', 'triage', this)">03 // Rapid Triage</button>
+            </div>
+
+            <!-- Tab 1 -->
+            <div class="dossier-tab-content active" id="reconnect-tab-telemetry" style="padding: 0;">
+              <div class="featured-img-stage" onclick="openImageLightbox('Files/Project Img/agrowalls-reconnect.png', 'Reconnect Network (Agro-Walls) — Disaster Incident Command System')">
+                <img src="Files/Project Img/agrowalls-reconnect.png" alt="Reconnect Network Disaster Incident Command" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="dossier-tab-content" id="reconnect-tab-mesh">
+              <div style="background-color: var(--bg-subtle); padding: 24px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-light);">
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Zero-Connectivity Disaster Protocol</h4>
+                <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                  Built for catastrophic disaster zones where cellular towers fail. Implements an offline QR-mesh synchronization protocol enabling emergency responders to reconcile missing persons registries peer-to-peer.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="metric-tag">Offline QR Protocol</span>
+                  <span class="metric-tag">IndexedDB Local Storage</span>
+                  <span class="metric-tag">Spatial Hotspots</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3 -->
+            <div class="dossier-tab-content" id="reconnect-tab-triage">
+              <div style="background-color: var(--bg-subtle); padding: 24px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-light);">
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Emergency Shelter &amp; Incident Reconciliation</h4>
+                <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                  Reduces missing person identification time from days to under 45 seconds during simulated evacuation exercises.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="metric-tag">&lt; 45s Victim Match</span>
+                  <span class="metric-tag">Multi-Agency Sync</span>
+                </div>
+              </div>
             </div>
 
             <div class="featured-caption-row">
@@ -212,7 +307,8 @@
                 <span class="metric-tag">OFFLINE PROTOCOL</span>
                 <span class="metric-tag">SPATIAL DENSITY</span>
                 <span class="metric-tag">INCIDENT TRACKING</span>
-                <a href="https://github.com/m-agrawal09/agro-walls" target="_blank" rel="noopener" class="btn-card-link">
+                <a href="https://github.com/m-agrawal09/agro-walls" target="_blank" rel="noopener"
+                  class="btn-card-link">
                   SOURCE CODE ↗
                 </a>
               </div>
@@ -220,26 +316,55 @@
           </article>
 
           <!-- Project 03: Highway Accident Severity Forensics -->
-          <article class="featured-project-card">
-            <div class="featured-img-stage" onclick="openImageLightbox('Files/Project Img/Road Accidents.png', 'National Highway Accident Severity Forensics — Power BI & RandomForest')">
-              <img src="Files/Project Img/Road Accidents.png" alt="Highway Accident Severity Forensics" loading="lazy">
+          <article class="featured-project-card" id="card-accidents">
+            <div class="dossier-tab-strip">
+              <button class="dossier-tab-btn active" onclick="switchDossierTab('accidents', 'telemetry', this)">01 // Power BI Cockpit</button>
+              <button class="dossier-tab-btn" onclick="switchDossierTab('accidents', 'schema', this)">02 // Star Schema Rigor</button>
+              <button class="dossier-tab-btn" onclick="switchDossierTab('accidents', 'ml', this)">03 // RandomForest (0.84 AUC)</button>
             </div>
-          </div>
-          <div class="deep-dive-cell">
-            <span class="deep-dive-lbl">ARCHITECTURAL SOLUTION</span>
-            <p class="deep-dive-text">
-              Engineered an end-to-end intelligence web application integrating spatial density clustering, crime
-              rate trajectory forecasting, officer workload load-balancing, and bilingual English/Kannada decision
-              reporting.
-            </p>
-          </div>
-        </div>
 
-            <div class="featured-caption-row">
-              <div>
-                <h3 class="featured-project-title">HIGHWAY ACCIDENT SEVERITY FORENSICS</h3>
-                <p class="featured-project-sub">NATIONAL ROAD SAFETY RESEARCH / 2025</p>
+            <!-- Tab 1 -->
+            <div class="dossier-tab-content active" id="accidents-tab-telemetry" style="padding: 0;">
+              <div class="featured-img-stage" onclick="openImageLightbox('Files/Project Img/Road Accidents.png', 'National Highway Accident Severity Forensics — Power BI &amp; RandomForest')">
+                <img src="Files/Project Img/Road Accidents.png" alt="Highway Accident Severity Forensics" loading="lazy">
               </div>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="dossier-tab-content" id="accidents-tab-schema">
+              <div style="background-color: var(--bg-subtle); padding: 24px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-light);">
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Relational Star Schema &amp; VertiPaq Optimization</h4>
+                <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                  Modeled 1.4M+ incident rows using strict 1:N surrogate dimensions (Dim_Weather, Dim_RoadType, Dim_Vehicle, Dim_Location) isolating the central Fact_Accident table, preventing Cartesian explosions and multi-threaded engine locks.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="metric-tag">1.4M+ Incident Rows</span>
+                  <span class="metric-tag">Pure Star Schema</span>
+                  <span class="metric-tag">Sub-Second Refresh</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3 -->
+            <div class="dossier-tab-content" id="accidents-tab-ml">
+              <div style="background-color: var(--bg-subtle); padding: 24px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-light);">
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Predictive Accident Severity Classifier</h4>
+                <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                  Built a Scikit-learn RandomForest pipeline predicting fatal vs non-fatal collision risk based on road geometries, ambient weather, and traffic density with a 0.84 ROC-AUC benchmark.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="metric-tag">0.84 ROC-AUC</span>
+                  <span class="metric-tag">RandomForest Classifier</span>
+                  <span class="metric-tag">Feature Importance Ranked</span>
+                </div>
+              </div>
+            </div>
+
+        <div class="featured-caption-row">
+          <div>
+            <h3 class="featured-project-title">HIGHWAY ACCIDENT SEVERITY FORENSICS</h3>
+            <p class="featured-project-sub">NATIONAL ROAD SAFETY RESEARCH / 2025</p>
+          </div>
 
               <div class="featured-action-meta">
                 <span class="metric-tag">1.4M+ RECORDS</span>
@@ -250,59 +375,27 @@
                 </a>
               </div>
             </div>
-            <div class="browser-viewport"
-              onclick="openImageLightbox('Files/Project Img/agrowalls-reconnect.png', 'Reconnect Network (Agro-Walls) — Disaster Reunification &amp; Incident Command System')">
-              <img src="Files/Project Img/agrowalls-reconnect.png"
-                alt="Reconnect Network Agro-Walls Disaster Reunification Command Dashboard" loading="lazy" width="900"
-                height="562">
-              <span class="viewport-zoom-tag">INSPECT PREVIEW ↗</span>
-            </div>
-          </div>
-        </div>
+          </article>
 
         </div>
       </div>
-    </div>
-  </section>
-            <div class="narrative-block">
-              <span class="narrative-block-title">ARCHITECTURAL SOLUTION</span>
-              <p class="narrative-block-p">
-                Architected a unified humanitarian command platform featuring an interactive Leaflet GIS map spanning
-                35 Rajasthan district hubs, a bilingual Hindi/English voice NLP assistant powered by Google Gemini for
-                hands-free field reporting, and a D3 force-directed correlation graph.
-              </p>
-            </div>
-          </div>
-      </article>
+    </section>
 
-  <!-- ==========================================================================
-       SECTION 03: /principles (PAGE 3) — WORK PRINCIPLES
-       ========================================================================== -->
-  <section class="editorial-section" id="principles">
-    <div class="editorial-layout">
-
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/principles</span>
+    <!-- ================= SECTION 03: .. work principles (PRESERVED TOP NOTCH) ================= -->
+    <section class="editorial-row" id="principles">
+      <div class="track-rail-col">
+        <span class="track-section-num">03</span>
+        <span class="track-watermark-text">/principles</span>
       </div>
 
-      <div class="editorial-content">
+      <div class="track-main-col">
+        <div class="track-top-meta">/PRINCIPLES</div>
 
         <div class="principles-header-row">
           <h2 class="dotted-heading" style="margin-bottom: 0;">work principles</h2>
           <p class="principles-header-sub">
             Every model is tailored to strategic impact and high-conviction decisions
           </p>
-        </div>
-              <span>safety://national-highway-accident-analysis</span>
-              <span class="browser-live-pill">485K+ AUDITED</span>
-            </div>
-            <div class="browser-viewport"
-              onclick="openImageLightbox('Files/Project Img/Road Accidents.png', 'National Highway Accident Safety &amp; Severity Modeling')">
-              <img src="Files/Project Img/Road Accidents.png" alt="National Highway Accident Safety Dashboard"
-                loading="lazy" width="900" height="562">
-              <span class="viewport-zoom-tag">INSPECT PREVIEW ↗</span>
-            </div>
-          </div>
         </div>
 
         <div class="principles-bento-grid">
@@ -315,7 +408,7 @@
                 We audit data lineage, missing distributions, and model assumptions before writing a single line of DAX or Python code.
               </p>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; color: var(--accent-amber); margin-top: 40px;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; color: var(--accent-amber); margin-top: 36px;">
               // AUDITED TELEMETRY PIPELINE
             </div>
           </div>
@@ -328,17 +421,8 @@
                 Not beauty for its own sake, but cognitive speed, high data-ink ratio, and executive storytelling clarity.
               </p>
             </div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 40px;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 36px;">
               // SIGNAL OVER NOISE RATIO
-            </div>
-          </div>
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">6 Zones</span>
-              <span class="kpi-mini-lbl">Hazard Corridors</span>
-            </div>
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">100%</span>
-              <span class="kpi-mini-lbl">Star Schema Clean</span>
             </div>
           </div>
 
@@ -369,108 +453,89 @@
                 </p>
               </div>
             </div>
-              <span>sports-intel://ipl-auction-dossier</span>
-              <span class="browser-live-pill">QUANT MODEL AUDITED</span>
-            </div>
-            <div class="browser-viewport"
-              onclick="openImageLightbox('Files/Project Img/IPL Dashboard.png', 'IPL Player Auction &amp; Strike-Rate Predictive Modeling')">
-              <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Player Auction &amp; Statistical Dossier"
-                loading="lazy" width="900" height="562">
-              <span class="viewport-zoom-tag">INSPECT PREVIEW ↗</span>
-            </div>
-          </div>
-        </div>
 
             <!-- Card 5: Deadlines & Ownership -->
             <div class="bento-card bento-card-dark">
               <div>
                 <div class="bento-card-kpi">100%</div>
                 <h4 style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: #FFFFFF;">
-                  Deadline & Quality
+                  Deadline &amp; Quality
                 </h4>
                 <p class="bento-card-desc" style="font-size: 0.82rem; color: var(--text-dark-muted);">
                   Complete ownership of mathematical rigor, pipeline uptime, and reproducible artifacts.
                 </p>
               </div>
-              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dark-dim); margin-top: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dark-dim); margin-top: 14px;">
                 © Verifiable open data
               </div>
             </div>
 
           </div>
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">250+</span>
-              <span class="kpi-mini-lbl">Player Dossiers</span>
+
+        </div>
+
+        <!-- ================= EXTRAORDINARY FEATURE: THE OPTIMIZATION CONSOLE ================= -->
+        <div class="data-lab-wrapper">
+          <div class="data-lab-header">
+            <div class="data-lab-title-group">
+              <h3>// INTERACTIVE DATA BENCHMARK CONSOLE</h3>
+              <p>Simulating VertiPaq Compression &amp; Star-Schema Query Plan vs Legacy Flat Tables</p>
             </div>
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">100%</span>
-              <span class="kpi-mini-lbl">Purse DAX Yield</span>
+
+            <div class="data-lab-toggle-controls">
+              <button class="data-lab-btn" id="btnModeLegacy" onclick="toggleDataLabMode('legacy')">Legacy Flat Table</button>
+              <button class="data-lab-btn active" id="btnModeOptimized" onclick="toggleDataLabMode('optimized')">Star Schema + DAX</button>
             </div>
           </div>
 
+          <div class="data-lab-grid">
+            <div class="data-lab-kpi-box">
+              <span class="data-lab-kpi-lbl">QUERY LATENCY</span>
+              <span class="data-lab-kpi-val highlight" id="labQueryTime">&lt; 140 ms</span>
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dark-muted);" id="labQueryNote">Sub-second executive refresh</span>
+            </div>
+
+            <div class="data-lab-kpi-box">
+              <span class="data-lab-kpi-lbl">IN-MEMORY FOOTPRINT</span>
+              <span class="data-lab-kpi-val highlight" id="labMemorySize">78 MB</span>
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dark-muted);" id="labMemoryNote">VertiPaq Dictionary Encoded</span>
+            </div>
+
+            <div class="data-lab-kpi-box">
+              <span class="data-lab-kpi-lbl">CARTESIAN BLAST RISK</span>
+              <span class="data-lab-kpi-val highlight" id="labCartesianRisk">0.0%</span>
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dark-muted);" id="labCartesianNote">Surrogate Key Isolation</span>
+            </div>
+
+            <div class="data-lab-kpi-box">
+              <span class="data-lab-kpi-lbl">FORMULA ENGINE LOAD</span>
+              <span class="data-lab-kpi-val highlight" id="labFeLoad">12%</span>
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dark-muted);" id="labFeNote">Storage Engine Pushed</span>
+            </div>
+          </div>
+
+          <div class="data-lab-foot-note">
+            <span>AUDITED PIPELINE: POWER BI VERTIPAQ ENGINE // HIGHWAY SAFETY &amp; CRIME TELEMETRY</span>
+            <button onclick="toggleDataLabMode(document.getElementById('btnModeOptimized').classList.contains('active') ? 'legacy' : 'optimized')" style="color: var(--accent-amber); font-weight: 600; cursor: pointer;">
+              [CLICK TO SWITCH RUNTIME ENGINE ⇄]
+            </button>
+          </div>
         </div>
 
       </div>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ==========================================================================
-       SECTION 04: /works (PAGES 3 & 4) — LATEST PORTFOLIO
-       ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">03</span>
-    <span class="rail-tag">/PORTFOLIO</span>
-  </div>
-              <span>forensics://ap-election-swings</span>
-              <span class="browser-live-pill">175 SEATS MAPPED</span>
-            </div>
-            <div class="browser-viewport"
-              onclick="openImageLightbox('Files/Project Img/AP Election.png', 'Andhra Pradesh Assembly Constituency Forensics &amp; Swing Analytics')">
-              <img src="Files/Project Img/AP Election.png" alt="Andhra Pradesh Election Analysis Dashboard"
-                loading="lazy" width="900" height="562">
-              <span class="viewport-zoom-tag">INSPECT PREVIEW ↗</span>
-            </div>
-          </div>
-        </div>
-
-  <section class="editorial-section" id="portfolio">
-    <div class="editorial-layout">
-
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/works</span>
-          <div class="project-kpi-ribbon">
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">175</span>
-              <span class="kpi-mini-lbl">Constituencies</span>
-            </div>
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">4</span>
-              <span class="kpi-mini-lbl">Alliances Modeled</span>
-            </div>
-            <div class="kpi-mini-card">
-              <span class="kpi-mini-val">100%</span>
-              <span class="kpi-mini-lbl">Spatial GIS Clean</span>
-            </div>
-          </div>
-
-          <div class="project-stack-row">
-            <span class="tech-chip">Power BI</span>
-            <span class="tech-chip">Spatial Mapping</span>
-            <span class="tech-chip">Custom DAX</span>
-            <span class="tech-chip">Demographic Analytics</span>
-          </div>
-
-          <div class="project-cta-row">
-            <a href="Files/APelections.csv" download class="btn-inspect-secondary">
-              DOWNLOAD DATASET [CSV] ↓
-            </a>
-          </div>
-        </div>
-      </article>
-
+    <!-- ================= SECTION 04: .. latest portfolio ================= -->
+    <section class="editorial-row" id="portfolio">
+      <div class="track-rail-col">
+        <span class="track-section-num">04</span>
+        <span class="track-watermark-text">/works</span>
       </div>
 
-      <div class="editorial-content">
+      <div class="track-main-col">
+        <div class="track-top-meta">/PORTFOLIO</div>
+
         <h2 class="dotted-heading">latest portfolio</h2>
 
         <!-- Asymmetrical Row 1 -->
@@ -478,32 +543,23 @@
 
           <!-- IPL Player Auction Card -->
           <div class="works-card">
-            <div class="works-img-frame" onclick="openImageLightbox('Files/Project Img/IPL Dashboard.png', 'IPL Player Auction & Valuation Dossier — DAX & Performance Metrics')">
-              <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Player Auction & Valuation Dossier" loading="lazy">
+            <div class="works-img-frame" onclick="openImageLightbox('Files/Project Img/IPL Dashboard.png', 'IPL Player Auction &amp; Valuation Dossier — DAX &amp; Performance Metrics')">
+              <img src="Files/Project Img/IPL Dashboard.png" alt="IPL Player Auction &amp; Valuation Dossier" loading="lazy">
             </div>
             <div class="works-card-caption">
               <div>
-                <h3 class="works-card-title">IPL PLAYER AUCTION & VALUATION</h3>
-                <p class="works-card-sub">SPORTS ANALYTICS & DAX / 2024</p>
+                <h3 class="works-card-title">IPL PLAYER AUCTION &amp; VALUATION</h3>
+                <p class="works-card-sub">SPORTS ANALYTICS &amp; DAX / 2024</p>
               </div>
               <a href="Files/IPL Dataset Final.xlsx" download class="btn-card-link">
                 DATASET [XLSX] ↓
               </a>
             </div>
           </div>
-        <h4 class="stage-title">INGEST</h4>
-        <p class="stage-desc">
-          Collect, inspect, and understand raw telemetry sources. Query relational SQL tables, pull unstructured
-          files, audit null patterns, and verify source schema integrity.
-        </p>
-        <div class="stage-deliverable-strip">
-          <span>✓ Data Audit Dossier</span>
-        </div>
-      </div>
 
           <!-- AP Election Forensics Card -->
           <div class="works-card">
-            <div class="works-img-frame" onclick="openImageLightbox('Files/Project Img/AP Election.png', 'AP Election Constituency Forensics — Electoral Margin & Turnout Dynamics')">
+            <div class="works-img-frame" onclick="openImageLightbox('Files/Project Img/AP Election.png', 'AP Election Constituency Forensics — Electoral Margin &amp; Turnout Dynamics')">
               <img src="Files/Project Img/AP Election.png" alt="AP Election Constituency Forensics" loading="lazy">
             </div>
             <div class="works-card-caption">
@@ -516,36 +572,20 @@
               </a>
             </div>
           </div>
-
+          <a href="Files/APelections.csv" download class="btn-card-link">
+            DATASET [CSV] ↓
+          </a>
         </div>
-        <h4 class="node-title">TRANSFORM</h4>
-        <p class="node-desc">
-          Clean, validate, and structure information. Resolve anomalies, impute missing values, reconcile
-          timestamps, and establish high-performance star schema relational models.
-        </p>
-        <div class="node-deliverable-strip">
-          <span>✓ Star Schema Architecture</span>
-        </div>
-      </div>
-      <h4 class="stage-title">TRANSFORM</h4>
-      <p class="stage-desc">
-        Clean, validate, and structure information. Resolve anomalies, impute missing values, reconcile timestamps,
-        and establish high-performance star schema relational models.
-      </p>
-      <div class="stage-deliverable-strip">
-        <span>✓ Star Schema Architecture</span>
-      </div>
-      </div>
 
         <!-- Panoramic Card: Water Quality Monitoring Hardware -->
         <div class="works-panoramic-card">
-          <div class="panoramic-frame" onclick="openImageLightbox('Files/Project Img/agrowalls-reconnect.png', 'Autonomous Water Quality Monitoring & Sensor Fusion Architecture')">
-            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 40px; z-index: 2; background: linear-gradient(90deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.6) 50%, transparent 100%);">
-              <span style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.16em; color: var(--accent-amber); margin-bottom: 12px;">// EMBEDDED SENSOR FUSION & REAL-TIME IOT</span>
-              <h3 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 800; color: #FFFFFF; line-height: 1.15; max-width: 600px; margin-bottom: 12px;">
-                AUTONOMOUS WATER QUALITY MONITORING & TELEMETRY
+          <div class="panoramic-frame" onclick="openImageLightbox('Files/Project Img/agrowalls-reconnect.png', 'Autonomous Water Quality Monitoring &amp; Sensor Fusion Architecture')">
+            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 36px 32px; z-index: 2; background: linear-gradient(90deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.65) 50%, transparent 100%);">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.16em; color: var(--accent-amber); margin-bottom: 10px;">// EMBEDDED SENSOR FUSION &amp; REAL-TIME IOT</span>
+              <h3 style="font-family: var(--font-display); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 800; color: #FFFFFF; line-height: 1.15; max-width: 600px; margin-bottom: 10px;">
+                AUTONOMOUS WATER QUALITY MONITORING &amp; TELEMETRY
               </h3>
-              <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dark-muted); max-width: 500px; margin-bottom: 24px;">
+              <p style="font-family: var(--font-body); font-size: 0.92rem; color: var(--text-dark-muted); max-width: 520px; margin-bottom: 20px;">
                 Arduino micro-controller integration with multi-parameter sensor arrays measuring pH, turbidity, and dissolved solids with automated threshold alerts.
               </p>
               <div>
@@ -558,35 +598,17 @@
             </div>
           </div>
         </div>
-        <h4 class="node-title">ANALYZE</h4>
-        <p class="node-desc">
-          Discover patterns, relationships, and trends. Formulate performant DAX measures, test statistical
-          significance, run regressions, and isolate key performance variances.
-        </p>
-        <div class="node-deliverable-strip">
-          <span>✓ DAX Measure Repository</span>
-        </div>
-      </div>
-      <h4 class="stage-title">ANALYZE</h4>
-      <p class="stage-desc">
-        Discover patterns, relationships, and trends. Formulate performant DAX measures, test statistical
-        significance, run regressions, and isolate key performance variances.
-      </p>
-      <div class="stage-deliverable-strip">
-        <span>✓ DAX Measure Repository</span>
-      </div>
-      </div>
 
         <!-- Duo Grid: Additional Hardware & Scientific Research -->
         <div class="works-duo-grid">
 
           <div class="works-card">
-            <div style="padding: 32px 24px; background-color: var(--bg-subtle);">
+            <div style="padding: 28px 24px; background-color: var(--bg-subtle);">
               <span style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted);">// EMBEDDED ELECTRONICS</span>
-              <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; margin: 8px 0 12px;">
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; margin: 6px 0 10px;">
                 TOUCHLESS TRASH CAN / SMART IOT
               </h4>
-              <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
                 Ultrasonic sensor range-finding with micro-servo actuator automation for zero-contact hygiene control.
               </p>
               <a href="https://www.linkedin.com/posts/medhavi-agrawal_iot-arduino-innovation-activity-7311979744302927873-dE4R" target="_blank" rel="noopener" class="btn-card-link">
@@ -594,32 +616,14 @@
               </a>
             </div>
           </div>
-        <h4 class="node-title">VISUALIZE</h4>
-        <p class="node-desc">
-          Build interactive dashboards and analytical reports. Engineer zero-clutter visual interfaces featuring
-          intuitive drill-downs, cross-filtering, and cognitive visual hierarchy.
-        </p>
-        <div class="node-deliverable-strip">
-          <span>✓ Production BI Dashboard</span>
-        </div>
-      </div>
-      <h4 class="stage-title">VISUALIZE</h4>
-      <p class="stage-desc">
-        Build interactive dashboards and analytical reports. Engineer zero-clutter visual interfaces featuring
-        intuitive drill-downs, cross-filtering, and cognitive visual hierarchy.
-      </p>
-      <div class="stage-deliverable-strip">
-        <span>✓ Production BI Dashboard</span>
-      </div>
-      </div>
 
           <div class="works-card">
-            <div style="padding: 32px 24px; background-color: var(--bg-subtle);">
+            <div style="padding: 28px 24px; background-color: var(--bg-subtle);">
               <span style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted);">// NATIONAL RESEARCH</span>
-              <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; margin: 8px 0 12px;">
+              <h4 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; margin: 6px 0 10px;">
                 CARBON PARTICULATE RECOVERY
               </h4>
-              <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
                 National Children's Science Congress (NCSC) research on soot collection, carbon filtration, and particulate ink synthesis.
               </p>
               <a href="Files/NCSC Presentation File.pdf" target="_blank" rel="noopener" class="btn-card-link">
@@ -629,180 +633,68 @@
           </div>
 
         </div>
-        <h4 class="node-title">COMMUNICATE</h4>
-        <p class="node-desc">
-          Translate findings into actionable insights. Author concise executive briefs highlighting quantitative
-          conclusions, operational risks, and high-impact business recommendations.
-        </p>
-        <div class="node-deliverable-strip">
-          <span>✓ Executive Action Brief</span>
-        </div>
-      </div>
-      <h4 class="stage-title">COMMUNICATE</h4>
-      <p class="stage-desc">
-        Translate findings into actionable insights. Author concise executive briefs highlighting quantitative
-        conclusions, operational risks, and high-impact business recommendations.
-      </p>
-      <div class="stage-deliverable-strip">
-        <span>✓ Executive Action Brief</span>
-      </div>
-      </div>
-
         <!-- Center Corner Button -->
         <div class="center-btn-row">
-          <a href="posters.html" class="corner-btn corner-btn-fill">
+          <a href="posters.html" class="corner-btn">
             <span class="c-mark c-tl"></span>
             <span class="c-mark c-tr"></span>
             <span class="c-mark c-bl"></span>
             <span class="c-mark c-br"></span>
-            SEE ALL 21+ VISUAL DESIGNS & POSTERS →
+            SEE ALL 21+ VISUAL DESIGNS &amp; POSTERS →
           </a>
         </div>
-
       </div>
-    </div>
-  </section>
-      </div>
+    </section>
 
-  <!-- ==========================================================================
-       SECTION 05: /experience (PAGE 4) — ABOUT & FACTS
-       ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">04</span>
-    <span class="rail-tag">/ABOUT</span>
-  </div>
-
-  <section class="editorial-section" id="experience">
-    <div class="editorial-layout">
+    <!-- ================= SECTION 05: /experience & PROVENANCE LEDGER ================= -->
+    <section class="editorial-row" id="experience">
+      <div class="track-rail-col">
+        <span class="track-section-num">05</span>
+        <span class="track-watermark-text">/experience</span>
       </div>
 
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/experience</span>
-      </div>
-        <div class="skill-item-row" data-name="postgresql mysql">
-          <span class="skill-item-name">MySQL &amp; PostgreSQL</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-        <div class="skill-item-row" data-name="python">
-          <span class="skill-item-name">Python</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-        <div class="skill-item-row" data-name="pandas dataframes">
-          <span class="skill-item-name">Pandas DataFrames</span>
-          <span class="skill-item-tier">EXPERT</span>
-        </div>
-        <div class="skill-item-row" data-name="numpy">
-          <span class="skill-item-name">NumPy</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-      </div>
-      </div>
+      <div class="track-main-col">
+        <div class="track-top-meta">/ABOUT</div>
 
-      <div class="editorial-content">
-        <div class="skill-item-row" data-name="matplotlib seaborn">
-          <span class="skill-item-name">Matplotlib &amp; Seaborn</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-        <div class="skill-item-row" data-name="statistical analysis">
-          <span class="skill-item-name">Statistical Modeling</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-        <div class="skill-item-row" data-name="eda exploratory data analysis">
-          <span class="skill-item-name">Exploratory Data Analysis</span>
-          <span class="skill-item-tier">EXPERT</span>
-        </div>
-      </div>
-      </div>
+        <!-- Experience Layout Grid -->
+        <div class="experience-layout-grid">
 
-        <!-- Top Experience Grid -->
-        <div class="experience-hero-grid">
-        <div class="skill-item-row" data-name="tailwind css">
-          <span class="skill-item-name">Tailwind CSS</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-        <div class="skill-item-row" data-name="react">
-          <span class="skill-item-name">React</span>
-          <span class="skill-item-tier">INTERMEDIATE</span>
-        </div>
-        <div class="skill-item-row" data-name="node js mongodb">
-          <span class="skill-item-name">Node.js &amp; MongoDB</span>
-          <span class="skill-item-tier">INTERMEDIATE</span>
-        </div>
-        <div class="skill-item-row" data-name="git github">
-          <span class="skill-item-name">Git &amp; GitHub</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-        <div class="skill-item-row" data-name="arduino iot">
-          <span class="skill-item-name">Arduino &amp; IoT</span>
-          <span class="skill-item-tier">ADVANCED</span>
-        </div>
-      </div>
-      </div>
+          <!-- Left Column: Stats & Narrative -->
+          <div class="exp-statement-wrap">
 
-          <!-- Left Stats Column -->
-          <div class="exp-stats-col">
-            <div class="exp-stat-item">
-              <span class="exp-stat-val">9.84</span>
-              <span class="exp-stat-lbl">CGPA (INSTITUTE RANK 1)</span>
+            <!-- Horizontal Stats Strip with Live Count-Up Targets -->
+            <div class="exp-stats-horizontal-strip" id="statsTelemetryBar">
+              <div class="exp-stat-item">
+                <span class="exp-stat-val count-up-stat" data-target="9.84" data-decimals="2">9.84</span>
+                <span class="exp-stat-lbl">CGPA (RANK 1)</span>
+              </div>
+              <div class="exp-stat-item">
+                <span class="exp-stat-val">TOP 30</span>
+                <span class="exp-stat-lbl">KSP DATATHON</span>
+              </div>
+              <div class="exp-stat-item">
+                <span class="exp-stat-val count-up-stat" data-target="3" data-suffix="X">3X</span>
+                <span class="exp-stat-lbl">PODIUMS</span>
+              </div>
+              <div class="exp-stat-item">
+                <span class="exp-stat-val count-up-stat" data-target="10" data-suffix="+">10+</span>
+                <span class="exp-stat-lbl">PIPELINES</span>
+              </div>
             </div>
-            <div class="exp-stat-item">
-              <span class="exp-stat-val">TOP 30</span>
-              <span class="exp-stat-lbl">KSP POLICE DATATHON</span>
-            </div>
-            <div class="exp-stat-item">
-              <span class="exp-stat-val">3X</span>
-              <span class="exp-stat-lbl">HACKATHON PODIUMS</span>
-            </div>
-            <div class="exp-stat-item">
-              <span class="exp-stat-val">10+</span>
-              <span class="exp-stat-lbl">END-TO-END PIPELINES</span>
-            </div>
-          </div>
-          <div class="skill-row" data-name="canva suite">
-            <span class="skill-name">Canva Graphic Suite</span>
-            <span class="skill-tier-badge">EXPERT</span>
-          </div>
-          <div class="skill-row" data-name="data storytelling">
-            <span class="skill-name">Data Storytelling</span>
-            <span class="skill-tier-badge">EXPERT</span>
-          </div>
-          <div class="skill-row" data-name="presentation design">
-            <span class="skill-name">Presentation Design</span>
-            <span class="skill-tier-badge">EXPERT</span>
-          </div>
-        <div class="skill-item-row" data-name="canva">
-          <span class="skill-item-name">Canva Graphic Suite</span>
-          <span class="skill-item-tier">EXPERT</span>
-        </div>
-        <div class="skill-item-row" data-name="data storytelling">
-          <span class="skill-item-name">Data Storytelling</span>
-          <span class="skill-item-tier">EXPERT</span>
-        </div>
-        <div class="skill-item-row" data-name="presentation design">
-          <span class="skill-item-name">Presentation Design</span>
-          <span class="skill-item-tier">EXPERT</span>
-        </div>
-      </div>
-      </div>
 
-          <!-- Middle Narrative Column -->
-          <div class="exp-statement-col">
-            <div>
-              <h3 class="two-tone-statement" style="font-size: clamp(1.6rem, 2.8vw, 2.2rem);">
-                I'm Medhavi Agrawal — I design data systems with intent where
-                <span class="muted">analytical clarity meets operational impact, precision</span>
-                enhances decision-making.
-              </h3>
+            <h3 class="two-tone-statement" style="font-size: clamp(1.4rem, 2.4vw, 2rem); margin-bottom: 16px;">
+              I'm Medhavi Agrawal — I design data systems with intent where
+              <span class="muted">analytical clarity meets operational impact, precision</span>
+              enhances decision-making.
+            </h3>
 
-              <p class="exp-narrative-p">
-                Top 0.3% Nationwide Eastman PowerUp Scholar (1 of 32 scholars across India), Reliance Foundation Undergraduate Scholar, and Electronics & Telecommunication Engineering scholar at MITS Gwalior. Department Rank 1 for two consecutive years with a 10.00 SGPA in Semester 1.
-              </p>
+            <p class="exp-narrative-p">
+              Top 0.3% Nationwide Eastman PowerUp Scholar (1 of 32 scholars across India), Reliance Foundation Undergraduate Scholar, and Electronics &amp; Telecommunication Engineering scholar at MITS Gwalior. Department Rank 1 for two consecutive years with a 10.00 SGPA in Semester 1.
+            </p>
 
-              <p class="exp-narrative-p">
-                Passionate about merging predictive data modeling, relational star schemas, and cognitive-first executive storytelling to help high-growth teams make confident decisions.
-              </p>
-            </div>
-      </div>
+            <p class="exp-narrative-p">
+              Passionate about merging predictive data modeling, relational star schemas, and cognitive-first executive storytelling to help high-growth teams make confident decisions.
+            </p>
 
             <div class="exp-social-pills">
               <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" rel="noopener">LI</a>
@@ -811,133 +703,110 @@
               <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener">RESUME</a>
             </div>
           </div>
-          <p class="honor-desc">
-            Awarded prestigious national scholarship; 1 of only 32 scholars selected nationwide from over 10,000+
-            applicants evaluated on technical excellence and problem-solving capability.
-          </p>
-        <p class="merit-desc">
-          Awarded prestigious national scholarship; 1 of only 32 scholars selected nationwide from over 10,000+
-          applicants evaluated on technical excellence and problem-solving capability.
-        </p>
-      </div>
-      </div>
 
-          <!-- Right Photo Column -->
+          <!-- Right Column: High-Contrast Editorial Portrait -->
           <div class="exp-photo-col">
             <img src="Files/Profile New.jpeg" alt="Medhavi Agrawal Portrait" loading="lazy">
           </div>
-          <p class="honor-desc">
-            Captured First Place in a timed live 60-minute Power BI dashboard sprint at IITM Janakpuri, architecting
-            the Automotive Sales Margin DAX engine under strict sprint constraints.
-          </p>
-        <p class="merit-desc">
-          Captured First Place in a timed live 60-minute Power BI dashboard sprint at IITM Janakpuri, architecting
-          the Automotive Sales Margin DAX engine under strict sprint constraints.
-        </p>
-      </div>
-      </div>
 
-          <p class="honor-desc">
-            Ranked 1st place in the institutional data visualization and business storytelling championship at MITS
-            Gwalior for executive clarity and DAX data modeling.
-          </p>
         </div>
-        <p class="merit-desc">
-          Ranked 1st place in the institutional data visualization and business storytelling championship at MITS
-          Gwalior for executive clarity and DAX data modeling.
-        </p>
-      </div>
-      </div>
 
         <!-- Facts & Figures Bento Grid -->
         <div class="facts-figures-wrapper">
-          <div class="facts-title-slug">/facts & figures</div>
+          <div class="facts-title-slug">/facts &amp; figures</div>
 
           <div class="facts-grid">
             <div class="fact-cell">
               <div class="fact-big-number">
-                <span>108</span>
+                <span class="count-up-stat" data-target="108">108</span>
                 <span class="fact-dot">●</span>
               </div>
-              <div class="fact-desc">Datasets modeled, cleaned & audited</div>
+              <div class="fact-desc">Datasets modeled, cleaned &amp; audited</div>
             </div>
-        <p class="merit-desc">
-          Rank 01 scholar in the Department of Electronics &amp; Telecommunication Engineering for both academic
-          years
-          (2024–25 &amp; 2025–26) with a cumulative 9.84 CGPA.
-        </p>
-      </div>
-      </div>
 
             <div class="fact-cell">
               <div class="fact-big-number">
-                <span>9.84</span>
+                <span class="count-up-stat" data-target="9.84" data-decimals="2">9.84</span>
                 <span class="fact-dot">●</span>
               </div>
               <div class="fact-desc">Academic CGPA (Institute Rank 1)</div>
             </div>
-        <p class="merit-desc">
-          Chosen among the top 5,000 scholars selected from 125,000+ applicants nationwide for undergraduate
-          excellence in technical and quantitative sciences.
-        </p>
-      </div>
-      </div>
 
             <div class="fact-cell">
               <div class="fact-big-number">
-                <span>21+</span>
+                <span class="count-up-stat" data-target="21" data-suffix="+">21+</span>
                 <span class="fact-dot">●</span>
               </div>
-              <div class="fact-desc">Visual design collaterals & posters</div>
+              <div class="fact-desc">Visual design collaterals &amp; posters</div>
             </div>
-        <p class="merit-desc">
-          Finalist team in the Ujjain Simhastha Mahakumbh Hackathon sponsored by the Government of Madhya Pradesh
-          for
-          crowd-telemetry and urban safety modeling.
-        </p>
-      </div>
-      </div>
 
             <div class="fact-cell">
               <div class="fact-big-number">
-                <span>100%</span>
+                <span class="count-up-stat" data-target="100" data-suffix="%">100%</span>
                 <span class="fact-dot">●</span>
               </div>
-              <div class="fact-desc">Star schema & DAX audit compliance</div>
+              <div class="fact-desc">Star schema &amp; DAX audit compliance</div>
             </div>
           </div>
-          <p class="honor-desc">
-            Awarded State Rank 05 at the National Children's Science Congress for experimental engineering research on
-            the Reutilization of Fossil Fuels (ROFF) particulate carbon recovery.
-          </p>
         </div>
-        <p class="merit-desc">
-          Awarded State Rank 05 at the National Children's Science Congress for experimental engineering research on
-          the Reutilization of Fossil Fuels (ROFF) particulate carbon recovery.
-        </p>
-      </div>
-      </div>
+
+        <!-- ================= VERIFIED CREDENTIALS & PROVENANCE LEDGER ================= -->
+        <div style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 32px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: var(--text-primary);">
+              // VERIFIED CREDENTIALS &amp; ACADEMIC HONORS
+            </h4>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">CLICK TO VIEW OFFICIAL CERTIFICATE ↗</span>
+          </div>
+
+          <div class="provenance-ledger-strip">
+            <div class="provenance-card" onclick="openImageLightbox('Files/Certificates/IMG-20251009-WA0001.jpg', 'Python for Data Science — Certified Credential')">
+              <div class="provenance-meta">
+                <h5>Python for Data Science</h5>
+                <p>NPTEL / IIT Madras · Verified</p>
+              </div>
+              <span class="provenance-badge">VERIFIED ●</span>
+            </div>
+
+            <div class="provenance-card" onclick="openImageLightbox('Files/Certificates/IMG-20250804-WA0007.jpg', 'Institute Rank 1 Academic Excellence Honor — MITS Gwalior')">
+              <div class="provenance-meta">
+                <h5>Institute Rank 1 Honor</h5>
+                <p>MITS Gwalior · Two Years</p>
+              </div>
+              <span class="provenance-badge">VERIFIED ●</span>
+            </div>
+
+            <div class="provenance-card" onclick="openImageLightbox('Files/Certificates/IMG-20250804-WA0019.jpg', 'Technical Distinction Award')">
+              <div class="provenance-meta">
+                <h5>Technical Distinction</h5>
+                <p>Electronics &amp; Telecom</p>
+              </div>
+              <span class="provenance-badge">VERIFIED ●</span>
+            </div>
+
+            <div class="provenance-card" onclick="openImageLightbox('Files/Certificates/IMG-20250804-WA0002.jpg', 'Competitive Merit Scholarship Credential')">
+              <div class="provenance-meta">
+                <h5>National Merit Award</h5>
+                <p>Eastman Chemical Scholar</p>
+              </div>
+              <span class="provenance-badge">VERIFIED ●</span>
+            </div>
+          </div>
+        </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==========================================================================
-       SECTION 06: /what i do (PAGE 5) — SERVICES
-       ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">05</span>
-    <span class="rail-tag">/SERVICES</span>
-  </div>
-
-  <section class="editorial-section" id="services">
-    <div class="editorial-layout">
-
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/what i do</span>
+    <!-- ================= SECTION 06: .. services ================= -->
+    <section class="editorial-row" id="services">
+      <div class="track-rail-col">
+        <span class="track-section-num">06</span>
+        <span class="track-watermark-text">/what i do</span>
       </div>
 
-      <div class="editorial-content">
+      <div class="track-main-col">
+        <div class="track-top-meta">/SERVICES</div>
+
         <h2 class="dotted-heading">services</h2>
 
         <div class="services-list">
@@ -945,39 +814,30 @@
           <!-- Service 01 -->
           <div class="service-row-item">
             <div class="service-info-col">
-              <h3>Business Intelligence & DAX Architecture</h3>
+              <h3>Business Intelligence &amp; DAX Architecture</h3>
               <p>
-                End-to-end Power BI architecture, relational star schemas, complex DAX measures, automated ETL refresh schedules, and executive KPI cockpit telemetry.
+                End-to-end Power BI architecture, relational star schemas, complex DAX measures, automated ETL refresh
+                schedules, and executive KPI cockpit telemetry.
               </p>
             </div>
             <div class="service-previews-col">
-              <div class="service-thumb-card" onclick="openImageLightbox('Files/Project Img/ksp-dashboard.png', 'Power BI DAX Telemetry Architecture')">
+              <div class="service-thumb-card"
+                onclick="openImageLightbox('Files/Project Img/ksp-dashboard.png', 'Power BI DAX Telemetry Architecture')">
                 <img src="Files/Project Img/ksp-dashboard.png" alt="KSP Intelligence">
                 <span class="thumb-caption">KSP INTELLIGENCE</span>
               </div>
-              <div class="service-thumb-card" onclick="openImageLightbox('Files/Project Img/Road Accidents.png', 'Highway Accident DAX Pipeline')">
+              <div class="service-thumb-card"
+                onclick="openImageLightbox('Files/Project Img/Road Accidents.png', 'Highway Accident DAX Pipeline')">
                 <img src="Files/Project Img/Road Accidents.png" alt="Road Safety">
                 <span class="thumb-caption">HIGHWAY SAFETY</span>
               </div>
             </div>
           </div>
-          <span class="timeline-org-name">Department of ETE, MITS</span>
-          <p class="timeline-desc-text">
-            Maintaining alumni telemetry database records, curating high-level executive webinars, and structuring
-            undergraduate mentorship pipelines.
-          </p>
-        </div>
-        <span class="timeline-org">Department of ETE, MITS</span>
-        <p class="timeline-text">
-          Maintaining alumni telemetry database records, curating high-level executive webinars, and structuring
-          undergraduate mentorship pipelines.
-        </p>
-      </div>
 
           <!-- Service 02 -->
           <div class="service-row-item">
             <div class="service-info-col">
-              <h3>Predictive Analytics & Spatial Forensics</h3>
+              <h3>Predictive Analytics &amp; Spatial Forensics</h3>
               <p>
                 Geospatial clustering, time-series forecasting, regression modeling, and statistical anomaly detection across civic, police, and enterprise datasets.
               </p>
@@ -997,7 +857,7 @@
           <!-- Service 03 -->
           <div class="service-row-item">
             <div class="service-info-col">
-              <h3>Executive Design & Data Storytelling</h3>
+              <h3>Executive Design &amp; Data Storytelling</h3>
               <p>
                 Transforming dense analytical outputs into cognitive-optimized visual systems, executive presentations, and publication-ready infographic dossiers.
               </p>
@@ -1012,38 +872,12 @@
                 <span class="thumb-caption">21+ DESIGNS →</span>
               </div>
             </div>
-            <div class="score-box">
-              <span class="score-big-num" style="color: var(--amber-gold);">10.00</span>
-              <span class="score-tag-lbl">Semester 01 SGPA (Perfect)</span>
-            </div>
-            <div class="score-box">
-              <span class="score-big-num" style="color: var(--text-primary);">93.4%</span>
-              <span class="score-tag-lbl">Class XII (CBSE Board)</span>
-            </div>
-            <div class="score-box">
-              <span class="score-big-num" style="color: var(--text-primary);">92.6%</span>
-              <span class="score-tag-lbl">Class X (CBSE Board)</span>
-            </div>
           </div>
 
-          <div class="score-cell">
-            <span class="score-val" style="color: var(--accent-lime);">10.00</span>
-            <span class="score-lbl">Semester 01 SGPA (Perfect)</span>
-          </div>
-          <div class="score-cell">
-            <span class="score-val">93.4%</span>
-            <span class="score-lbl">Class XII (CBSE Board)</span>
-          </div>
-          <div class="score-cell">
-            <span class="score-val">92.6%</span>
-            <span class="score-lbl">Class X (CBSE Board)</span>
-          </div>
         </div>
-      </div>
-      </div>
 
         <div class="center-btn-row">
-          <a href="#contact" class="corner-btn corner-btn-fill">
+          <a href="#contact" class="corner-btn">
             <span class="c-mark c-tl"></span>
             <span class="c-mark c-tr"></span>
             <span class="c-mark c-bl"></span>
@@ -1053,26 +887,19 @@
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==========================================================================
-       SECTION 07: /honors (PAGE 5) — RECOGNITION & HONORS
-       ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">06</span>
-    <span class="rail-tag">/HONORS & RECOGNITION</span>
-  </div>
-
-  <section class="editorial-section" id="honors">
-    <div class="editorial-layout">
-
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/honors</span>
+    <!-- ================= SECTION 07: .. recognition & honors ================= -->
+    <section class="editorial-row" id="honors">
+      <div class="track-rail-col">
+        <span class="track-section-num">07</span>
+        <span class="track-watermark-text">/recognition</span>
       </div>
 
-      <div class="editorial-content">
-        <h2 class="dotted-heading">recognition & honors</h2>
+      <div class="track-main-col">
+        <div class="track-top-meta">/HONORS</div>
+
+        <h2 class="dotted-heading">recognition &amp; honors</h2>
 
         <div class="honors-scroll-container">
 
@@ -1083,7 +910,8 @@
               <span>5.0</span>
             </div>
             <p class="honor-quote">
-              Eastman PowerUp Scholar: Selected among top 0.3% engineering students nationwide (1 of 32 scholars across India) for analytical distinction.
+              Eastman PowerUp Scholar: Selected among top 0.3% engineering students nationwide (1 of 32 scholars across
+              India) for analytical distinction.
             </p>
             <div class="honor-author-meta">
               <div class="honor-avatar">EC</div>
@@ -1101,7 +929,8 @@
               <span>5.0</span>
             </div>
             <p class="honor-quote">
-              Karnataka State Police Datathon 2026: Top 30 Finalist out of hundreds of engineering teams across India for spatial crime prediction.
+              Karnataka State Police Datathon 2026: Top 30 Finalist out of hundreds of engineering teams across India
+              for spatial crime prediction.
             </p>
             <div class="honor-author-meta">
               <div class="honor-avatar">KP</div>
@@ -1111,7 +940,6 @@
               </div>
             </div>
           </div>
-      </div>
 
           <!-- Honor 03: Reliance Foundation -->
           <div class="honor-review-card">
@@ -1120,7 +948,8 @@
               <span>5.0</span>
             </div>
             <p class="honor-quote">
-              Reliance Foundation Undergraduate Scholar: Prestigious competitive national scholarship awarded for academic excellence and technical leadership.
+              Reliance Foundation Undergraduate Scholar: Prestigious competitive national scholarship awarded for
+              academic excellence and technical leadership.
             </p>
             <div class="honor-author-meta">
               <div class="honor-avatar">RF</div>
@@ -1130,16 +959,6 @@
               </div>
             </div>
           </div>
-        <div class="poster-caption-strip">
-          <span class="poster-name-text">Vikasit Bharat 2047</span>
-          <span class="poster-arrow-link">VIEW ↗</span>
-        </div>
-      </div>
-      <div class="poster-caption-row">
-        <span class="poster-title-text">Vikasit Bharat 2047</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
-      </div>
 
           <!-- Honor 04: 3x Podium Finishes -->
           <div class="honor-review-card">
@@ -1158,16 +977,6 @@
               </div>
             </div>
           </div>
-        <div class="poster-caption-strip">
-          <span class="poster-name-text">Prompt-E-Pic Contest</span>
-          <span class="poster-arrow-link">VIEW ↗</span>
-        </div>
-      </div>
-      <div class="poster-caption-row">
-        <span class="poster-title-text">Prompt-E-Pic Contest</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
-      </div>
 
           <!-- Honor 05: Academic Department Rank 1 -->
           <div class="honor-review-card">
@@ -1176,7 +985,7 @@
               <span>5.0</span>
             </div>
             <p class="honor-quote">
-              Department Rank 1: Ranked 1st in Electronics & Telecommunication Engineering for two consecutive years with a 9.84 CGPA.
+              Department Rank 1: Ranked 1st in Electronics &amp; Telecommunication Engineering for two consecutive years with a 9.84 CGPA.
             </p>
             <div class="honor-author-meta">
               <div class="honor-avatar">MI</div>
@@ -1186,79 +995,21 @@
               </div>
             </div>
           </div>
-        <div class="poster-caption-strip">
-          <span class="poster-name-text">CCC Recruitment Drive</span>
-          <span class="poster-arrow-link">VIEW ↗</span>
-        </div>
-      </div>
-      <div class="poster-caption-row">
-        <span class="poster-title-text">CCC Recruitment Drive</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
-      </div>
 
         </div>
-        <div class="poster-caption-strip">
-          <span class="poster-name-text">MATLAB Workshop</span>
-          <span class="poster-arrow-link">VIEW ↗</span>
-        </div>
       </div>
-      <div class="poster-caption-row">
-        <span class="poster-title-text">MATLAB Workshop</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
+    </section>
+
+    <!-- ================= SECTION 08: /faq ================= -->
+    <section class="editorial-row" id="faq">
+      <div class="track-rail-col">
+        <span class="track-section-num">08</span>
+        <span class="track-watermark-text">/faq</span>
       </div>
 
-      </div>
-    </div>
-  </section>
-        <div class="poster-caption-strip">
-          <span class="poster-name-text">Python Bootcamp</span>
-          <span class="poster-arrow-link">VIEW ↗</span>
-        </div>
-      </div>
-      <div class="poster-caption-row">
-        <span class="poster-title-text">Python Bootcamp</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
-      </div>
+      <div class="track-main-col">
+        <div class="track-top-meta">/FAQ</div>
 
-  <!-- ==========================================================================
-       SECTION 08: /faq (PAGE 6) — FREQUENTLY ASKED QUESTIONS
-       ========================================================================== -->
-  <div class="section-rail">
-    <span class="rail-num">07</span>
-    <span class="rail-tag">/FAQ</span>
-  </div>
-        <div class="poster-caption-strip">
-          <span class="poster-name-text">Smart Shelf Exhibition</span>
-          <span class="poster-arrow-link">VIEW ↗</span>
-        </div>
-      </div>
-      <div class="poster-caption-row">
-        <span class="poster-title-text">Smart Shelf Exhibition</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
-      </div>
-
-  <section class="editorial-section" id="faq">
-    <div class="editorial-layout">
-      <div class="poster-caption-row">
-        <span class="poster-title-text">Pat Cummins Analytics</span>
-        <span class="poster-view-arrow">VIEW ↗</span>
-      </div>
-      </div>
-
-      <div class="gallery-footer-action">
-        <a href="posters.html" class="btn-all-designs">EXPLORE ALL 21+ VISUAL DESIGNS →</a>
-      </div>
-      </div>
-
-      <div class="vertical-gutter">
-        <span class="gutter-watermark">/faq</span>
-      </div>
-
-      <div class="editorial-content">
         <h2 class="faq-headline-statement">
           Before you ask me about. There's what most people want to know.
         </h2>
@@ -1273,7 +1024,10 @@
             </button>
             <div class="faq-accordion-body">
               <div class="faq-body-content">
-                My core stack is built around enterprise Power BI, complex DAX (iterators, context transition, time-intelligence), SQL (PostgreSQL), Python (Pandas, NumPy, Scikit-learn), Zoho Catalyst, and MongoDB. I focus on clean star-schema data modeling, ensuring high query performance and sub-second visual refresh rates.
+                My core stack is built around enterprise Power BI, complex DAX (iterators, context transition,
+                time-intelligence), SQL (PostgreSQL), Python (Pandas, NumPy, Scikit-learn), Zoho Catalyst, and MongoDB.
+                I focus on clean star-schema data modeling, ensuring high query performance and sub-second visual
+                refresh rates.
               </div>
             </div>
           </div>
@@ -1285,26 +1039,12 @@
             </button>
             <div class="faq-accordion-body">
               <div class="faq-body-content">
-                Every project begins with a strict data audit: checking null distributions, cardinality, and referential integrity. I design dimension tables with surrogate keys and isolate fact tables to prevent Cartesian explosions and circular relationship traps in Power BI.
+                Every project begins with a strict data audit: checking null distributions, cardinality, and referential
+                integrity. I design dimension tables with surrogate keys and isolate fact tables to prevent Cartesian
+                explosions and circular relationship traps in Power BI.
               </div>
             </div>
           </div>
-          <div class="cert-preview-card"
-            onclick="openLightbox('Files/Certificates/IMG-20251009-WA0001.jpg', 'Python for Data Science Credential')">
-            <img src="Files/Certificates/IMG-20251009-WA0001.jpg" alt="Credential 2" loading="lazy" width="300"
-              height="214">
-          </div>
-          <div class="cert-preview-card"
-            onclick="openLightbox('Files/Certificates/IMG-20250804-WA0007.jpg', 'Academic Excellence Honor')">
-            <img src="Files/Certificates/IMG-20250804-WA0007.jpg" alt="Credential 3" loading="lazy" width="300"
-              height="214">
-          </div>
-          <div class="cert-preview-card"
-            onclick="openLightbox('Files/Certificates/IMG-20250804-WA0019.jpg', 'Industry Certification')">
-            <img src="Files/Certificates/IMG-20250804-WA0019.jpg" alt="Credential 4" loading="lazy" width="300"
-              height="214">
-          </div>
-      </div>
 
           <div class="faq-accordion-item">
             <button class="faq-accordion-trigger" onclick="toggleFaqAccordion(this)">
@@ -1317,18 +1057,6 @@
               </div>
             </div>
           </div>
-          <div class="hardware-foot">
-            <span class="hardware-stack">Arduino · Sensor Fusion</span>
-            <a href="Files/Report_Water Quality Monitoring.pdf" target="_blank" class="hardware-action">VIEW REPORT
-              ↗</a>
-          </div>
-        </div>
-        <div class="tech-hw-foot">
-          <span class="tech-hw-stack">Arduino · Sensor Fusion</span>
-          <a href="Files/Report_Water Quality Monitoring.pdf" target="_blank" class="tech-hw-action">VIEW REPORT
-            ↗</a>
-        </div>
-      </div>
 
           <div class="faq-accordion-item">
             <button class="faq-accordion-trigger" onclick="toggleFaqAccordion(this)">
@@ -1337,28 +1065,11 @@
             </button>
             <div class="faq-accordion-body">
               <div class="faq-body-content">
-                Absolutely. I have extensive experience collaborating asynchronously across Git, cloud platforms, and live telemetry dashboards with clean documentation, reproducible notebooks, and clear status milestones.
+                Absolutely. I have extensive experience collaborating asynchronously across Git, cloud platforms, and
+                live telemetry dashboards with clean documentation, reproducible notebooks, and clear status milestones.
               </div>
             </div>
           </div>
-          <h4 class="hardware-title">Automated Smart Toll Gate System</h4>
-          <p class="hardware-desc">
-            Hardware automation deploying ultrasonic vehicle distance telemetry and servo-assisted barrier control
-            to eliminate highway congestion.
-          </p>
-        </div>
-        <div class="hardware-foot">
-          <span class="hardware-stack">Arduino · Servo · IoT</span>
-          <a href="https://www.linkedin.com/posts/medhavi-agrawal_iot-arduino-innovation-activity-7311979744302927873-dE4R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
-            target="_blank" class="hardware-action">VIEW PROJECT ↗</a>
-        </div>
-      </div>
-      <div class="tech-hw-foot">
-        <span class="tech-hw-stack">Arduino · Servo · IoT</span>
-        <a href="https://www.linkedin.com/posts/medhavi-agrawal_iot-arduino-innovation-activity-7311979744302927873-dE4R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKDmTkBufb1bu0V2vMZAPX8Kt0ZWOh_hAQ"
-          target="_blank" class="tech-hw-action">VIEW PROJECT ↗</a>
-      </div>
-      </div>
 
           <div class="faq-accordion-item">
             <button class="faq-accordion-trigger" onclick="toggleFaqAccordion(this)">
@@ -1372,34 +1083,20 @@
             </div>
           </div>
 
-          <h4 class="hardware-title">Reutilization of Fossil Fuels (ROFF)</h4>
-          <p class="hardware-desc">
-            Environmental engineering research capturing exhaust particulate emissions and converting carbon residue
-            into printing ink. Awarded State Rank 05 at NCSC.
-          </p>
         </div>
-        <div class="hardware-foot">
-          <span class="hardware-stack">Particulate Recovery</span>
-          <a href="Files/NCSC Presentation File.pdf" target="_blank" class="hardware-action">VIEW REPORT ↗</a>
-        </div>
-      </div>
-      <div class="tech-hw-foot">
-        <span class="tech-hw-stack">Particulate Recovery</span>
-        <a href="Files/NCSC Presentation File.pdf" target="_blank" class="tech-hw-action">VIEW REPORT ↗</a>
-      </div>
-      </div>
-      </div>
 
         <!-- Still Have Questions Banner -->
         <div class="faq-contact-card">
           <div class="faq-contact-info">
             <h4>Still have questions?</h4>
             <p>
-              Feel free to get in touch — I'll gladly clarify the details and help you decide if this is the right fit for your team or project.
+              Feel free to get in touch — I'll gladly clarify the details and help you decide if this is the right fit
+              for your team or project.
             </p>
           </div>
 
-          <a href="mailto:magrawal09.contact@gmail.com" class="corner-btn corner-btn-fill" onclick="copyContactEmail(); return false;">
+          <a href="mailto:magrawal09.contact@gmail.com" class="corner-btn corner-btn-fill"
+            onclick="copyContactEmail(); return false;">
             <span class="c-mark c-tl"></span>
             <span class="c-mark c-tr"></span>
             <span class="c-mark c-bl"></span>
@@ -1408,59 +1105,63 @@
           </a>
         </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ==========================================================================
-       CLOSING CONTACT & MASSIVE FOOTER (PAGE 6) — DARK THEME
+       CLOSING CONTACT & MASSIVE FOOTER (PRESERVED TOP-NOTCH DESIGN)
        ========================================================================== -->
   <footer class="closing-footer-section" id="contact">
+    <div class="closing-inner-container">
 
-    <!-- Top Channels Bar -->
-    <div class="closing-channels-bar">
-      <div class="closing-brand">MEDHAVI AGRAWAL</div>
-      <div class="closing-links">
-        <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" rel="noopener">LINKEDIN</a>
-        <a href="https://github.com/m-agrawal09" target="_blank" rel="noopener">GITHUB</a>
-        <a href="mailto:magrawal09.contact@gmail.com">EMAIL</a>
-        <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener">RÉSUMÉ</a>
-        <a href="posters.html">POSTERS</a>
-      </div>
-    </div>
-
-    <!-- Available & CTA Row -->
-    <div class="closing-cta-strip">
-      <div class="closing-status-group">
-        <div class="closing-available-tag">
-          <span class="live-dot"></span>
-          <span>AVAILABLE FOR 2026 OPPORTUNITIES</span>
+      <!-- Top Channels Bar -->
+      <div class="closing-channels-bar">
+        <div class="closing-brand">MEDHAVI AGRAWAL</div>
+        <div class="closing-links">
+          <a href="https://www.linkedin.com/in/medhavi-agrawal/" target="_blank" rel="noopener">LINKEDIN</a>
+          <a href="https://github.com/m-agrawal09" target="_blank" rel="noopener">GITHUB</a>
+          <a href="mailto:magrawal09.contact@gmail.com">EMAIL</a>
+          <a href="Files/Resume_Medhavi Agrawal [Aug 2026].pdf" target="_blank" rel="noopener">RÉSUMÉ</a>
+          <a href="posters.html">POSTERS</a>
         </div>
-        <h2 class="closing-headline">Let's work together</h2>
       </div>
 
-      <a href="mailto:magrawal09.contact@gmail.com" class="corner-btn corner-btn-dark">
-        <span class="c-mark c-tl"></span>
-        <span class="c-mark c-tr"></span>
-        <span class="c-mark c-bl"></span>
-        <span class="c-mark c-br"></span>
-        GET IN TOUCH ↗
-      </a>
+      <!-- Available & CTA Row -->
+      <div class="closing-cta-strip">
+        <div class="closing-status-group">
+          <div class="closing-available-tag">
+            <span class="live-dot"></span>
+            <span>AVAILABLE FOR 2026 OPPORTUNITIES</span>
+          </div>
+          <h2 class="closing-headline">Let's work together</h2>
+        </div>
+
+        <a href="mailto:magrawal09.contact@gmail.com" class="corner-btn corner-btn-dark">
+          <span class="c-mark c-tl"></span>
+          <span class="c-mark c-tr"></span>
+          <span class="c-mark c-bl"></span>
+          <span class="c-mark c-br"></span>
+          GET IN TOUCH ↗
+        </a>
+      </div>
+
+      <!-- Enormous Screen-Spanning Headline -->
+      <div class="massive-touch-wrapper">
+        <span class="massive-touch-text">GET IN TOUCH</span>
+      </div>
+
+      <!-- Glowing Amber Horizon Bar -->
+      <div class="horizon-glow-bar"></div>
+
+      <!-- Legal & Coordinates Strip -->
+      <div class="closing-legal-strip">
+        <div>© 2026 Medhavi Agrawal. All rights reserved.</div>
+        <div>GWALIOR, INDIA · REMOTE WORLDWIDE</div>
+      </div>
+
     </div>
-
-    <!-- Enormous Screen-Spanning Headline -->
-    <div class="massive-touch-wrapper">
-      <span class="massive-touch-text">GET IN TOUCH</span>
-    </div>
-
-    <!-- Glowing Amber Horizon Bar -->
-    <div class="horizon-glow-bar"></div>
-
-    <!-- Legal & Coordinates Strip -->
-    <div class="closing-legal-strip">
-      <div>© 2026 Medhavi Agrawal. All rights reserved.</div>
-      <div>GWALIOR, INDIA · REMOTE WORLDWIDE</div>
-    </div>
-
   </footer>
 
   <!-- ==========================================================================
@@ -1482,39 +1183,148 @@
   </div>
 
   <!-- ==========================================================================
-       INTERACTIVE JAVASCRIPT ENGINE
+       INTERACTIVE JAVASCRIPT ENGINE & EXTRAORDINARY SIMULATOR
        ========================================================================== -->
+  <script type="module" src="Files/decrypted-text.js"></script>
+
   <script>
-    // 1. Live IST Clock Telemetry
+    // 1. Live IST Clock Telemetry (with Millisecond Precision)
     function refreshLiveClock() {
       const display = document.getElementById('liveClockDisplay');
       if (!display) return;
       const now = new Date();
       const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
       const timeStr = now.toLocaleTimeString('en-GB', options);
-      display.textContent = `GWALIOR / ${timeStr} [IST]`;
+      const ms = String(Math.floor(now.getMilliseconds() / 100)).padStart(1, '0');
+      display.textContent = `GWALIOR / ${timeStr}.${ms} [IST]`;
     }
-    setInterval(refreshLiveClock, 1000);
+    setInterval(refreshLiveClock, 100);
     refreshLiveClock();
 
-    // 2. Interactive FAQ Accordion
+    // 2. Interactive Spotlight Cursor Follower on Hero
+    const heroSection = document.getElementById('hero');
+    const heroSpotlight = document.getElementById('heroSpotlight');
+    if (heroSection && heroSpotlight) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        heroSpotlight.style.setProperty('--mouse-x', `${x}px`);
+        heroSpotlight.style.setProperty('--mouse-y', `${y}px`);
+      });
+    }
+
+    // 3. 3D Parallax Tilt on Portrait Frame
+    const portraitFrame = document.getElementById('heroPortraitFrame');
+    const visualWrap = document.getElementById('heroVisualWrap');
+    if (portraitFrame && visualWrap) {
+      visualWrap.addEventListener('mousemove', (e) => {
+        const rect = visualWrap.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotX = -(y / rect.height) * 12;
+        const rotY = (x / rect.width) * 12;
+        portraitFrame.style.transform = `perspective(800px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      visualWrap.addEventListener('mouseleave', () => {
+        portraitFrame.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    }
+
+    // 4. Interactive Project Dossier Tab Switcher
+    function switchDossierTab(projectKey, tabKey, btn) {
+      const card = document.getElementById(`card-${projectKey}`);
+      if (!card) return;
+
+      // Update Tab buttons
+      card.querySelectorAll('.dossier-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      // Update Tab contents
+      card.querySelectorAll('.dossier-tab-content').forEach(c => c.classList.remove('active'));
+      const activeContent = document.getElementById(`${projectKey}-tab-${tabKey}`);
+      if (activeContent) activeContent.classList.add('active');
+    }
+
+    // 5. Interactive Data Lab Simulator
+    function toggleDataLabMode(mode) {
+      const btnLegacy = document.getElementById('btnModeLegacy');
+      const btnOptimized = document.getElementById('btnModeOptimized');
+      const valQuery = document.getElementById('labQueryTime');
+      const valMem = document.getElementById('labMemorySize');
+      const valRisk = document.getElementById('labCartesianRisk');
+      const valLoad = document.getElementById('labFeLoad');
+      const noteQuery = document.getElementById('labQueryNote');
+      const noteMem = document.getElementById('labMemoryNote');
+      const noteRisk = document.getElementById('labCartesianNote');
+      const noteLoad = document.getElementById('labFeNote');
+
+      if (mode === 'legacy') {
+        btnLegacy.classList.add('active');
+        btnOptimized.classList.remove('active');
+
+        valQuery.textContent = '14,820 ms';
+        valQuery.classList.remove('highlight');
+        valQuery.style.color = '#FF4444';
+        noteQuery.textContent = 'Slow row-by-row full table scan';
+
+        valMem.textContent = '1,840 MB';
+        valMem.classList.remove('highlight');
+        valMem.style.color = '#FF4444';
+        noteMem.textContent = 'Zero compression; raw memory choke';
+
+        valRisk.textContent = 'HIGH (84%)';
+        valRisk.classList.remove('highlight');
+        valRisk.style.color = '#FF4444';
+        noteRisk.textContent = 'Cartesian explosion risk on many-to-many';
+
+        valLoad.textContent = '94%';
+        valLoad.classList.remove('highlight');
+        valLoad.style.color = '#FF4444';
+        noteLoad.textContent = 'Formula Engine locked on iteration';
+      } else {
+        btnOptimized.classList.add('active');
+        btnLegacy.classList.remove('active');
+
+        valQuery.textContent = '< 140 ms';
+        valQuery.classList.add('highlight');
+        valQuery.style.color = '';
+        noteQuery.textContent = 'Sub-second executive refresh';
+
+        valMem.textContent = '78 MB';
+        valMem.classList.add('highlight');
+        valMem.style.color = '';
+        noteMem.textContent = 'VertiPaq Dictionary Encoded';
+
+        valRisk.textContent = '0.0%';
+        valRisk.classList.add('highlight');
+        valRisk.style.color = '';
+        noteRisk.textContent = 'Surrogate Key Isolation';
+
+        valLoad.textContent = '12%';
+        valLoad.classList.add('highlight');
+        valLoad.style.color = '';
+        noteLoad.textContent = 'Storage Engine Pushed';
+      }
+    }
+
+    // 6. Interactive FAQ Accordion
     function toggleFaqAccordion(triggerBtn) {
       const item = triggerBtn.closest('.faq-accordion-item');
       if (!item) return;
       const isActive = item.classList.contains('active');
 
-      // Close all items
       document.querySelectorAll('.faq-accordion-item').forEach(el => {
         el.classList.remove('active');
       });
 
-      // Toggle clicked item
       if (!isActive) {
         item.classList.add('active');
       }
     }
 
-    // 3. Copy Email Helper with Toast
+    // 7. Copy Email Helper with Toast
     function copyContactEmail() {
       const email = 'magrawal09.contact@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
@@ -1535,7 +1345,7 @@
       }, 3000);
     }
 
-    // 4. Global Lightbox Controller
+    // 8. Global Lightbox Controller
     function openImageLightbox(src, caption) {
       const modal = document.getElementById('globalLightbox');
       const img = document.getElementById('lightboxTargetImg');
@@ -1563,6 +1373,50 @@
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') dismissLightbox();
+    });
+
+    // 9. Count-Up Animation for Numerical Stats
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.dataset.target);
+          const decimals = parseInt(el.dataset.decimals || '0', 10);
+          const suffix = el.dataset.suffix || '';
+          const prefix = el.dataset.prefix || '';
+          const duration = 1400;
+          const start = performance.now();
+          const startVal = decimals > 0 ? target * 0.75 : 0;
+
+          function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = startVal + (target - startVal) * ease;
+            el.textContent = `${prefix}${decimals > 0 ? current.toFixed(decimals) : Math.round(current)}${suffix}`;
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.count-up-stat').forEach(statEl => {
+      countObserver.observe(statEl);
+    });
+
+    // 10. Decrypted Text Trigger on Page Ready
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.initDecryptedText) {
+        window.initDecryptedText({
+          target: '#decryptedHeroTitle',
+          text: 'INTELLIGENCE',
+          speed: 80,
+          maxIterations: 12,
+          animateOn: 'view',
+          characters: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$&*'
+        });
+      }
     });
   </script>
 
